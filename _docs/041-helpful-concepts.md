@@ -21,6 +21,6 @@ A quite different approach was used neural networks to build a co-processor. @es
  code. 
  
 #### References
-[^esmaeilzadeh2012architecture] Hadi Esmaeilzadeh, Adrian Sampson, Luis Ceze, and Doug Burger. Architecture
+[^esmaeilzadeh2012architecture]: Hadi Esmaeilzadeh, Adrian Sampson, Luis Ceze, and Doug Burger. Architecture
 support for disciplined approximate programming. In ACM SIGPLAN Notices,
 volume 47, pages 301–312. ACM, 2012.
