@@ -3,7 +3,7 @@ layout: splash
 permalink: /
 header:
   overlay_color: "#5e616c"
-  overlay_image: mm-home-page-feature.jpg
+  overlay_image: header.jpg
   cta_label: "<i class='fa fa-download'></i> Install Now"
   cta_url: "/docs/getting-started/"
   caption:
