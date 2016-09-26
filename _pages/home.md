@@ -15,13 +15,13 @@ feature_row:
     excerpt: ""
     url: "/docs/results/"
     btn_label: "Speedup"
-  - image_path: mm-responsive-feature.png
+  - image_path: general_1.png
     alt: "General Purpose"
     title: "General Purpose"
     excerpt: ""
     url: "/docs/concepts/"
     btn_label: "General Purpose"
-  - image_path: general_1.png
+  - image_path: mm-free-feature.png
     alt: "Platform"
     title: "Approximate Computing Platform"
     excerpt: ""
