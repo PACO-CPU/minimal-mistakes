@@ -9,6 +9,12 @@ sidebar:
   nav: "links"
 ---
 
+---
+title: "Sample Document"
+output: html_document
+bibliography: literature.bib
+---
+
 {% include base_path %}
 
 ### Similar projects
