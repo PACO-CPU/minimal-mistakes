@@ -91,3 +91,15 @@ Attention: remember to replace N with the number of threads you want to spawn.
 
 From this point on your system should be prepared to run all the software tools of this
 environment.
+
+#### Generating the CPU core
+
+To translate the Rocket-Chip, written in Chisel HDL, to a verilog description, run:
+```bash
+$ cd paco-env/rocket-chip/fsim
+$ make -jN && make install
+```
+
+#### Synthesizing the system for FPGA installation
+
+Please look into the User guide for more information. 
