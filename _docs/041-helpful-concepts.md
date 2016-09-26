@@ -18,4 +18,4 @@ At the level of micro-architecture, different techniques of approximation were a
 A quite different approach was used neural networks to build a co-processor. [@esmaeilzadeh2012neural] describes a program
  transformation that configures and trains a neural processing unit to mimic a region of imperative
  code. 
-#References
+####References
