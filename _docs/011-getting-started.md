@@ -42,6 +42,7 @@ Before you start to download and use PACO, please make sure you have all the nee
 ## Prerequisites
 
 For installation you need some packages installed on your machine: 
+
 - libuuid for Clang and LLVM
 - lua for the LUT Compiler
 
