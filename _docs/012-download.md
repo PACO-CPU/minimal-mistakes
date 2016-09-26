@@ -3,6 +3,8 @@ title: "Download"
 permalink: /docs/download/
 excerpt: "How and where from can the PACO toolchain be downloaded."
 modified: 2016-08-08T16:25:30-04:00
+sidebar:
+    nav: "getting-started"
 ---
 
 ## Download

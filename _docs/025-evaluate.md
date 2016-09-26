@@ -7,7 +7,8 @@ single_layout_gallery:
     alt: "single layout with header example"
   - image_path: mm-layout-single-meta.png
     alt: "single layout with comments and related posts"
-modified: 2016-09-09T10:22:01-04:00
+sidebar:
+    nav: "tutorial" 
 ---
 
 {% include base_path %}

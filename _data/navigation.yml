@@ -51,7 +51,7 @@ docs:
       - title: "Demo Application"
         url: /docs/demo/
 
-
+getting-started:
   - title: Getting Started
     children:
       - title: "Getting Started Guide"
@@ -63,6 +63,7 @@ docs:
       - title: "Run"
         url: /docs/run/
 
+tutorial:
   - title: Tutorial
     children:
       - title: "Creating your Application"
@@ -78,6 +79,7 @@ docs:
       - title: "Contributing to PACO"
         url: /docs/contribute/
 
+documentation:
   - title: Documentation
     children:
       - title: "User Guide"
@@ -93,6 +95,7 @@ docs:
       - title: "Troubleshooting"
         url: /docs/troubleshoot/
 
+links:
   - title: Links
     children:
       - title: "Helpful concepts"
@@ -101,3 +104,4 @@ docs:
         url: /docs/related-works/
       - title: "Publications"
         url: /docs/publications/
+

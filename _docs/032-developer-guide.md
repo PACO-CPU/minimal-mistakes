@@ -2,7 +2,8 @@
 title: "Developer Guide"
 permalink: /docs/developer-guide/
 excerpt: "Developer Guide"
-modified: 2016-06-01
+sidebar:
+  nav: "documentation"
 ---
 
 {% include base_path %}
