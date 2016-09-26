@@ -26,7 +26,9 @@ Fork the [Minimal Mistakes theme](https://github.com/mmistakes/minimal-mistakes/
 Congratulations! You've successfully blah blah!
 
 ---
+
 ### Real page starts here:
+
 ---
 # Getting started with PACO – Paderborn CPU Core for Approximate Computing
 
