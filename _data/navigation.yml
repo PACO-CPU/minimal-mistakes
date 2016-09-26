@@ -37,7 +37,7 @@ main:
     url: /docs/evaluation
 
   - title: "Links"
-    url: /docs/helpful-concepts/
+    url: /docs/similar-projects/
 
 # documentation links
 docs:
@@ -111,10 +111,10 @@ evaluation:
 links:
   - title: Links
     children:
-      - title: "Helpful concepts"
-        url: /docs/helpful-concepts/
-      - title: "Related Works"
-        url: /docs/related-works/
+      - title: "Similar projects"
+        url: /docs/similar-projects/
+      - title: "Related Work"
+        url: /docs/related-work/
       - title: "Publications"
         url: /docs/publications/
 
