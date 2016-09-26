@@ -79,7 +79,7 @@ $ cd paco-env/riscv-tools-src/py
 $ make install
 ```
 
-#### Rocket Libaries
+#### 5 Rocket Libaries
 
 This will install the RocketLib into the directory riscv-tools when you run it:
 ```bash
@@ -91,6 +91,8 @@ Attention: remember to replace N with the number of threads you want to spawn.
 
 From this point on your system should be prepared to run all the software tools of this
 environment.
+
+### Hardware setup
 
 #### Generating the CPU core
 
