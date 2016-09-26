@@ -8,9 +8,9 @@ sidebar:
 
 {% include base_path %}
 
-## Building the toolchain
+# Building the toolchain
 
-### Elements that need to be build
+## Elements that need to be build
 
 The toolchain consints of five parts they need to be build. These parts are:
 
@@ -20,14 +20,24 @@ The toolchain consints of five parts they need to be build. These parts are:
 4. Python Libaries
 5. Rocket Libaries
 
-### Building process
+## Building process
 
-#### Prerequisites
+### Prerequisites
 
 To install the toolchain make sure you have installed the following packages:
 - libuuid for Clang and LLVM
 - lua for the LUT Compiler
 
+### Using the setup script
+
+You can build the whole project by using the install script
+
+```bash
+$ cd paco-env
+$ ./install.sh
+```
+
+### Manual setup
 
 #### 1 RISCV-Toolchain
 
