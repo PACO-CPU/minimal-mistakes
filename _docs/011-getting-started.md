@@ -31,6 +31,7 @@ Congratulations! You've successfully blah blah!
 
 ---
 
+
 # Getting started with PACO – Paderborn CPU Core for Approximate Computing
 
 Welcome on the webpage of the project PACO. PACO is an implementation of a CPU core which contains approximate computing units. In the current state, it consits two approximation units. The first is an approximate ALU which can add, substract and multiply approximately, the second one is lookup table, which selects a precomputed output for a specific function. 
