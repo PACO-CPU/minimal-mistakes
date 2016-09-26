@@ -33,6 +33,9 @@ main:
   - title: "Documentation"
     url: /docs/user-guide/
 
+  - title: "Evaluation"
+    url: /docs/evaluation
+
   - title: "Links"
     url: /docs/helpful-concepts/
 
@@ -94,6 +97,16 @@ documentation:
         url: /docs/faq/
       - title: "Troubleshooting"
         url: /docs/troubleshoot/
+
+evaluation:
+   - title : Evaluation
+     children:
+       - title: "Introduction"
+         url: /docs/evaluation/
+       - title: "Gamma Correction"
+         url: /docs/eval-gamma/
+       - title: "Gauss Filter"
+         url: /docs/eval-gauss/
 
 links:
   - title: Links
