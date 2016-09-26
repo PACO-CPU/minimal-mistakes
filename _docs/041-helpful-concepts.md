@@ -11,7 +11,7 @@ sidebar:
 
 {% include base_path %}
 
-###similar projects
+###Similar projects
 At the level of micro-architecture, different techniques of approximation were adopted to build approximate processors. [4] used two pipelines supplied with two different levels of voltage for precise and approximate processing. [19] used precision scaling with error monitoring and compensation to facilitate quality programmable
  execution in a vector architecture. 
 
