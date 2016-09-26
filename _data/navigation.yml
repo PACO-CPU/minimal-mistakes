@@ -86,7 +86,7 @@ documentation:
   - title: Documentation
     children:
       - title: "Introduction"
-        url: /docs/documentation-intro
+        url: /docs/documentation-intro/
       - title: "User Guide"
         url: /docs/user-guide/
       - title: "Developer Guide"
