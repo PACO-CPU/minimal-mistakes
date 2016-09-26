@@ -21,7 +21,7 @@ feature_row:
     excerpt: ""
     url: "/docs/concepts/"
     btn_label: "General Purpose"
-  - image_path: general_01.png
+  - image_path: general_1.png
     alt: "Platform"
     title: "Approximate Computing Platform"
     excerpt: ""
