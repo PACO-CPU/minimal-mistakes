@@ -31,7 +31,7 @@ main:
     url: /docs/create-application/
 
   - title: "Documentation"
-    url: /docs/user-guide/
+    url: /docs/documentation-intro/
 
   - title: "Evaluation"
     url: /docs/evaluation
@@ -85,6 +85,8 @@ tutorial:
 documentation:
   - title: Documentation
     children:
+      - title: "Introduction"
+        url: /docs/documentation-intro
       - title: "User Guide"
         url: /docs/user-guide/
       - title: "Developer Guide"
