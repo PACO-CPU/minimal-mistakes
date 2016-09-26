@@ -3,16 +3,11 @@ title: "similar projects"
 permalink: /docs/similar-projects/
 excerpt: "Links to helpful and related concepts"
 modified: 2016-04-13T15:54:02-04:00
+bibliography: literature.bib
 redirect_from:
   - /theme-setup/
 sidebar:
-  nav: "links"
----
-
----
-title: "Sample Document"
-output: html_document
-bibliography: literature.bib
+  nav: "links"  
 ---
 
 {% include base_path %}
