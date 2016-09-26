@@ -20,12 +20,12 @@ Here you can take a look into the structure to have a clue how the repositories 
 #### The navigation below is not removed as a hint for documentation of the project structure
 
 ```bash
-paco-env
-├── env.sh
-├── install.sh
-├── _qemu
-├── _riscv-tools
-├── _riscv-tools-src
+paco-env                                 # 
+├── env.sh                               # 
+├── install.sh                           #
+├── _qemu                                # 
+├── _riscv-tools                         # 
+├── _riscv-tools-src                     # 
 |  ├── _py                               # 
 |  ├── _riscv-fesrv                      # 
 |  ├── _riscv-gnu-toolchain              # 
@@ -40,28 +40,18 @@ paco-env
 |  ├── _rocket-chip                      # 
 |  |  ├── _chisel                        # 
 |  |  ├── _context-dependent-environment # 
-├── _layouts
-|  ├── archive-taxonomy.html   # tag/category archive for Jekyll Archives plugin
-|  ├── archive.html            # archive listing documents in an array
-|  ├── compress.html           # compresses HTML in pure Liquid
-|  ├── default.html            # base for all other layouts
-|  ├── single.html             # single document (post/page/etc)
-|  └── splash.html             # splash page
-├── _sass                      # SCSS partials
-├── assets
-|  ├── css
-|  |  └── main.scss            # main stylesheet, loads SCSS partials from _sass
-|  ├── fonts
-|  |  └── fontawesome-webfont  # Font Awesome webfonts
-|  ├── js
-|  |  ├── plugins              # jQuery plugins
-|  |  ├── vendor               # vendor scripts
-|  |  ├── _main.js             # plugin settings and other scripts to load after jQuery
-|  |  └── main.min.js          # optimized and concatenated script file loaded before </body>
-├── images                     # image assets for posts/pages/collections/etc.
-├── _config.yml                # site configuration
-├── Gemfile                    # gem file dependencies
-├── Gemfile.lock               # gem file dependencies
-├── index.html                 # paginated home page showing recent posts
-└── package.json               # NPM build scripts
-```
+|  |  ├── _dramsim2                      # 
+|  |  ├── _emulator                      # 
+|  |  ├── _fsim                          # 
+|  |  ├── _groundtest                    # 
+|  |  ├── _hardfloat                     # 
+|  |  ├── _junctions                     # 
+|  |  ├── _rocket                        # 
+|  |  ├── _torture                       # 
+|  |  ├── _uncore                        # 
+|  |  ├── _vsim                          # 
+|  |  ├── _zscale                        # 
+|  ├── _rocket-soc                       # 
+|  |  ├── _rocket_soc                    # 
+|  |  |  ├── _lib                        # 
+|  |  |  ├── _rocket-lut                 # 
