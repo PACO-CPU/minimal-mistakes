@@ -74,6 +74,7 @@ Attention: remember to replace N with the number of threads you want to spawn.
 #### 4 Python Libaries
 
 This will install the python libs into the directory riscv-tools, if you run it:
+
 ```bash
 $ cd paco-env/riscv-tools-src/py
 $ make install
@@ -82,6 +83,7 @@ $ make install
 #### Rocket Libaries
 
 This will install the RocketLib into the directory riscv-tools when you run it:
+
 ```bash
 $ cd paco-env/rocket-soc/rocket_soc/lib
 $ make -jN && make install
