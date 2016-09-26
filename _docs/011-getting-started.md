@@ -30,19 +30,31 @@ Congratulations! You've successfully blah blah!
 ---
 # Getting started with PACO – Paderborn CPU Core for Approximate Computing
 
-# TODO: write introduction
+Welcome on the webpage of the project PACO. PACO is an implementation of a CPU core which contains approximate computing units. In the current state, it consits two approximation units. The first is an approximate ALU which can add, substract and multiply approximately, the second one is lookup table, which selects a precomputed output for a specific function. 
+The approximate ALU can be used to analyse approximation, the LUT also saves computation time up to be 3 times faster than a normal CPU would compute results. 
 
-Before you start to download and use PACO, please make sure you have all the needed prerequisites
+Before you start to download and use PACO, please make sure you have all the needed prerequisites.
 
-# TODO: write something about the prerequisites
+## Prerequisites
 
-Now you can download the content from the git repositories. Click on Download to get more information about how to do it.
+For installation you need some packages installed on your machine: 
+- libuuid for Clang and LLVM
+- lua for the LUT Compiler
 
-When all repositories are downloaded successful in the correct directory, you can start to build the project. To do so, follow the link Build project. 
+You also need some disc space free on your machine. 
 
-To run it, read content of run
+## Next steps
 
-For using PACO with your own code, you might want to run the code on the approximate core. 
+Now you can download the content from the git repository. Click on Download to do it.
 
+When the downloaded was successful, you can start to build the project. To do so, see Build. 
 
+To run it, read content of Run. 
 
+For using PACO with your own code, please look into the Tutorial section how to annotate your code and how to use PACO. 
+
+If you want to extend PACO with your own ideas, look into the Documentation to understand how the core works. 
+
+If you are interested in the benefit of PACO, please see the Evaluation section. 
+
+For scientific interests and similar work, look into the Links section
