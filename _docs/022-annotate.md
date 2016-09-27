@@ -9,4 +9,4 @@ sidebar:
 
 {% include base_path %}
 
-## Annotating C Code with PACO constructs
+This guide will give you an overview over the way functions and variables can be annotated in C-code.
