@@ -5,6 +5,11 @@ excerpt: "Related Works"
 sidebar:
    nav: "links"
 ---
+
+#### Introduce the section and its intention
+
+#### remember that this is not a scientific paper. The language needs to more informal and exciting to read. Make it more personal please! 
+
 ### Related Work
 Approximation techniques to make use of applications’ error resilience span the full stack
 of software and hardware. Many efforts have been put into designing programming
@@ -27,3 +32,4 @@ proposes the substitution of signals with similar output such that the hardware 
 input such that traditional synthesis tools can exploit these Approximate Don’t Cares to
 optimize the circuit using techniques of software synthesis originally not intended for approximate computing. 
 
+#### Conclude 
