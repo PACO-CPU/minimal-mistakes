@@ -2,12 +2,19 @@
 title: "Download"
 permalink: /docs/download/
 excerpt: "How and where from can the PACO toolchain be downloaded."
-modified: 2016-08-08T16:25:30-04:00
 sidebar:
     nav: "getting-started"
 ---
 
 ## Download
-To prevent you from cloning all subdirectories of the project by yourself, you can download the content from the master directory: (TODO: add link)
+Clone the entire project to your system. 
 
-Be aware that all data will need about 18GB. 
+` $ git clone --recursive `
+
+The `--recursive` flag saves you from cloning all subdirectories of the project manually. This instead, downloads the entire content to your main directory.
+
+#### Be aware that entire project requires about 18GB of space on your system. 
+
+### (TODO: add link)
+
+
