@@ -13,7 +13,7 @@ Clone the entire project to your system.
 
 The `--recursive` flag saves you from cloning all subdirectories of the project manually. This instead, downloads the entire content to your main directory.
 
-#### Be aware that entire project requires about 18GB of space on your system. 
+#### Be aware that entire project requires approximately[:wink] 18GB of space on your system. 
 
 ### (TODO: add link)
 
