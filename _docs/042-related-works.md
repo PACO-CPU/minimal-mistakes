@@ -11,7 +11,8 @@ PACO inroduced modifications to the hardware architecture to build an approximat
 ### Approximate hardware
 
 Several modifications were done to adder and multiplier units on the circuit level, showing substantial advantages in improving delay, area and energy consumption. A comparison between different examples can be found [here](http://approximate.uni-paderborn.de/media/invitedTalks/JieHan-ACPaderborn2015.pdf). The mentioned examples lack , however, the possibility of scaling the error to different levels. The error introduced by the modified designs depends mainly on the value of the their inputs.  
-Use of lookup tables (LUT) to approximate arithmetic functions, a concept directly related to our work, has been around for a long time. An Example of using a lookup table (LUT) approach for function evaluation can be found [here](http://www.public.asu.edu/~chaitali/jourpapers/tanor-tc.pdf). Stochastic search algorithms, in particular evolutionary algorithms, have also shown to
+Use of lookup tables (LUT) to approximate arithmetic functions, a concept directly related to our work, has been around for a long time. An Example of using a lookup table (LUT) approach for function evaluation can be found [here](http://www.public.asu.edu/~chaitali/jourpapers/tanor-tc.pdf).  
+Stochastic search algorithms, in particular evolutionary algorithms, have also shown to
 produce promising results in obtaining approximate circuits [14].  
 These concepts nevertheless are not used so far to design fully working approximate processors.  [here](https://paco-cpu.github.io/paco-cpu/docs/similar-projects/) we give a short description about Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks.
 
@@ -23,56 +24,7 @@ optimize the circuit using techniques of software synthesis originally not inten
 
 ### Programming languages and compiler support
 
- Many efforts have been put into designing programming languages and coding styles for approximate computing. EnerJ [15] uses type qualifiers to declare data that may be subject to approximate computation. Loop perforation
-provides a general technique to trade accuracy for performance by transforming loops to
-execute a subset of their iterations [16]. A task-based programming model and runtime
+ Many efforts have been put into designing programming languages and coding styles for approximate computing. [EnerJ] (http://sampa.cs.washington.edu/research/approximation/enerj.html) uses type qualifiers to declare data that may be subject to approximate computation. Loop perforation provides a general technique to trade accuracy for performance by transforming loops to
+execute a subset of their iterations, an example of using this technique for better energy performance is found [here] (http://dl.acm.org/citation.cfm?id=2025133). A task-based programming model and runtime
 system that exploit the observation that not all parts of a program are equally significant
-for the accuracy of the end-result is introduced in [18]. In  PACO we have not used any of the former , but rather added our own extensions to CLANG and LLVM. More details can be found [here](https://paco-cpu.github.io/paco-cpu/docs/developer-guide/). 
-
-### References 
-
-[4] Hadi Esmaeilzadeh, Emily Blem, Ren´ee St Amant, Karthikeyan Sankaralingam,
-and Doug Burger. Power challenges may end the multicore era. Communications
-of the ACM, 56(2):93–102, 2013.  
-
-[5] Hadi Esmaeilzadeh, Adrian Sampson, Luis Ceze, and Doug Burger. Architecture
-support for disciplined approximate programming. In ACM SIGPLAN Notices,
-volume 47, pages 301–312. ACM, 2012.    
-
-[8] Jie Han and Michael Orshansky. Approximate computing: An emerging paradigm
-for energy-efficient design. In Test Symposium (ETS), 2013 18th IEEE European,
-pages 1–6. IEEE, 2013.  
-
-[14] Jin Miao, Ku He, Andreas Gerstlauer, and Michael Orshansky. Modeling and synthesis of quality-energy optimal approximate adders. In Proceedings of the International Conference on Computer-Aided Design, pages 728–735. ACM, 2012.  
-
-[15] Vojtech Mrazek, Zdenek Vasicek, and Lukas Sekanina. Evolutionary approximation
-of software for embedded systems: Median function. In Proceedings of the Companion Publication of the 2015 on Genetic and Evolutionary Computation Conference,
-pages 795–801. ACM, 2015.  
-
-[16] Adrian Sampson, Andr´e Baixo, Benjamin Ransford, Thierry Moreau, Joshua Yip,
-Luis Ceze, and Mark Oskin. Accept: A programmer-guided compiler framework
-for practical approximate computing. University of Washington Technical Report
-UW-CSE-15-01, 1, 2015.  
-
-[17] Adrian Sampson, Werner Dietl, Emily Fortuna, Danushen Gnanapragasam, Luis
-Ceze, and Dan Grossman. EnerJ: Approximate data types for safe and general lowpower computation. In ACM SIGPLAN Notices, volume 46, pages 164–174. ACM,
-2011.  
-
-[18] Stelios Sidiroglou-Douskos, Sasa Misailovic, Henry Hoffmann, and Martin Rinard.
-Managing performance vs. accuracy trade-offs with loop perforation. In Proceedings of the 19th ACM SIGSOFT symposium and the 13th European conference on
-Foundations of software engineering, pages 124–134. ACM, 2011.  
-
-
-[20] Vassilis Vassiliadis, Konstantinos Parasyris, Charalambos Chalios, Christos D
-Antonopoulos, Spyros Lalis, Nikolaos Bellas, Hans Vandierendonck, and Dimitrios S
-Nikolopoulos. A programming model and runtime system for significance-aware
-energy-efficient computing. In Proceedings of the 20th ACM SIGPLAN Symposium
-on Principles and Practice of Parallel Programming, pages 275–276. ACM, 2015.  
-
-[21] Swagath Venkataramani, Vinay K Chippa, Srimat T Chakradhar, Kaushik Roy,
-and Anand Raghunathan. Quality programmable vector processors for approximate
-computing. In Proceedings of the 46th Annual IEEE/ACM International Symposium
-on Microarchitecture, pages 1–12. ACM, 2013.  
-
-[22] Swagath Venkataramani, Kaushik Roy, and Anand Raghunathan. Substitute-andsimplify: a unified design paradigm for approximate and quality configurable circuits. In Proceedings of the Conference on Design, Automation and Test in Europe,
-pages 1367–1372. EDA Consortium, 2013.  
+for the accuracy of the end-result is introduced [here](http://delivery.acm.org/10.1145/2690000/2688546/p275-vassiliadis.pdf?ip=131.234.42.90&id=2688546&acc=ACTIVE%20SERVICE&key=2BA2C432AB83DA15%2EFF86995C7D80A64D%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=673132489&CFTOKEN=69262487&__acm__=1475069518_463584b9e4294fad9427e857dec931dc). In  PACO we have not used any of the former , but rather added our own extensions to CLANG and LLVM. Check our [developer guide](https://paco-cpu.github.io/paco-cpu/docs/developer-guide/) for more details. 
