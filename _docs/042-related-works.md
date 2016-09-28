@@ -13,14 +13,12 @@ PACO inroduced modifications to the hardware architecture to build an approximat
 Several modifications were done to adder and multiplier units on the circuit level, showing substantial advantages in improving delay, area and energy consumption. A comparison between different examples can be found [here](http://approximate.uni-paderborn.de/media/invitedTalks/JieHan-ACPaderborn2015.pdf). The mentioned examples lack , however, the possibility of scaling the error to different levels. The error introduced by the modified designs depends mainly on the value of the their inputs.  
 Use of lookup tables (LUT) to approximate arithmetic functions, a concept directly related to our work, has been around for a long time. An Example of using a lookup table (LUT) approach for function evaluation can be found [here](http://www.public.asu.edu/~chaitali/jourpapers/tanor-tc.pdf).  
 Stochastic search algorithms, in particular evolutionary algorithms, have also shown to
-produce promising results in obtaining approximate circuits. [This](http://dl.acm.org/citation.cfm?id=2768416) paper, for example, uses genetic programming-based improvement of non-functional properties of programs intended for low-cost microcontrollers.   
+produce promising results in obtaining approximate circuits. [This paper](http://dl.acm.org/citation.cfm?id=2768416), for example, uses genetic programming-based improvement of non-functional properties of programs intended for low-cost microcontrollers.   
 These concepts nevertheless are not used so far to design fully working approximate processors. In [similar projects](https://paco-cpu.github.io/paco-cpu/docs/similar-projects/) we give a short description about Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks.
 
 ### Automatic logic generation
 
-In addition to manual design techniques, design automation like automatic logic synthesis can be used to generate approximate circuits. [8] introduces transformations on the Abstract Syntax Tree (AST) of the Hardware Description Language (HDL). [20]
-proposes the substitution of signals with similar output such that the hardware generating one of the signals can be removed. [21] generates Approximate Don’t Cares into the input such that traditional synthesis tools can exploit these Approximate Don’t Cares to
-optimize the circuit using techniques of software synthesis originally not intended for approximate computing. 
+In addition to manual design techniques, design automation like automatic logic synthesis can be used to generate approximate circuits. [ABACUS](http://dl.acm.org/citation.cfm?id=2617115) introduces transformations on the Abstract Syntax Tree (AST) of the Hardware Description Language (HDL). [Substitute-and-Simplify](http://dl.acm.org/citation.cfm?id=2485615) proposes the substitution of signals with similar output such that the hardware generating one of the signals can be removed. [SALSA](http://dl.acm.org/citation.cfm?id=2228504) generates Approximate Don’t Cares into the input such that traditional synthesis tools can exploit these Approximate Don’t Cares to optimize the circuit using techniques of software synthesis originally not intended for approximate computing. 
 
 ### Programming languages and compiler support
 
