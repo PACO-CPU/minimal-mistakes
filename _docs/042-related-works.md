@@ -10,7 +10,7 @@ PACO inroduced modifications to the hardware architecture to build an approximat
 
 ### Approximate hardware
 
-Several modifications were done to adder and multiplier units on the circuit level, showing substantial advantages in improving delay, area and energy consumption. Different examples can be seen in [10], [9], [7], [11], [23], [24], [25], [2] and [13]. The mentioned examples lack , however, the possibility of scaling the error to different levels. The error introduced by the modified designs depends mainly on the value of the their inputs.  
+Several modifications were done to adder and multiplier units on the circuit level, showing substantial advantages in improving delay, area and energy consumption. A comparison between ifferent examples can be found [here](http://approximate.uni-paderborn.de/media/invitedTalks/JieHan-ACPaderborn2015.pdf). The mentioned examples lack , however, the possibility of scaling the error to different levels. The error introduced by the modified designs depends mainly on the value of the their inputs.  
 Use of LUTs to approximate arithmetic functions, a concept directly related to our work, has been around for a long time. Examples can be found in [22] and [17]. Stochastic search algorithms, in particular evolutionary algorithms, have also shown to
 produce promising results in obtaining approximate circuits [14].  
 These concepts nevertheless are not used so far to design fully working approximate processors.  [here](https://paco-cpu.github.io/paco-cpu/docs/similar-projects/) we give a short description about Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks.
@@ -29,10 +29,7 @@ execute a subset of their iterations [16]. A task-based programming model and ru
 system that exploit the observation that not all parts of a program are equally significant
 for the accuracy of the end-result is introduced in [18]. In  PACO we have not used any of the former , but rather added our own extensions to CLANG and LLVM. More details can be found [here](https://paco-cpu.github.io/paco-cpu/docs/developer-guide/). 
 
-### References
-
-[2] Robert H Dennard, Fritz H Gaensslen, Hwa-Nien Yu, V Leo Rideout, Ernest Bassous, and Andre R LeBlanc. Design of ion-implanted MOSFET’s with very small
-physical dimensions. Proceedings of the IEEE, 87(4):668–678, 1999.  
+### References 
 
 [4] Hadi Esmaeilzadeh, Emily Blem, Ren´ee St Amant, Karthikeyan Sankaralingam,
 and Doug Burger. Power challenges may end the multicore era. Communications
@@ -40,30 +37,11 @@ of the ACM, 56(2):93–102, 2013.
 
 [5] Hadi Esmaeilzadeh, Adrian Sampson, Luis Ceze, and Doug Burger. Architecture
 support for disciplined approximate programming. In ACM SIGPLAN Notices,
-volume 47, pages 301–312. ACM, 2012.  
-
-[7] Vaibhav Gupta, Debabrata Mohapatra, Anand Raghunathan, and Kaushik Roy.
-Low-power digital signal processing using approximate adders. Computer-Aided
-Design of Integrated Circuits and Systems, IEEE Transactions on, 32(1):124–137,
-2013.  
+volume 47, pages 301–312. ACM, 2012.    
 
 [8] Jie Han and Michael Orshansky. Approximate computing: An emerging paradigm
 for energy-efficient design. In Test Symposium (ETS), 2013 18th IEEE European,
 pages 1–6. IEEE, 2013.  
-
-[9] Kumud Nepal Yueting Li R Iris and Bahar Sherief Reda. Automated high-level
-synthesis of low power/area approximate computing circuits.  
-
-[10] Andrew B Kahng and Seokhyeong Kang. Accuracy-configurable adder for approximate arithmetic designs. In Proceedings of the 49th Annual Design Automation
-Conference, pages 820–825. ACM, 2012.  
-
-[11] Parag Kulkarni, Puneet Gupta, and Milos Ercegovac. Trading accuracy for power
-with an underdesigned multiplier architecture. In VLSI Design (VLSI Design),
-2011 24th International Conference on, pages 346–351. IEEE, 2011.  
-
-[13] Dong-U Lee, Altaf Abdul Gaffar, Oskar Mencer, and Wayne Luk. Optimizing
-hardware function evaluation. Computers, IEEE Transactions on, 54(12):1520–
-1531, 2005.  
 
 [14] Jin Miao, Ku He, Andreas Gerstlauer, and Michael Orshansky. Modeling and synthesis of quality-energy optimal approximate adders. In Proceedings of the International Conference on Computer-Aided Design, pages 728–735. ACM, 2012.  
 
@@ -103,13 +81,3 @@ on Microarchitecture, pages 1–12. ACM, 2013.
 
 [22] Swagath Venkataramani, Kaushik Roy, and Anand Raghunathan. Substitute-andsimplify: a unified design paradigm for approximate and quality configurable circuits. In Proceedings of the Conference on Design, Automation and Test in Europe,
 pages 1367–1372. EDA Consortium, 2013.  
-
-[23] Swagath Venkataramani, Amit Sabne, Vivek Kozhikkottu, Kaushik Roy, and Anand
-Raghunathan. Salsa: systematic logic synthesis of approximate circuits. In Proceedings of the 49th Annual Design Automation Conference, pages 796–801. ACM,
-2012.  
-
-[24] O Vinyals, G Friedland, and N Mirghafori. Revisiting a basic function on current
-cpus: a fast logarithm implementation with adjustable accuracy. International
-Computer Science Institute, 2007.  
-
-[25] Zhixi Yang, Abhishek Jain, Jinghang Liang, Jie Han, and Floriana Lombardi. Approximate xor/xnor-based adders for inexact computing. In Nanotechnology (IEEENANO), 2013 13th IEEE Conference on, pages 690–693. IEEE, 2013.  
