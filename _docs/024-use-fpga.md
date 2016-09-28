@@ -11,15 +11,17 @@ sidebar:
 
 This guide gives you step by step instructions on how to run your application on FPGA.
 
-- If you are using the FPGA for the very first time, start [here](#1 Installing Xilinx and starting ise)
-- If you already have Xilinx tools, start [here](#2 Prerequisites)
+- If you are using the FPGA for the very first time, start from [here](#1 Installing Xilinx and starting ISE)
+- If you already have Xilinx tools, start from [here](#2 Prerequisites)
 
-### 1) Installing Xilinx and starting ise
+### 1) Installing Xilinx and starting ISE
+
 - First of all you need to have Xilinx ISE 14.7 installed on your system as well as the
   Xilinx cable driver. A guide on installing both of them can be found [here](http://www.george-           smart.co.uk/wiki/Xilinx_JTAG_Linux). The ISE is installed in the path /opt/Xilinx/14.7/ISE DS.
 
 - You start ISE by first sourcing the file settings64.sh and invoking
-```c
+
+```
 $ source /opt/Xilinx/14.7/ISE_DS/settings64.sh
 $ ise&
 ```
@@ -29,6 +31,7 @@ $ ise&
 For running programs on FPGA following prerequisites are needed:
 
 - Synthesize PACO core on FPGA, details how to synthesize the core is provided in [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:synth-FPGA)
+
 - Have a binary generated after compilation.
 
 Once the above prerequistes are met you can get going with running your program with FPGA from [here](#3 Run Programs on FPGA)
