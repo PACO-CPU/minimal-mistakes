@@ -10,8 +10,8 @@ PACO inroduced modifications to the hardware architecture to build an approximat
 
 ### Approximate hardware
 
-Several modifications were done to adder and multiplier units on the circuit level, showing substantial advantages in improving delay, area and energy consumption. A comparison between ifferent examples can be found [here](http://approximate.uni-paderborn.de/media/invitedTalks/JieHan-ACPaderborn2015.pdf). The mentioned examples lack , however, the possibility of scaling the error to different levels. The error introduced by the modified designs depends mainly on the value of the their inputs.  
-Use of LUTs to approximate arithmetic functions, a concept directly related to our work, has been around for a long time. Examples can be found in [22] and [17]. Stochastic search algorithms, in particular evolutionary algorithms, have also shown to
+Several modifications were done to adder and multiplier units on the circuit level, showing substantial advantages in improving delay, area and energy consumption. A comparison between different examples can be found [here](http://approximate.uni-paderborn.de/media/invitedTalks/JieHan-ACPaderborn2015.pdf). The mentioned examples lack , however, the possibility of scaling the error to different levels. The error introduced by the modified designs depends mainly on the value of the their inputs.  
+Use of lookup tables (LUT) to approximate arithmetic functions, a concept directly related to our work, has been around for a long time. An Example of using a lookup table (LUT) approach for function evaluation can be found [here](http://www.public.asu.edu/~chaitali/jourpapers/tanor-tc.pdf). Stochastic search algorithms, in particular evolutionary algorithms, have also shown to
 produce promising results in obtaining approximate circuits [14].  
 These concepts nevertheless are not used so far to design fully working approximate processors.  [here](https://paco-cpu.github.io/paco-cpu/docs/similar-projects/) we give a short description about Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks.
 
@@ -62,11 +62,6 @@ Ceze, and Dan Grossman. EnerJ: Approximate data types for safe and general lowpo
 Managing performance vs. accuracy trade-offs with loop perforation. In Proceedings of the 19th ACM SIGSOFT symposium and the 13th European conference on
 Foundations of software engineering, pages 124–134. ACM, 2011.  
 
-[19] Kanwaldeep Sobti, Lanping Deng, Chaitali Chakrabarti, Nikos Pitsianis, Xiaobai
-Sun, Jungsub Kim, Prasanth Mangalagiri, K Irick, M Kandemir, and Vijaykrishnan
-Narayanan. Efficient function evaluations with lookup tables for structured matrix
-operations. In Signal Processing Systems, 2007 IEEE Workshop on, pages 463–468.
-IEEE, 2007.  
 
 [20] Vassilis Vassiliadis, Konstantinos Parasyris, Charalambos Chalios, Christos D
 Antonopoulos, Spyros Lalis, Nikolaos Bellas, Hans Vandierendonck, and Dimitrios S
