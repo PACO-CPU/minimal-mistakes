@@ -21,7 +21,7 @@ foo:
 
 # main links links
 main:
-  - title: "Idea"
+  - title: "What?"
     url: /docs/people/
 
   - title: "Getting Started"
