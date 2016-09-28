@@ -14,7 +14,7 @@ Several modifications were done to adder and multiplier units on the circuit lev
 Use of lookup tables (LUT) to approximate arithmetic functions, a concept directly related to our work, has been around for a long time. An Example of using a lookup table (LUT) approach for function evaluation can be found [here](http://www.public.asu.edu/~chaitali/jourpapers/tanor-tc.pdf).  
 Stochastic search algorithms, in particular evolutionary algorithms, have also shown to
 produce promising results in obtaining approximate circuits [14].  
-These concepts nevertheless are not used so far to design fully working approximate processors.  [here](https://paco-cpu.github.io/paco-cpu/docs/similar-projects/) we give a short description about Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks.
+These concepts nevertheless are not used so far to design fully working approximate processors. In [similar projects](https://paco-cpu.github.io/paco-cpu/docs/similar-projects/) we give a short description about Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks.
 
 ### Automatic logic generation
 
