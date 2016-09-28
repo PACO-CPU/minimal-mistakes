@@ -13,7 +13,7 @@ PACO inroduced modifications to the hardware architecture to build an approximat
 Several modifications were done to adder and multiplier units on the circuit level, showing substantial advantages in improving delay, area and energy consumption. Different examples can be seen in [10], [9], [7], [11], [23], [24], [25], [2] and [13]. The mentioned examples lack , however, the possibility of scaling the error to different levels. The error introduced by the modified designs depends mainly on the value of the their inputs.  
 Use of LUTs to approximate arithmetic functions, a concept directly related to our work, has been around for a long time. Examples can be found in [22] and [17]. Stochastic search algorithms, in particular evolutionary algorithms, have also shown to
 produce promising results in obtaining approximate circuits [14].  
-These concepts nevertheless are not used so far to design fully working approximate processors. Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks can be found [here](https://paco-cpu.github.io/paco-cpu/docs/similar-projects/).
+These concepts nevertheless are not used so far to design fully working approximate processors.  [here](https://paco-cpu.github.io/paco-cpu/docs/similar-projects/) we give a short description about Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks.
 
 ### Automatic logic generation
 
@@ -27,7 +27,7 @@ optimize the circuit using techniques of software synthesis originally not inten
 provides a general technique to trade accuracy for performance by transforming loops to
 execute a subset of their iterations [16]. A task-based programming model and runtime
 system that exploit the observation that not all parts of a program are equally significant
-for the accuracy of the end-result is introduced in [18]. In  PACO we have not used any of the former , but rather added our own extensions to CLANG and LLVM (link). 
+for the accuracy of the end-result is introduced in [18]. In  PACO we have not used any of the former , but rather added our own extensions to CLANG and LLVM. More details can be found [here](https://paco-cpu.github.io/paco-cpu/docs/developer-guide/). 
 
 ### References
 
