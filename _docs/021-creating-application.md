@@ -124,17 +124,17 @@ For instructions on how you can run your program on the FPGA please take a look 
 **TODO: Add fancy images**
 
 ## 3. Approximate ALU Guide <a id="#3-approximate-alu-guide"></a>
-The PACO Approximate ALU is used to show the effect approximation has on certain applications. It is accomplished by not using some of least significant bits for an operation like add, sub, or mul.  Since no one can know which variables support these approximate operation you as the programmer need to annotate these variables as imprecise. The next section will show you how to do that.
+The PACO Approximate ALU approximates by neglecting some of the least significant bits of an operation such as add, sub, or mul. This effect can be accomplished only in certain applications. Since its not possible to automatically discern the variables that supports the approximation operation, you, as the programmer, need to annotate the variables as approximate. The next section will show you how to do just that.
 
 For this example we will use a  [Gaussian blur](https://en.wikipedia.org/wiki/Gaussian_blur) image filter with the following kernel matrix:
 
  <img src="/paco-cpu/images/matrix.png" alt="alt text" width="206" height="153">
 
 
-The complete code for this example, including a Makefile  can be found [here](TODO) **TODO: Add a link to the whole gauss application.**
+The complete code for this example, including a Makefile can be found [here](TODO) **TODO: Add a link to the whole gauss application.**
 
-### 3.1 Pick variables which can be imprecise
-Lets say we have the following program snippet implementing this filter:
+### 3.1 Select the variables which can be imprecise
+Let's say we have the following program snippet implementing this filter:
 
 ```c
 long image[IMG_WIDTH * IMG_HEIGHT];
@@ -169,10 +169,12 @@ void gauss()
 }
 ```
 
-Suitable for approximation would be the variable **image_data**, **intermediate_data**, and the **result**. These are suitable because the input and output are images intended to be seen by humans, who cannot notice minor errors. The next section will explain how to mark these variables for approximation.
+The variable **image_data**, **intermediate_data**, and **result** would be suitable for approximation because these contain the image data intended to be seen by humans. Therefore, approximating them would be ideal since human eye cannot perceive minor errors.
+
+The next section will explain how to mark these variables for approximation.
 
 ### 3.2 Annotate variables for approximation
-We annotate a variable with approximate decorators as follows :
+We annotate a variable with approximate decorators as follows:
 
 ```c
 /* ... */
@@ -185,8 +187,7 @@ void gauss()
 }
 ```
 
-An approx decorator can take key/value pairs which further describe how a variable can be approximated. For example: neglect_amount=2 tell the compiler
-that the 2 least significant bits can be left out during an operation. If we take a look at the following code snippet from the gauss() function
+An approx decorator can take key/value pairs, which further describe how a variable can be approximated. For example: neglect_amount=2 tells the compiler that the least 2 significant bits can be neglected during an operation. If we take a look at the following code snippet from the gauss() function
 
 ```c
 long approx(neglect_amount=2 inject=1 relax=1)intermediate_data;
