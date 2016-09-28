@@ -28,7 +28,7 @@ The Lookup Table (LUT) is a functional unit residing in the CPU pipeline and can
 
 In order to approximate this function, it needs to be split into several intervals, here called **segments**.
 This example image shows a linear distribution of segements, but with the PACO tools other distributions can
-be chosen, e.g. logarithmic (see **TODO: Insert link to impl. Doc**). To give you fine grained control these **primary segments** can be further divided into **secondary segment**.
+be chosen, e.g. logarithmic (see [Developers Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:dg-sementation-strategies)). To give you fine grained control these **primary segments** can be further divided into **secondary segment**.
 
 For each segment we can now interpolate the function. The picture below shows a linear interpolation for each 
 segment. The interpolated line of each segment can then be stored as integer values m, b in our LUT. With the formula
@@ -36,7 +36,7 @@ y = m * x + b we can describe the line again.
 
  <img src="/paco-cpu/images/lut-function-linear.png" alt="lut-function" width="300">
  
- For more information on the LUT please read the [Implementation Document](TODO)**TODO:Add link to Impl. Doc.**
+ For more information on the LUT please read the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut)
 
 For this example we will use a [Gamma correction](https://en.wikipedia.org/wiki/Gamma_correction) image filter. 
 
@@ -111,7 +111,7 @@ An explenation for the key/value pairs we used can be seen here:
 For more information on other possible key/values please read [Annotate Code](/paco-cpu/docs/annotate/).
     
 ### 2.3 Compile your program 
-The basic steps to compile you program are (for more detail, refer to [User Guide](TODO) **TODO: Add link to User Guide**:
+The basic steps to compile you program are (for more detail, refer to [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs):
 
 1. Compile you program using clang. This will yield an llvm-ir file of your code and an input file to the lut-compiler
 2. Use llc to convert the llvm-ir file into an assembly file
@@ -202,7 +202,7 @@ The next section shows you how to compile your program and how this particular c
 regarding annotation, take a look [here](/paco-cpu/docs/annotate/)
 
 ### 3.3 Compile your program
-To compile your program there is not much more to do than invoking clang. The details on how to compile clang/llvm and which parameters to supply for example to use the correct ISA backended, please refer to the [User Guide](TODO) **TODO: Add link to user-guide document.**
+To compile your program there is not much more to do than invoking clang. The details on how to compile clang/llvm and which parameters to supply for example to use the correct ISA backended, please refer to the [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs) 
 
 However for now lets see how our compiler would translate the code snippet from above
 
