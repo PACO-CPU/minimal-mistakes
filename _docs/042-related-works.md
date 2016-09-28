@@ -13,7 +13,7 @@ PACO inroduced modifications to the hardware architecture to build an approximat
 Several modifications were done to adder and multiplier units on the circuit level, showing substantial advantages in improving delay, area and energy consumption. Different examples can be seen in [10], [9], [7], [11], [23], [24], [25], [2] and [13]. The mentioned examples lack , however, the possibility of scaling the error to different levels. The error introduced by the modified designs depends mainly on the value of the their inputs.  
 Use of LUTs to approximate arithmetic functions, a concept directly related to our work, has been around for a long time. Examples can be found in [22] and [17]. Stochastic search algorithms, in particular evolutionary algorithms, have also shown to
 produce promising results in obtaining approximate circuits [14].  
-These concepts nevertheless were not used so far to design fully working approximate processors. Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks caqn be found here (link).
+These concepts nevertheless are not used so far to design fully working approximate processors. Approximate processors built based on the concepts of Clock gating, voltage scaling and neural networks can be found here (link).
 
 ### Automatic logic generation
 
