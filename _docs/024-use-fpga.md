@@ -23,6 +23,7 @@ This guide gives you step by step instructions on how to run your application on
 
 ```
 $ source /opt/Xilinx/14.7/ISE_DS/settings64.sh
+
 $ ise&
 ```
 - This will start ISE in a GUI window
@@ -41,6 +42,7 @@ Once the above prerequistes are met you can get going with running your program 
 
 ```
 $ riscv-uart-flash -i prog.elf -w
+
 ```
 prog.elf is your program and the argument -w tells the flash tool to continue executing until it recieves a terminal signal from the program running on FPGA
 
