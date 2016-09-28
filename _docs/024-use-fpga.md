@@ -38,7 +38,8 @@ Once the above prerequistes are met you can get going with running your program 
 
 ### 3) Run Programs on FPGA
 - Loading and running of a program on FPGA is done via flash tool over UART communiation. The program is loaded by running the following command
-```c
+
+```
 $ riscv-uart-flash -i prog.elf -w
 ```
 prog.elf is your program and the argument -w tells the flash tool to continue executing until it recieves a terminal signal from the program running on FPGA
