@@ -41,7 +41,7 @@ main:
 
 # documentation links
 docs:
-  - title: Idea
+  - title: What?
     children:
       - title: "People"
         url: /docs/people/
