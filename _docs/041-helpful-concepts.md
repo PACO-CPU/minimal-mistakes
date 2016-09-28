@@ -11,7 +11,7 @@ sidebar:
 
 ### Similar projects
 
- At the level of micro-architecture, different techniques of approximation were adopted to build approximate processors. Three differnet approaches that achieved considerable speed-up or energy saving are introduced in this section.
+ At the level of micro-architecture, different techniques of approximation were adopted to build approximate processors. Three different approaches that achieved considerable speed-up or energy saving are introduced in this section.
  
  Truffle[1] was designed by a team from the University of Washington to exploit the concept of voltage scaling. It uses two pipelines supplied with two different levels of voltage for precise and approximate processing. Exexution of approximate arithemtic operation using a lower voltage supply resulted in more than 50% energy reduction for certain test benches.
   
