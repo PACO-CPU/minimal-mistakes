@@ -10,6 +10,7 @@ sidebar:
 {% include base_path %}
 
 This guide gives you step by step instructions on how to run your application on FPGA.
+
 - If you are using the FPGA for the very first time, start [here](#1 Installing Xilinx and starting ise)
 - If you already have Xilinx tools, start [here](#2 Prerequisites)
 
@@ -26,19 +27,20 @@ $ ise&
 
 ### 2) Prerequisites
 For running programs on FPGA following prerequisites are needed:
-- Synthesize PACO core on FPGA
+
+- Synthesize PACO core on FPGA, details how to synthesize the core is provided in [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:synth-FPGA)
 - Have a binary generated after compilation.
 
 Once the above prerequistes are met you can get going with running your program with FPGA from [here](#3 Run Programs on FPGA)
 
 ### 3) Run Programs on FPGA
-- Loading and running of a program on FPGA is done via flash tool via UART communiation. The program is loaded by running the following command
+- Loading and running of a program on FPGA is done via flash tool over UART communiation. The program is loaded by running the following command
 ```c
 $ riscv-uart-flash -i prog.elf -w
 ```
 prog.elf is your program and the argument -w tells the flash tool to continue executing until it recieves a terminal signal from the program running on FPGA
 
 - To write data or status information back from the program running on FPGA, use appropriate function from rocket-lib
- for more details regarding this refer to [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:running-prog-fpga)
+ for more details regarding this refer to [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:communicate-with-prog)
  
  
