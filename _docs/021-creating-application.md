@@ -2,46 +2,44 @@
 title: "Creating your Application"
 permalink: /docs/create-application/
 excerpt: "Creating your Application."
-modified: 2016-09-226T17:19:29-04:00
-redirect_from:
-  - /theme-setup/
 sidebar:
   nav: "tutorial"
 ---
 
 {% include base_path %}
 
-This guide will give you an introduction on how to write a simple 
-applications which use the PACO components. This guide will be split up
-in two parts depending on the component you want to use. Both parts will
-share steps and can of course be combined to create a binary which uses
-both components.
+This guide introduces you on how to write a simple application using the PACO components. 
+It is divided into two sections based on the components you wish to use. These two components
+can also be combined to create a binary in which you could use both of them. 
+
+Alright! Let's get started!
 
 ## 1. Decide on the Approximate Component to Use
 - If you're interested to use the Lookup Table (LUT) start [here](#2-lut-guide)
 - If you're interested to use the Approximate ALU start [here](#3-approximate-alu-guide)
 
 ## 2. Lut Guide <a id="#2-lut-guide"></a>
-The Lookup Table (LUT) is a functional unit residing in the CPU pipeline and can be imagined as a software lookup table on crack. It's main purpose is to approximate any derivable function. To visualize it, lets take look and the graph of some function:
+The Lookup Table (LUT) is a functional unit residing in the CPU pipeline and can be imagined as a software lookup table on crack. It's main purpose is to approximate any derivable function. To visualize it, let's take a look at the graph of a function:
 
  <img src="/paco-cpu/images/lut-function.png" alt="lut-function" width="300">
 
-In order to approximate this function, it needs to be split into several intervals, here called **segments**.
-This example image shows a linear distribution of segements, but with the PACO tools other distributions can
-be chosen, e.g. logarithmic (see [Developers Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:dg-sementation-strategies)). To give you fine grained control these **primary segments** can be further divided into **secondary segment**.
+In order to approximate this function, it needs to be divided into several intervals, here called **segments**.
+The above image shows a linear distribution of segments. Using the PACO tools, you could also choose from other distributions such as a logarithmic distribution (see [Developers Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:dg-sementation-strategies)). These **primary segments** can also be further divided into **secondary segments** giving you fine grained control over the function you wish to approximate.
 
-For each segment we can now interpolate the function. The picture below shows a linear interpolation for each 
+For each segment we can now interpolate the function. The picture below shows a linear interpolation for every 
 segment. The interpolated line of each segment can then be stored as integer values m, b in our LUT. With the formula
 y = m * x + b we can describe the line again.
 
- <img src="/paco-cpu/images/lut-function-linear.png" alt="lut-function" width="300">
- 
- For more information on the LUT please read the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut)
+** Rephrase the previous two lines. Maybe add a link to LUT in the idea page **
 
+ <img src="/paco-cpu/images/lut-function-linear.png" alt="lut-function" width="300">
+
+For more information on the LUT please read the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut)
+** Create a transition between what is described above and the Gamma correction **
 For this example we will use a [Gamma correction](https://en.wikipedia.org/wiki/Gamma_correction) image filter. 
 
-### 2.1 Pick your function to be approximated
-First we have to implement our function in normal C code. You can see our implementation below:
+### 2.1 Select your function to be approximated
+Firstly we have to implement our function in normal C code. You can see our implementation below:
 
 ```c
 #include <math.h>
@@ -74,15 +72,14 @@ int main()
     }
 }
 ```
-Since we have implemented our function now, we need to tell the compiler to use the LUT for this 
-function as well as decide how we want to divide it into segments and which range on the x-axis 
-should be divided into segments. This is done by annotation which will be covert in the next 
+Now that we have our function, we need to tell the compiler to use the LUT for this 
+implementation. We also have to decide on how to divide the function into segments and the range
+on the x-axis on which it is divided. This is done using annotation, which will be covered in the next 
 section.
 
 ### 2.2 Annotate your function for approximation 
-First we need to tell the compiler that our function **gamma** should be approximated by the LUT. We
-do that by adding the **approx** decorator. Additionally we need to give the decorator the keyword 
-**strategy="lut"** to indicate that we want to use the LUT for approximating this function.
+Firstly we need to tell the compiler that our function **gamma** should be approximated. We
+do this by adding the **approx** decorator to the function. Then, we need to indicate that we want to use the LUT for approximating the function. This can be done by adding the keyword **strategy="lut"** to the decorator.
 
 ```c
 long approx(strategy="lut") gamma(long a)
@@ -91,9 +88,9 @@ long approx(strategy="lut") gamma(long a)
 }
 ```
 
-Now that the compiler knows that this function should be approximated using the LUT, we can give hints how the 
-approximation should be done. We do this by adding more key/value pairs to the approx decorator. The code snippet 
-below the pairs we will be using:
+Now that the compiler knows that this function should be approximated using the LUT, we can provide hints on how the 
+approximation should be performed. We do this by adding several key/value pairs to the approx decorator. The code snippet 
+below shows some of the options:
 
 ```c
 long approx(strategy="lut" numPrimarySegments="6" bound="(0,16777215)" segements="uniform" approximation="linear") gamma(long a)
@@ -101,23 +98,23 @@ long approx(strategy="lut" numPrimarySegments="6" bound="(0,16777215)" segements
 /* ... */
 }
 ```
-An explenation for the key/value pairs we used can be seen here:
+This is what the key/value pairs we used above mean:
 
-- **numPrimarySegments** describes how many **primary segments** should be used for approximation. Since we don't subdivide our segements into subsegments this is also the total number of segments.
-- **bound** is used to describe the range of input values of our function we are interested in. It is given as a list of intervals (min, max), (min, max),.. . For an image we have 3 colors with 8 bit per pixel, which leads to a maximum value of (2⁸)³ = 16777216 and a minimum value of 0.
-- **segments** describes how the segements are distributed in this case linear as in the pictures in section 2.
-- **approximation** describes how the function is approximated within each segment. Linear in this case means that it is approximated using a line, as can be seen in the picture of section 2.
+- **numPrimarySegments** indicates the number of **primary segments** used for approximation. Since we don't subdivide our segements into subsegments, this is also the total number of segments.
+- **bound** indicates the range of the input values of our function. It is given as a list of intervals (min, max), (min, max),.. . For example let us consider an image. There are 3 colors with 8 bits per pixel, which leads to a maximum value of (2⁸)³ = 16777216 and a minimum value of 0. Therefore, the bound can be provided as bound="(0,16777215)" as in the example above.
+- **segments** indicates how the segments are distributed. In this case, it is uniformly distributed, as shown in the pictures in Section 2.
+- **approximation** indicates how the function is approximated within each segment. "Linear" in this case means that it is approximated using a line, as can be seen in the picture of section 2.
 
 For more information on other possible key/values please read [Annotate Code](/paco-cpu/docs/annotate/).
     
 ### 2.3 Compile your program 
 The basic steps to compile you program are (for more detail, refer to [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs):
 
-1. Compile you program using clang. This will yield an llvm-ir file of your code and an input file to the lut-compiler
-2. Use llc to convert the llvm-ir file into an assembly file
-3. Invoke the lut-compiler on it's input file to generate a configuration for the LUT
-4. Use the lut-startup script with the configuration to create startup code that loads the configuration.
-5. Link everythink together into a binary
+1. Compile you program using Clang. This will yield an llvm-ir file of your code and an input file to the lut-compiler.
+2. Use llc to convert the llvm-ir file into an assembly file. **what is llc? **
+3. Invoke the lut-compiler on the input file to generate a configuration for the LUT.
+4. Use the lut-startup script with the configuration to create a startup code that loads the configuration **where?**.
+5. Link everything together into a binary.
 
 Now you should have a binary ready to be run on an FPGA.
     
