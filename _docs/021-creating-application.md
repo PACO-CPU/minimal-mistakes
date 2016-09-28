@@ -38,6 +38,8 @@ For more information on the LUT please read the [Design Document](/paco-cpu/docs
 ** Create a transition between what is described above and the Gamma correction **
 For this example we will use a [Gamma correction](https://en.wikipedia.org/wiki/Gamma_correction) image filter. 
 
+The complete code for this example, including a Makefile can be found [here](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/lut-gaussian-application) 
+
 ### 2.1 Select your function to be approximated
 Firstly we have to implement our function in normal C code. You can see our implementation below:
 
@@ -131,7 +133,7 @@ For this example we will use a  [Gaussian blur](https://en.wikipedia.org/wiki/Ga
  <img src="/paco-cpu/images/matrix.png" alt="alt text" width="206" height="153">
 
 
-The complete code for this example, including a Makefile can be found [here](TODO) **TODO: Add a link to the whole gauss application.**
+The complete code for this example, including a Makefile can be found [here](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/lut-gaussian-application) 
 
 ### 3.1 Select the variables which can be imprecise
 Let's say we have the following program snippet implementing this filter:
