@@ -22,7 +22,7 @@ foo:
 # main links links
 main:
   - title: "How?"
-    url: /docs/people/
+    url: /docs/intro/
 
   - title: "Getting Started"
     url: /docs/getting-started/
@@ -43,8 +43,8 @@ main:
 docs:
   - title: How?
     children:
-      - title: "People"
-        url: /docs/people/
+      - title: "Intro"
+        url: /docs/intro/
       - title: "Concepts"
         url: /docs/concepts/
       - title: "Technology"
