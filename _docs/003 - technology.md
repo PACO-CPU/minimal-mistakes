@@ -2,7 +2,7 @@
 title: "Technology Behind PACO"
 permalink: /docs/technology/
 excerpt: "Description regarding the technology used in PACO"
-modified: 2016-04-13T15:54:02-04:00
+modified: 2016-09-30T15:54:02-04:00
 redirect_from:
   - /theme-setup/
 ---
@@ -10,14 +10,12 @@ redirect_from:
 {% include base_path %}
 
 ### Design considerations
-The PACO group surveyed current open CPU specifications and chose the [RISC V](https://riscv.org/) implementation [Rocket](https://github.com/ucb-bar/rocket) because it offered
+Our most important decision was the selection of the CPU we wanted to modify for the PACO core. The PACO group surveyed available CPU specifications and chose the [RISC V](https://riscv.org/) implementation [Rocket CPU](https://github.com/ucb-bar/rocket) because it offered
 
 * a current open source CPU design
-* a diverse and powerful set of open source tools (link user guide), gdb 
+* a diverse and powerful set of open source tools (including spike, gdb, LLVM, binutils) 
 * an active community developing it
 * a novel, promising and apparently working language for hardware definition: [Chisel](https://chisel.eecs.berkeley.edu/)
-
-Added to toolset: QEMU, flashing tool
 
 ### Description regarding the technology used in PACO
 
@@ -28,13 +26,13 @@ We built on:
 * clang/LLVM for cross compilation
 * GCC for linking and generation of executables from assembly
 * QEMU for fast emulation of approximate applications
-* the Rocket CPU for a current CPU design with an active community
+* mentioned above, the Rocket CPU for a current CPU design with an active community
     - Chisel for hardware specification
+* Rocket SoC (System-on-Chip), providing us with a hardware environment for the CPU
 * (non-open-source) Xilinx ISE for FPGA bitstream generation
-* **(more)**
 
-Additional tools supported by the PACO system:
+Tools we added to Rocket to support the PACO system:
 
-* remote-gdb for QEMU
+* QEMU, with it's inherent support for remote-gdb
 * flashing tool to load applications to the FPGA
-* **(more)**
+* a Lookup Table compiler capable of generating configuration of the Lookup table functional unit.
