@@ -9,6 +9,13 @@ redirect_from:
 
 {% include base_path %}
 
+### Demo Application to showcase PACO
+Why image processing? Quality visible, and approximate computing for human consumption
+
+Why these? Very different, one point, one neighborhood, one add/mult, one complex mathematical function.
+
+When introducing Gamma correction, show formula.
+
 ### The results and outcome obtained from the PACO project
 The PACO repository contains two demo applications:
 * a [Gaussian blur](https://en.wikipedia.org/wiki/Gaussian_blur) image filter
