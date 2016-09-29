@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 ### How does it work?
-The Paderborn CPU Core for Approximate Computing (PACO) is a CPU that can compute *inaccurately but faster & more energy-efficiently* than a similar precisely-calculating CPU.
+The Paderborn CPU Core for Approximate Computing (PACO) is a CPU that can compute **inaccurately but faster & more energy-efficiently** than a similar precisely-calculating CPU.
 
 * [How was it made faster / more energy-efficient? (Concepts)](/paco-cpu/docs/concepts/)
 * [What technology is PACO based on? (Technology)](/paco-cpu/docs/technology/)
