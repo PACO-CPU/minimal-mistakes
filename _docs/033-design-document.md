@@ -25,7 +25,7 @@ a single output.
   - An approximate decorator following the syntax of a parameterized C/C++ preprocessor macro. It can annotate C declarations with an arbitrary set of key-values that are understood by the compiler and 
 translated to utilize approximation units on the constructs being decorated.   
   - Changes to Clang/LLVM and the GNU Binutils to effect the realization of our language extensions.   
-  - <it>LUT Configuration Generator</it>, or LUT Compiler - a piece of software to generate configuration 
+  - LUT Configuration Generator or LUT Compiler - a piece of software to generate configuration 
 bitstreams for our LUT units that is loaded at startup time of applications using respective LUT units. It inputs a function written in C, a set of key-value pairs (e.g. extracted from approximate decorators) as well as
 an optional architecture file specifying the parameters of the LUT core in question.
   
