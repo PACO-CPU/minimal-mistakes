@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-### Design considerations
+### CPU Choice
 Our most important decision was the selection of the CPU we wanted to modify for the PACO core. The PACO group surveyed available CPU specifications and chose the [RISC V](https://riscv.org/) implementation [Rocket CPU](https://github.com/ucb-bar/rocket) because it offered
 
 * a current open source CPU design
