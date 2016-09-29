@@ -7,29 +7,32 @@ excerpt: "Description of the Idea/Concepts."
 {% include base_path %}
 
 ### The PACO idea
-[Approximate computing](https://en.wikipedia.org/wiki/Approximate_computing) is a [steadily growing research topic](/paco-cpu/docs/related-work/) because other performance gains are [harder to reach](https://en.wikipedia.org/wiki/Dennard_scaling#Breakdown_of_Dennard_scaling_around_2006). Common goal is trading off accuracy or reliability for energy-savings, speed-up or computation latency reduction. Ideas range from 
+[Approximate computing](https://en.wikipedia.org/wiki/Approximate_computing) is a [steadily growing research topic](/paco-cpu/docs/related-work/) because other performance gains become [harder to reach](https://en.wikipedia.org/wiki/Dennard_scaling#Breakdown_of_Dennard_scaling_around_2006) while [applications](https://en.wikipedia.org/wiki/Computer_vision) [requiring](https://en.wikipedia.org/wiki/Image_processing) [less](https://en.wikipedia.org/wiki/Big_data) [than](https://en.wikipedia.org/wiki/Speech_recognition) [absolute](https://en.wikipedia.org/wiki/Machine_learning) [precision](https://en.wikipedia.org/wiki/Data_compression#Video) proliferate. Common goal is trading off accuracy or reliability for energy-savings, speed-up or computation latency reduction.
+
+Approximate computing concepts range from 
 
 * completely custom CPU core fabrics with error rate self-monitoring over
 * under-volting or overclocking of circuits to 
 * selectively ignoring cache coherency requirements.
 
 A large majority of these approaches live an isolated existence, because they target a very specific trade-off effect and are not based on a current general purpose CPU design. This isolated existence translates to often outdated and limited toolsets around the approximate computing platform.  
-In contrast, the PACO group decided to extend a current open general purpose CPU/ISA by some promising approximate functional units.
+In contrast, the PACO group decided to **extend** a current **open general purpose CPU/ISA** by some promising approximate functional units.
 
-These functional units
+These **functional units**
 
 * reside in the execution stage of the pipeline, 
 * compute arithmetic functions in the most general sense,
 * behave deterministically (i.e. given the same inputs they always compute the same results) and
 * are addressed with special approximate instructions.
 
-### Goals:
+### PACO Goals
+Provide a platform that allows us and others to
+
 * learn about approximations
 * measure effects
 * provide a working system that allows application developers to see results
-* open source hardware and software
-* functional approximation (...)
-* static approximation - the programmer/compiler try to predict precision requirements of individual operations and encode them in instructions. (Some systems, like ... need a specification of result precision, and will try to evaluate the output quality and adjust approximation accordingly at runtime.)
+* foster cooperation through open source hardware and software
+* experiment with static approximation - the programmer/compiler has to try to predict precision requirements of individual operations and encode them in instructions. (In contrast with other approximate computing systems that try to regulate precision trade-offs at runtime, and need quality metrics for every approximate calculation.)
 
 ### Design considerations:
 * 
