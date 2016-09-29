@@ -21,7 +21,7 @@ foo:
 
 # main links links
 main:
-  - title: "What?"
+  - title: "How?"
     url: /docs/people/
 
   - title: "Getting Started"
@@ -41,7 +41,7 @@ main:
 
 # documentation links
 docs:
-  - title: What?
+  - title: How?
     children:
       - title: "People"
         url: /docs/people/
