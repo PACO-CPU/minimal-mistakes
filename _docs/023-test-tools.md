@@ -65,7 +65,6 @@ $ make
  mounting it first and then copying the file over as follows:
  
 ```
-
 $ mkdir -p rootfs
 $ mount -o loop rootfs.ext2 rootfs
 $ cp test-program rootfs/root/
@@ -76,7 +75,6 @@ $ umount rootfs
  - After adding your program in the initrd, it can be tested through the virtual machine. To execute it run following:
  
 ```
-
  $ qemu-system-riscv -kernel bbl -append vmlinux \
    -drive file=rootfs.ext2, format=raw -nographic
    
@@ -87,7 +85,6 @@ $ umount rootfs
  run by:
  
 ```
-
 $ /root/test-program
  
 ```
