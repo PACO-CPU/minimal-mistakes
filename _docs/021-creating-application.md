@@ -110,13 +110,15 @@ This is what the key/value pairs we used above mean:
 For more information on other possible key/values please read [Annotate Code](/paco-cpu/docs/annotate/).
     
 ### 2.3 Compile your program 
-The basic steps to compile you program are (for more detail, refer to [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs):
+The basic steps to compile you program are (for more details, refer to [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs)):
 
 1. Compile you program using Clang. This will yield an llvm-ir file of your code and an input file to the lut-compiler.
 2. Use llc to convert the llvm-ir file into an assembly file. **what is llc? **
 3. Invoke the lut-compiler on the input file to generate a configuration for the LUT.
 4. Use the lut-startup script with the configuration to create a startup code that loads the configuration **where?**.
 5. Link everything together into a binary.
+
+** Isn't it possible to add the commands here as well? Because the user has to have the complete program running without referring to other documents by the end of this section rite?  This comment applies to running the program on the FPGA section as well **
 
 Now you should have a binary ready to be run on an FPGA.
     
@@ -133,10 +135,10 @@ For this example we will use a  [Gaussian blur](https://en.wikipedia.org/wiki/Ga
  <img src="/paco-cpu/images/matrix.png" alt="alt text" width="206" height="153">
 
 
-The complete code for this example, including a Makefile can be found [here](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/lut-gaussian-application) 
+The complete code for this example, including a Makefile can be found [here](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/lut-gaussian-application).
 
 ### 3.1 Select the variables which can be imprecise
-Let's say we have the following program snippet implementing this filter:
+Let's say, we have the following program snippet implementing this filter:
 
 ```c
 long image[IMG_WIDTH * IMG_HEIGHT];
@@ -171,9 +173,9 @@ void gauss()
 }
 ```
 
-The variable **image_data**, **intermediate_data**, and **result** would be suitable for approximation because these contain the image data intended to be seen by humans. Therefore, approximating them would be ideal since human eye cannot perceive minor errors.
+The variables **image_data**, **intermediate_data**, and **result** would be suitable candidates for approximation because these contain the image data intended to be seen by humans. Therefore, approximating them would be ideal since the human eye cannot perceive minor errors.
 
-The next section will explain how to mark these variables for approximation.
+The next section explains on how to mark these variables for approximation.
 
 ### 3.2 Annotate variables for approximation
 We annotate a variable with approximate decorators as follows:
@@ -189,7 +191,7 @@ void gauss()
 }
 ```
 
-An approx decorator can take key/value pairs, which further describe how a variable can be approximated. For example: neglect_amount=2 tells the compiler that the least 2 significant bits can be neglected during an operation. If we take a look at the following code snippet from the gauss() function
+An approx decorator can have key/value pairs, which further describe how a variable can be approximated. For example: neglect_amount=2 indicates that the compiler has to neglect the least 2 significant bits during an operation. If we take a look at the following code snippet from the gauss function,
 
 ```c
 long approx(neglect_amount=2 inject=1 relax=1)intermediate_data;
@@ -197,14 +199,14 @@ long approx(neglect_amount=2, inject=1 relax=1)result;
 /* since "intermediate_data" and "result" both can be approximated the compiler would emit a add.approx instruction here. */
 result = result + intermediate_data;
 ```
-we can see that if an operation uses two variables with approx decorators an approximate operation will be emitted. In this case this would be add.approx. 
-The next section shows you how to compile your program and how this particular code snippet would be translated. If you want to read more
-regarding annotation, take a look [here](/paco-cpu/docs/annotate/)
+we can notice that if an operation uses two variables with approx decorators, an approximate operation will be emitted. In this particular case, it would be an **add.approx** or an approximate addition operation.
+
+In the next section, you will learn how to compile your program and how this particular code snippet would be translated to assembly. If you want to read more regarding annotations, take a look [here](/paco-cpu/docs/annotate/)
 
 ### 3.3 Compile your program
-To compile your program there is not much more to do than invoking clang. The details on how to compile clang/llvm and which parameters to supply for example to use the correct ISA backended, please refer to the [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs) 
+Compiling your program takes nothing more than invoking Clang. The details on compiling Clang/llvm and the parameters to use for example, using the correct ISA backend, please refer to the [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs) 
 
-However for now lets see how our compiler would translate the code snippet from above
+Lets look at how our compiler translates the code snippet from above:
 
 ```c
 result = result + intermediate_data; 
@@ -213,22 +215,23 @@ result = result + intermediate_data;
  */
 ```
 
-As you can see the compiler emitted the add.approx instruction. The last parameter of this instruction is the amount of bits to neglect. 
+Well, the compiler emitted the **add.approx** instruction. The last parameter of this instruction is the amount of bits to neglect. 
 
-Congratulations, you successfully create your first approximate program using PACO.  Now let's see how it performs on the FPGA.
+Congratulations! You have successfully created your first approximate program using PACO. Now onto how it performs on the FPGA.
 
 ### 3.4 Run your program on the FPGA
 For instructions on how you can run your program on the FPGA please take a look [here](/paco-cpu/docs/use-fpga/). 
-For now, let us compare how the approximation affects the image. The default test image for graphical application is [Lenna](https://en.wikipedia.org/wiki/Lenna) as can be seen below in grey-scale.
+For now, let us compare how approximation affects the image. The default test image that we used for our graphical application is [Lenna](https://en.wikipedia.org/wiki/Lenna) as can be seen below in grey-scale.
 
 ![lenna-256x256](/paco-cpu/images/results/alu/lenna-256x256.png) 
 
-Our approximated program with a neglect_amount of 4, which applies the gaussian filter, produces an image that looks like this:
+Our approximated program with a neglect_amount of 4, on applying the gaussian filter produces this image:
 
 ![MUL62ADD62](/paco-cpu/images/results/alu/lenna-256x256-4bit-approx.png) 
 
 
-Finally let's compare it against our program, which applies the gaussian filter without any approximate decorators: 
+Let's compare it against our program that applies the gaussian filter without any approximate decorators: 
 
 ![native](/paco-cpu/images/results/alu/lenna-256x256-native.png) 
 
+** conclude this section **
