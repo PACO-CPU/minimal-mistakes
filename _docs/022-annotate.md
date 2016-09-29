@@ -9,12 +9,9 @@ sidebar:
 
 {% include base_path %}
 
-This guide will give you an overview over the way functions and variables can be annotated in C-code. See this guide as a cheat sheet. If you are insterested in annotating
+This guide gives an overview over the way functions and variables can be annotated in C-code. Consider this guide as a cheat sheet. For annotating **functions** click [here](#1-function-approximation) and for **variables**, [here](#2-variable-approximation).
 
-- **functions** go [here](#1-function-approximation)
-- **variables** go [here](#2-variable-approximation)
-
-This guide however cannot provide everything in detail. For the maximum details please check the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lang-lut-generator) 
+This guide however does not provide all the details regarding annotations, for which please read the the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lang-lut-generator) 
 
 ## 1. Function Approximation
 ### Key/value pairs
