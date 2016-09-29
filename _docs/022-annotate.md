@@ -14,7 +14,9 @@ This guide gives an overview over the way functions and variables can be annotat
 This guide however does not provide all the details regarding annotations, for which please read the the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lang-lut-generator) 
 
 ## 1. Function Approximation
+
 ### Key/value pairs
+
 key | value range | short description | notes
 :---:|:---:|:---:|:---:
 |**name** | Any string | this uniquely identifies this function | Will be set by clang, should not be set manually
@@ -27,6 +29,7 @@ key | value range | short description | notes
 |**bounds** | (min, max) | If you know your the range of the input values to the function beforehand you can specify it here | - |
 
 ### Segmentation Strategies:
+
 value | short description | notes
 :---: | :---: | :---:
 **uniform** | all segments are uniformly distributed | -
@@ -41,7 +44,9 @@ value | short description | notes
 ![uniform](/paco-cpu/images/annotation-example-uniform.png)
 
 ## 2. Variable Approximation
+
 ### Key/Value Pairs
+
 key | valid values | short description | notes
 :---:|:---:|:---:|:---:
 **neglect_amount** | 2,4,7,10,15,20,27 | Describes how many least significant bits should be neglected on operations with this variable | mutually exclusive with **mask**
