@@ -6,11 +6,22 @@ excerpt: "Description of the Idea/Concepts."
 
 {% include base_path %}
 
-### Description of the Idea and the Concepts behind PACO
+### The PACO idea
+[Approximate computing](https://en.wikipedia.org/wiki/Approximate_computing) is a [steadily growing research topic](/paco-cpu/docs/related-work/) because other performance gains are [harder to reach](https://en.wikipedia.org/wiki/Dennard_scaling#Breakdown_of_Dennard_scaling_around_2006). Common goal is trading off accuracy or reliability for energy-savings, speed-up or computation latency reduction. Ideas range from 
 
-* PACO is a CPU designed to calculate approximations
-* hardware that has approximate instructions
-* provide a research platform
+* completely custom CPU core fabrics with error rate self-monitoring over
+* under-volting or overclocking of circuits to 
+* selectively ignoring cache coherency requirements.
+
+A large majority of these approaches live an isolated existence, because they target a very specific trade-off effect and are not based on a current general purpose CPU design. This isolated existence translates to often outdated and limited toolsets around the approximate computing platform.  
+In contrast, the PACO group decided to extend a current open general purpose CPU/ISA by some promising approximate functional units.
+
+These functional units
+
+* reside in the execution stage of the pipeline, 
+* compute arithmetic functions in the most general sense,
+* behave deterministically (i.e. given the same inputs they always compute the same results) and
+* are addressed with special approximate instructions.
 
 ### Goals:
 * learn about approximations
@@ -21,7 +32,8 @@ excerpt: "Description of the Idea/Concepts."
 * static approximation - the programmer/compiler try to predict precision requirements of individual operations and encode them in instructions. (Some systems, like ... need a specification of result precision, and will try to evaluate the output quality and adjust approximation accordingly at runtime.)
 
 ### Design considerations:
-* picked Rocket CPU as a basis, because it is under development, by an active community
+* 
+* picked Rocket CPU as a basis, because it is under development, by an active community, open
 * Chisel, why?
 
 ### Our hardware:
