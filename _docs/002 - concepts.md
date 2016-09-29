@@ -25,22 +25,22 @@ These **functional units**
 * behave deterministically (i.e. given the same inputs they always compute the same results) and
 * are addressed with special approximate instructions.
 
-### PACO Goals
+### PACO Goal
 Provide a platform that allows us and others to
 
-* learn about approximations
-* measure effects
-* provide a working system that allows application developers to see results
+* learn about hardware approximation techniques by implementing them quickly
+* measure effects on result quality and speed-up
+* quickly compile approximate applications with a C/C++ compiler, allowing developers to evaluate results for their general purpose applications
 * foster cooperation through open source hardware and software
 * experiment with static approximation - the programmer/compiler has to try to predict precision requirements of individual operations and encode them in instructions. (In contrast with other approximate computing systems that try to regulate precision trade-offs at runtime, and need quality metrics for every approximate calculation.)
 
-### Design considerations:
-* 
-* picked Rocket CPU as a basis, because it is under development, by an active community, open
-* Chisel, why?
+### PACO approximate functional units
+To provide proof that it possible to integrate very different approximate functional units in the PACO core, we have implemented:
 
-### Our hardware:
-* approximate ALU:  
- The PACO approximate ALU does not provide energy savings or calculation speedup compared to the standard ALU, it just allows you to experiment with different degrees of approximation for approximate applications. We have created an extension of the C/C++ languages that allows you to specify both expected precision of inputs (maybe you already know that the real world gauge feeding that input has limited measurement precision) and minimum precision boundaries of outputs. The PACO compiler will then try to specify the most approximation possible without violating the output precision boundaries.
-* Lookup Table (LUT) with interpolation within segments  
- The Lookup Table unit we created within the CPU pipeline allows an application to replace complex arithmetical functions with a segment-wise linear approximation of it **insert image of graph, with original function and segmentwise approximation**. It accepts input from up to three registers. The LUT can be configured at runtime to evaluate up to 9 bits from these registers to determine the segment it has to interpolate. When the segment is determined, some bits from the input can be multiplied with the slope for that segment, and finally an offset is added to calculate the result of the lookup instruction. A lookup instruction still only takes one cycle in the execution stage of the CPU.
+* an approximate ALU:  
+ The PACO approximate ALU does not provide energy savings or calculation speedup compared to the standard ALU, it just allows you to experiment with different degrees of approximation for approximate applications: Depending on the degree of approximation specified in the instruction, the ALU ignores a certain number of least significant bits of its inputs.  
+ We have also created an extension of the C/C++ languages that allows you to specify both expected precision of inputs (maybe you already know that the real world gauge feeding that input has limited measurement precision) and minimum precision boundaries of outputs. The PACO compiler will then try to specify the most approximation possible without violating the output precision boundaries.
+* a Lookup Table (LUT) interpolating functions within segments of the domain  
+ The Lookup Table unit we created within the CPU pipeline allows an application to replace complex arithmetical functions with a segment-wise linear approximation of it (see Fig.2). It accepts input from up to three registers. The LUT can be configured at runtime to evaluate up to 9 bits from these registers to determine the segment it has to interpolate. When the segment is determined, some bits from the input can be multiplied with the slope for that segment, and finally an offset is added to calculate the result of the lookup instruction. A lookup instruction still only takes one cycle in the execution stage of the CPU.
+<img src="/paco-cpu/images/lut-function-linear.png" alt="lut-function" width="400">
+Fig.2: The Lookup Table unit approximates arithmetic functions within segments. In this case values within the segment are linearly interpolated.
