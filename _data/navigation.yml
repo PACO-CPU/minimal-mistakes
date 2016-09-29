@@ -51,8 +51,6 @@ docs:
         url: /docs/technology/
       - title: "Results"
         url: /docs/results/
-      - title: "Demo Application"
-        url: /docs/demo/
 
 getting-started:
   - title: Getting Started
