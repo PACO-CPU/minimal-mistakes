@@ -206,13 +206,22 @@ In the next section, you will learn how to compile your program and how this par
 ### 3.3 Compile your program
 Compiling your program takes nothing more than invoking Clang. The details on compiling Clang/llvm and the parameters to use for example, using the correct ISA backend, please refer to the [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs) 
 
-Lets look at how our compiler translates the code snippet from above:
+However for now lets see how our compiler would translate the code snippet from above by running objdump on int
 
-```c
-result = result + intermediate_data; 
-/*
- * TODO: Add assembly here
- */
+```sh
+$ riscv64-unknown-elf-objdump -S main.elf
+  
+  ...
+  
+  0000000000000184 <.Ltmp41>:
+            immediate  = image_data * kernel_data;
+  184:   fca3a38b                mul.approx      t2,t2,a0,0x3f
+
+  0000000000000188 <.Ltmp42>:
+            result = result + immediate;
+  188:   f873030b                add.approx      t1,t1,t2,0x3e
+  
+  ...
 ```
 
 Well, the compiler emitted the **add.approx** instruction. The last parameter of this instruction is the amount of bits to neglect. 
