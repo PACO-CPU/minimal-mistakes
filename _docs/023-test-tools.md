@@ -64,26 +64,30 @@ $ make
 - Once all the components are prepared add your program in the initrd. Lwt us call the test-program as *test-program*. Insert test-program into the initrd by
  mounting it first and then copying the file over as follows:
  
- ```
+```
+
 $ mkdir -p rootfs
 $ mount -o loop rootfs.ext2 rootfs
 $ cp test-program rootfs/root/
 $ umount rootfs
- ```
+
+```
  
  - After adding your program in the initrd, it can be tested through the virtual machine. To execute it run following:
  
- ```
+```
+
  $ qemu-system-riscv -kernel bbl -append vmlinux \
    -drive file=rootfs.ext2, format=raw -nographic
- ```
+   
+```
  
  - Now this will boot the virtual machine. Eventually the entry of a user name is required.
  Enter root (no password required). When logged in, the test program can simply be
  run by:
  
- ```
+```
+
+$ /root/test-program
  
- $ /root/test-program
- 
- ```
+```
