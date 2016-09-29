@@ -10,7 +10,7 @@ sidebar:
 
 
 The Developer Guide is the second part of the
-[implementation document]({{site.url}}/docs/impl-doc.pdf). It details all the
+[implementation document](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:dg-sementation-strategies). It details all the
 implementation work done by us. It is divided into three main areas:
 Environment, Compiler System and Approximate Hardware.
 
