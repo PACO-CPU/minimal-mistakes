@@ -13,7 +13,8 @@ group.
 
 If you are curious as to how many apples fell on our heads before we came to the PACO realization, find out *[here](/paco-cpu/docs/design-doc.pdf)*.
 
-The gist of the story goes like this,
+The contents of the document are as follows:
+
 - Introduction to the components designed
 - Approximation Techniques
   - The Approximate ALU unit as a swag modification of the already implemented precise ALU in the Rocket Chip (an implementation of the RISCV processor architecture). We make use of bypass registers to omit changes in the least
