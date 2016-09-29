@@ -13,7 +13,6 @@ Reading this document is crucial to understanding how PACO works in order to mod
 
 ### So go ahead and click *[here](/paco-cpu/docs/impl-doc.pdf)* to download the Implementation Document!
 <br/>
-
 If you are not yet convinced and wish to read the gist of the contents before downloading the document(for whatever reason!) then go ahead...
 
 The developer guide is divided into three main sections:
