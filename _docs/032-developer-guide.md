@@ -11,7 +11,8 @@ sidebar:
 The Developer Guide is the second part of the implementation document that details all the implementation work done by us. 
 Reading this document is crucial to understanding how PACO works in order to modify or contribute to it.
 
-#### So go ahead and click [here](/paco-cpu/docs/impl-doc.pdf) to download the Implementation Document!
+### So go ahead and click [here](/paco-cpu/docs/impl-doc.pdf) to download the Implementation Document!
+
 
 If you are not yet convinced and wish to read the gist of the contents before downloading the document(for whatever reason!) then go ahead...
 
