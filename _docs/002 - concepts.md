@@ -16,14 +16,7 @@ Approximate computing concepts range from
 * selectively ignoring cache coherency requirements.
 
 A large majority of these approaches live an isolated existence, because they target a very specific trade-off effect and are not based on a current general purpose CPU design. This isolated existence translates to often outdated and limited toolsets around the approximate computing platform.  
-In contrast, the PACO group decided to **extend** a current **open general purpose CPU/ISA** by some promising approximate functional units.
-
-These **functional units**
-
-* reside in the execution stage of the pipeline, 
-* compute arithmetic functions in the most general sense,
-* behave deterministically (i.e. given the same inputs they always compute the same results) and
-* are addressed with special approximate instructions.
+In contrast, the PACO group decided to **extend** a current **open general purpose CPU/ISA** by some promising **approximate functional units**.
 
 ### PACO Goal
 Provide a platform that allows us and others to
@@ -35,6 +28,15 @@ Provide a platform that allows us and others to
 * experiment with static approximation - the programmer/compiler has to try to predict precision requirements of individual operations and encode them in instructions. (In contrast with other approximate computing systems that try to regulate precision trade-offs at runtime, and need quality metrics for every approximate calculation.)
 
 ### PACO approximate functional units
+These **functional units**
+
+* reside in the execution stage of the pipeline, 
+* compute arithmetic functions in the most general sense,
+* behave deterministically (i.e. given the same inputs they always compute the same results) and
+* are addressed with special approximate instructions.
+
+<img src="/paco-cpu/images/PACO_core.png" alt="PACO core" width="400">
+
 To provide proof that it possible to integrate very different approximate functional units in the PACO core, we have implemented:
 
 * an approximate ALU:  
