@@ -35,14 +35,14 @@ So click *[here](/paco-cpu/docs/design-doc-pre.pdf)* for the original version of
 
 ### The list of not-so-embarrassing changes:
 
-#### Usage of DMA-based LUT configuration
+### Usage of DMA-based LUT configuration
 Originally we had envisioned the option of configuring LUT units by 
 memory-mapping its configuration registers to the Rocket SoC memory bus.   
 As most of the configuration bitstream consisted of registers as opposed to
 random-addressable memory it showed to be more realistic to use a single 
 instruction to load configuration data word-by-word.
 
-#### LUT-related instruction set changes
+### LUT-related instruction set changes
 The original instruction set extension for the LUT unit consisted of merely
 a load and an execute instruction.   
 This was changed for a number of reasons:
