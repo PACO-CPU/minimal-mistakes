@@ -18,6 +18,7 @@ When introducing Gamma correction, show formula.
 
 ### The results and outcome obtained from the PACO project
 The PACO repository contains two demo applications:
+
 * a [Gaussian blur](https://en.wikipedia.org/wiki/Gaussian_blur) image filter
 * a [Gamma correction](https://en.wikipedia.org/wiki/Gamma_correction) algorithm
 
