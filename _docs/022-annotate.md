@@ -19,13 +19,13 @@ This guide however does not provide all the details regarding annotations, for w
 
 key | value range | short description | notes
 :---:|:---:|:---:|:---:
-|**name** | Any string | this uniquely identifies this function | Will be set by clang, should not be set manually
-|**numSegments** | 0 to 2^segmentsBits-1 |This defines the maximum number of segments (primary + secondary) in which the function ought to be divided | - |
+|**name** | Any string | this uniquely identifies this function | Will be set by clang, should not be set manually |
+|**numSegments** | 0 to 2^segmentsBits-1 |This defines the maximum number of segments (primary + secondary) in whichi the function ought to be divided | - |
 |**numPrimarySegments** | (0 to 2^segmentsBits-1) | This defines the maximun number of primary segments in which the function ought to be divided  | - |
 |**segments** | "uniform", "log-left", "log-right", or "min-error" | This defines how the segments should be distributed in the function to be approximated | See table below for an overview over the segmentation strategies. |
 |segments2 | "uniform", "log-left", "log-right", or "min-error" | This defines how the subsegments (secondary segments) should be distributed in the function to be approximated  | Experimental |
 |**explicitSegments** | [min,max],(min,max),... | If the programmer knows the segments beforehand, he can explicitly state them as comma seperated value ranges | - |
-|**approximation** | "linear", or "step" | Describes which strategy should be used to approximate the function within each segment | 
+|**approximation** | "linear", or "step" | Describes which strategy should be used to approximate the function within each segment | - |
 |**bounds** | (min, max) | If you know your the range of the input values to the function beforehand you can specify it here | - |
 
 ### Segmentation Strategies:
