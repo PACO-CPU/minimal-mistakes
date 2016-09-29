@@ -14,6 +14,7 @@ redirect_from:
 We tried to avoid reinventing the wheel, but wanted to build on open-source projects that are state of the art without adding unwanted complexity.
 
 We built on:
+
 * clang/LLVM for cross compilation
 * GCC for linking and generation of executables from assembly
 * QEMU for fast emulation of approximate applications
@@ -23,6 +24,7 @@ We built on:
 * **(more)**
 
 Additional tools supported by the PACO system:
+
 * remote-gdb for QEMU
 * flashing tool to load applications to the FPGA
 * **(more)**
