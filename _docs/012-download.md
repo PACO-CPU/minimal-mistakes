@@ -7,14 +7,10 @@ sidebar:
 ---
 
 ## Download
-Clone the entire project to your system. 
+To clone the entire project to your system, just type:
 
-` $ git clone --recursive `
+` $ git clone https://github.com/PACO-CPU/paco-env.git --recursive `
 
 The `--recursive` flag saves you from cloning all subdirectories of the project manually. This instead, downloads the entire content to your main directory.
 
-#### Be aware that entire project requires approximately[:wink] 18GB of space on your system. 
-
-### (TODO: add link)
-
-
+Or download it from [here](https://github.com/PACO-CPU/paco-env.git)
