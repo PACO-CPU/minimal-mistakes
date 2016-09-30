@@ -30,7 +30,7 @@ $ make CONFIG=PACOCOnfigCPP -jN run-asm-tests
 More details about the C Emulator are provided in the [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:ug-c-emulator) and
 [Developer Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:c-emulator). 
 
-## 3) QEMU
+## QEMU
 
 [QEMU](http://qemu.org/) allows you to test your approximate programs for logical correctness without
 having to specify hardware but it cannot be generated from your hardware specification, giving no guarantee for the correctness of hardware specifications. To simulate your program using QEMU follow the steps:
