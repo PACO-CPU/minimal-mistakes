@@ -71,4 +71,4 @@ The PACO Toolchain consists of CLANG capable of handling special annotations, tr
 
 It is useful if the compiler can at least try to predict consequences of previous arithmetical operations on later ones. This prediction is of course limited because [small changes can have hard-to-predict effects in some functions](https://en.wikipedia.org/wiki/Numerical_stability).
 
-Detail in the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lang-instruction-approx).
+An extensive description of the compiler can be found in the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lang-instruction-approx).
