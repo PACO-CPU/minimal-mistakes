@@ -40,13 +40,13 @@ These functional units
 
 To prove that it is possible to integrate different approximate functional units in the PACO core, we have implemented:
 
-## An Approximate ALU  
+### An Approximate ALU  
 The PACO Approximate ALU allows one to experiment with different degrees of approximation for approximate applications rather than providing energy savings or speedup as compared to the standard ALU. The ALU ignores a certain number of least significant bits of its inputs depending on the degree of approximation specified in the instruction.
 An extension to C/C++ languages has also been created that allows both expected precision of inputs and minimum precision boundaries of outputs to be specified. The PACO compiler determines the most approximation possible without violating the output precision boundaries.
  
  <img src="/paco-cpu/images/results/alu/approx-alu-pipeline.svg" alt="Approx ALU" width="500" height= "300" style = "margin:30px">
  
-## A Lookup Table (LUT) 
+### A Lookup Table (LUT) 
 The Lookup Table unit allows an application to replace complex arithmetical functions with a segment-wise linear approximation of it (see Fig.2). It is created within the CPU pipeline and takes **only one cycle** in the execution stage of the CPU. 
 
 The LUT accepts inputs from upto three registers. It can be configured at runtime to evaluate upto 9 bits from these registers to determine the segment that has be interpolated. Then, some input bits can be multiplied with the segment's slope and finally an offset is added to calculate the result of the lookup instruction. The design of the Lookup Table is shown in Fig.3.
