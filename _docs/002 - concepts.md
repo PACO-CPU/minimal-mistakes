@@ -67,7 +67,7 @@ To understand how LUT performs its magic refer to the [Design Document](/paco-cp
 
 In order to create approximate applications, programmers must be able to control the level of approximation in their applications. The compiler must then be capable of translating this code to instructions that controls the approximate functional units. This not only requires special annotations but also new instructions.  
 
-The PACO Toolchain consists of CLANG capable of handling special annotations, translating this C code into an Intermediate Representation(IR). This IR is consumed by LLVM to create assembly code. Binutils then converts assembly to maschine level representation that can be loaded and run on the FPGA or an emulator. Besides this, the special annotations are used to create a configuration for the LUT Core by the LUT Compiler. 
+The PACO Toolchain consists of CLANG capable of handling special annotations, translating this C code into an Intermediate Representation(IR). This IR is consumed by LLVM to create assembly code. Binutils then converts assembly to maschine level representation that can be loaded and run on the FPGA or an emulator. Besides this, the special annotations are used to create a configuration for the LUT Core by the **LUT Compiler**. 
 
 It is useful if the compiler can at least try to predict consequences of previous arithmetical operations on later ones. This prediction is of course limited because [small changes can have hard-to-predict effects in some functions](https://en.wikipedia.org/wiki/Numerical_stability).
 
