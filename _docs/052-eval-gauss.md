@@ -1,13 +1,13 @@
 ---
 title: "Gauss Filter"
-permalink: /docs/eval-gauss/
+permalink: /docs/eval-gauss
 excerpt: "Gauss Filter"
 sidebar:
    nav: "evaluation"
 ---
 {% include base_path %}
 
-### 1 Approximate Gaussian Filter Evaluation
+## Approximate Gaussian Filter Evaluation
 The Gaussian blur filter algorithm is used in image processing to smooth over noisy images. They generally generate a new color value for each pixel by incorporating the color values of neighboring pixels, weighted depending on the distance between pixel and neighbor.
 
 Precise implementations of the Gaussian blur algorithms calculate this by moving a sliding window over the image, adding up neighboring pixels (multiplied by weights).
@@ -17,7 +17,7 @@ We compare a precise implementation of the Gaussian blur algorithm with a 3x3 wi
 * the [approximate ALU](#eval_gauss_alu) **insert correct address**
 * the [Lookup Table](#eval_gauss_lookup) **insert address**
 
-### 2 Evaluation: Lookup Table<a id="#eval_gauss_lookup"></a>
+## Evaluation: Lookup Table<a id="#eval_gauss_lookup"></a>
 
 The Gaussian LUT implementation passes over the image twice: once with a 3x1 window in the horizonal direction to generate an intermediate image, then with a 1x3 window in the vertical to generate the final pixel value. The lookup table is fed with the 3 most significant bits from each pixel value in the window.
 
@@ -43,15 +43,15 @@ and an approximated Gaussian blur version, created with a Lookup Table with 9 in
 
 <img src="/paco-cpu/images/gaussian_lut_speedup.png" alt="Gaussian LUT Speedup graph" width="550">
 
-## 3 Evaluation: Approximate ALU
+## Evaluation: Approximate ALU
 
-### 3.1 Implementation<a id="#eval_gauss_alu"></a>
+### Implementation<a id="#eval_gauss_alu"></a>
 
 This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other then that, it corresponds to the [native implementation](_top).**TODO:** Add anchor 
 
 The complete code including a makefile can be found [here](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/alu-gaussian-application). 
 
-### 3.2 Approach
+### Approach
 
 The application was run on a [ml605 FPGA](https://www.xilinx.com/products/boards-and-kits/ek-v6-ml605-g.html) using the script
 [run_eval.py](https://github.com/PACO-CPU/rocket-soc/blob/master/rocket_soc/lib/templates/alu-gaussian-application/run_eval.py).
@@ -64,7 +64,7 @@ This script iterates over a [Lenna](https://en.wikipedia.org/wiki/Lenna) image i
 
 **Note:** The values after MUL and ADD in the image name correspond to the decimal value of the binary neglect masks defined in the [Design Document]()**TODO**: Add link to table in Design Document
 
-### 3.3 Results
+### Results
 
 The Table below shows the results for an image of the size 256x256 pixel. The first column of the table describes how many bits were neglected on a **mul.approx** instruction, the second column is likewise for **add.approx** instructions. A " - " means that a precise instruction was used. The third column is 
 a calculation of the [approximation error](https://en.wikipedia.org/wiki/Approximation_error) between the natively calculated image and the respective approximately computed image. The last column show the resulting image of the approximate calculation.
