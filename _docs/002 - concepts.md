@@ -33,7 +33,7 @@ These functional units
 
 * reside in the execution stage of the pipeline 
 * compute arithmetic functions in the most general sense
-* behave deterministically i.e., given the same inputs they always compute the same results 
+* behave deterministically, i.e. given the same inputs they always compute the same results 
 * addressed using special approximate instructions.
 
 <img src="/paco-cpu/images/PACO_core.png" alt="PACO core" width="400" style = "margin:30px">
