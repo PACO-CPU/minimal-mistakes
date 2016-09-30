@@ -60,16 +60,17 @@ The Gaussian LUT speedup compared to the precise version was approximately 3, wi
 | 256x256	| 3.044        |
 
 In comparison of the resulting images we found the following mean absolute and relative errors of grey values (0-255):
+
 | Image size | Mean absolute error | Mean relative error |
 |:-------:|:----------------:|:----------------:|
-| 64x64   |  -               |  0.04074         |
+| 64x64\* |  -               |  0.04074         |
 | 128x128 |  6.427           |  0.06617         |
 | 192x192 |  6.587           |  0.06992         |
 | 256x256 |  6.537           |  0.07129         |
 
 \* Star image, so not comparable with Lenna images.
 
-We were suspicious of the rise in mean relative error with image size, so we decided to draw a histogram of error magnitudes:
+We were suspicious of the rise in mean relative error with image size, so we decided to conclude with a histogram of error magnitudes:
 
 <img src="/paco-cpu/images/gauss_lut_distribution_abs_deviation.png" alt="Histogram error magnitude" width="550">
 
