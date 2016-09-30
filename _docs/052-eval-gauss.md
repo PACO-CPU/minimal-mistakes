@@ -14,19 +14,28 @@ Precise implementations of the Gaussian blur algorithms calculate this by moving
 
 We compare a precise implementation of the Gaussian blur algorithm with a 3x3 window (greyscale) to implementations using
 
-* the [approximate ALU](#evaluation-approximate-alu) **insert correct address**
-* the [Lookup Table](#evaluation-lookup-table) **insert address**
+* the [Lookup Table](#evaluation-lookup-table)
+* the [approximate ALU](#evaluation-approximate-alu)
 
 ## Evaluation: Lookup Table
 
+### Implementation
 The Gaussian LUT implementation passes over the image twice: once with a 3x1 window in the horizonal direction to generate an intermediate image, then with a 1x3 window in the vertical to generate the final pixel value. The lookup table is fed with the 3 most significant bits from each pixel value in the window.
 
 <img src="/paco-cpu/images/gauss_filter_grid.png" alt="Gaussian window" width="500">
 
 Only the 3 most significant bits of each pixel in the window are fed into the lookup table to first look-up an intermediate result for the horizontal traveling window. Another lookup from the intermediate image returns the final value of each pixel.
 
-**insert link to implementation**
+[Code for our Lookup Table implementation of the Gaussian filter algorithm](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/lut-gaussian-application)
 
+### Approach
+The application was run on a [ml605 FPGA](https://www.xilinx.com/products/boards-and-kits/ek-v6-ml605-g.html) using [the Makefile](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/lut-gaussian-application/Makefile).
+
+[64x64](/paco-cpu/docs/results-064/), [128x128](/paco-cpu/docs/results-128/), [192x192](/paco-cpu/docs/results-192/) and 256x256 (below) images were processed with the LUT Gaussian application, each 20 times. The speedup was measured by cycle-counting in comparison to the precise Gaussian filter implementation. Standard deviation of the runtime was calculated.
+
+The resulting approximate images were compared pixel by pixel to the output of the precise Gaussian filter implementation. Mean absolute and relative deviation was calculated from the differences and distributions of the deviations were compiled for each image size.
+
+### Results
 For a 256 by 256 pixel image the original:
 
 <img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256.png" alt="Lenna original" width="512">
@@ -39,8 +48,6 @@ and an approximated Gaussian blur version, created with a Lookup Table with 9 in
 
 <img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256_lut.png" alt="Lenna lut" width="508">
 
-[64x64](/paco-cpu/docs/results-064/), [128x128](/paco-cpu/docs/results-128/), [192x192](/paco-cpu/docs/results-192/) and 256x256 (above) images were processed in the same way, each 20 times, and speedup was measured:
-
 <img src="/paco-cpu/images/results/lut/gaussian_lut_speedup.png" alt="Gaussian LUT Speedup graph" width="550">
 
 ## Evaluation: Approximate ALU
@@ -49,7 +56,7 @@ and an approximated Gaussian blur version, created with a Lookup Table with 9 in
 
 This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other then that, it corresponds to the [native implementation](_top).**TODO:** Add anchor 
 
-The complete code including a makefile can be found [here](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/alu-gaussian-application). 
+[Linked: The complete code including a Makefile](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/alu-gaussian-application). 
 
 ### Approach
 
