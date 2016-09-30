@@ -40,7 +40,7 @@ More details about the C Emulator are provided in the [User Guide](/paco-cpu/doc
 having to specify hardware, just functional behaviour. Thus it cannot be generated from your hardware specification, giving no guarantee for the correctness of the hardware specification. The repository of QEMU for PACO can be found [here](https://github.com/PACO-CPU/qemu.git). 
 To simulate your program using QEMU follow the steps:
 
-- First build the qemu using the following commands
+- First build QEMU using the following commands
 
 ```sh
 $ mkdir qemu-build
@@ -49,7 +49,7 @@ $../qemu/configure --target-list=riscv-softmmu --enable-debug --python=/usr/bin/
 $ make
 ```
 
-- Once you have build qemu, you can create an application using the approximate ALU (e.g. [Gaussian Blur](paco-cpu/docs/create-application/#3-approximate-alu-guide)) to be run in QEMU. Make sure you compile it with a linux compiler version of GCC. The program can be any [annotated](/paco-cpu/docs/annotate/) program using the approximate ALU. **Note:** You can use the glibc method common in any linux system, e.g. "printf" for I/O.
+- Once you have build QEMU, you can create an application using the approximate ALU (e.g. [Gaussian Blur](paco-cpu/docs/create-application/#3-approximate-alu-guide)) to be run in QEMU. Make sure you compile it with a linux compiler version of GCC. The program can be any [annotated](/paco-cpu/docs/annotate/) program using the approximate ALU. **Note:** You can use the glibc method common in any linux system, e.g. "printf" for I/O.
 
 - Set up your system and include Berkley boot loader (bbl), linux kernel and initrd(initial ram disk)
  along with your program. For more details how to build these components refer to [Developer Guide](/paco-cpu/docs/impl- doc.pdf#nameddest=sec:env-build-vm). A prebuild version of bbl, linux kernel, and initrd can be found here:[bbl](https://github.com/PACO-CPU/qemu/raw/master/images/bbl), [linux](https://github.com/PACO-CPU/qemu/raw/master/images/vmlinux), and [initrd](https://github.com/PACO-CPU/qemu/raw/master/images/rootfs.ext2).
