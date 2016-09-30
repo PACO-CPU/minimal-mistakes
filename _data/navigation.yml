@@ -103,10 +103,10 @@ evaluation:
      children:
        - title: "Introduction"
          url: /docs/evaluation/
+       - title: "Gaussian Blur"
+         url: /docs/eval-gauss/
        - title: "Gamma Correction"
          url: /docs/eval-gamma/
-       - title: "Gauss Filter"
-         url: /docs/eval-gauss/
 
 links:
   - title: Links
