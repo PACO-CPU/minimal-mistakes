@@ -18,7 +18,7 @@ Alright! Let's get started!
 - Lookup Table (LUT) [start](#2-lut-guide)
 - Approximate ALU [start](#3-approximate-alu-guide)
 
-## 2. Lut Guide
+## 2. LUT Guide
 The Lookup Table (LUT) is a functional unit residing in the CPU pipeline and can be imagined as a software lookup table on crack. It's main purpose is to approximate any derivable function. To visualize it, let's take a look at the graph of a function:
 
  <img src="/paco-cpu/images/lut-function.png" alt="lut-function" width="300">
