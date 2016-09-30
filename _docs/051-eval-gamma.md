@@ -56,7 +56,7 @@ a resolution of 512 by 512 pixels and 8 bits per color channel. The image shows
 from left to right: Original image, output of the PACO LUT implementation,
 output of the Software Lookup-table and the reference output done by the
 trivial implementation.
-![Output quality comparison]({{ site.url }}/images/results/gamma/lena_color-out.png)
+![Output quality comparison](/paco-cpu/images/results/gamma/lena_color-out.png)
 To the naked eye, the results of all three implementations are almost identical.
 In fact, the bit values only differ in the least significant bits.  
 
@@ -77,7 +77,7 @@ below (percentages are relative 2<sup>24</sup>):
 | 1.25  | 0.02597%                | 0.09758%          |
 | 1.99  | 0.02489%                | 0.09829%          |
 
-![Error distribution]({{ site.url }}/images/results/gamma/lut0-deviation.png)
+![Error distribution](/paco-cpu/images/results/gamma/lut0-deviation.png)
 The error distribution was scaled to show the interesting subset. Outliers to
 the right do not exceed 0.001%. The figure shows a significant dependency 
 between the gamma exponent and error distribution, however error magnitude
