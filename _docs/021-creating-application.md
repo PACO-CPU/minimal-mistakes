@@ -15,7 +15,7 @@ can also be combined to create a binary in which you could use both of them.
 Alright! Let's get started!
 
 ## 1. Decide on the Approximate Component to Use
-- Lookup Table (LUT) [start](#2-lut-guide)
+- Lookup Table (LUT) [start](#lut-guide)
 - Approximate ALU [start](#approximate-alu-guide)
 
 ## 2. LUT Guide
