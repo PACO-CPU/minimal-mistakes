@@ -8,11 +8,11 @@ sidebar:
 
 {% include base_path %}
 
-The Getting Started pages are meant to help the user quickly setup the environment in order to use PACO. This page deals with the prerequisites required to setup, the subsequent pages dealing with how to download, build and use the core and the toolchain.
+The Getting Started pages are meant to help the user quickly setup the environment in order to use PACO. This page deals with the prerequisites required to setup, the subsequent pages deal with download, build and use of the core and toolchain.
 
 
 ## Prerequisites
-PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your machine, please install them.  
+PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they are not already on your machine, please install them.  
 
 Assuming you use a freshly installed Debian-based Linux Operating System, the following command will install the missing libraries for PACO:
 
@@ -49,4 +49,4 @@ while developing PACO, Ubuntu 16.04 LTS was used. All components are known to ru
 
 ## Next step
 
-Now that you have all the prerequisites setup precisely, lets move on to [downloading](https://paco-cpu.github.io/paco-cpu/docs/download/) PACO on your machine.
+Now that you have all the prerequisites set up, move on to [downloading](https://paco-cpu.github.io/paco-cpu/docs/download/) PACO on your machine.
