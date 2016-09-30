@@ -43,4 +43,4 @@ along with the LUT core itself (written in VHDL).
 
 The sections detail the implementation of the LUT hardware core and the approximate ALU.
 
-#### Convinced now? Then go ahead and click [here](/paco-cpu/docs/impl-doc.pdf) to download the Implementation Document!
+### Convinced now? Then go ahead and click [here](/paco-cpu/docs/impl-doc.pdf) to download the Implementation Document!
