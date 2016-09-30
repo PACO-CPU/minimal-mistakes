@@ -15,7 +15,7 @@ Precise implementations of the Gaussian blur algorithms calculate this by moving
 We compare a precise implementation of the Gaussian blur algorithm with a 3x3 window (greyscale) to implementations using
 
 * the [approximate ALU](#eval_gauss_alu) **insert correct address**
-* the [Lookup Table](#eval_gauss_lookup) **insert address**
+* the [Lookup Table](#approximate-alu-guide) **insert address**
 
 ## Evaluation: Lookup Table<a id="#eval_gauss_lookup"></a>
 
