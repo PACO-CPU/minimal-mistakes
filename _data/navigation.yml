@@ -75,8 +75,6 @@ tutorial:
         url: /docs/test-tools/
       - title: "Using an FPGA"
         url: /docs/use-fpga/
-      - title: "Evaluating your Results"
-        url: /docs/evaluate/
       - title: "Contributing to PACO"
         url: /docs/contribute/
 
@@ -115,6 +113,4 @@ links:
         url: /docs/similar-projects/
       - title: "Related Work"
         url: /docs/related-work/
-      - title: "Publications"
-        url: /docs/publications/
 
