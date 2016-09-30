@@ -41,4 +41,4 @@ for each pixel two lookup instructions are executed. A lookup instruction takes 
 
 ### Example: Accelerate Gamma Correction with Lookup Table
 
-Our other example application, Gamma correction, was accelerated by a more modest 38%. For more details, check the [Gamma Evaluation](/paco-cpu/docs/eval-gamma/) page.*
+Our other example application, Gamma correction, was accelerated by a more modest 38%. For more details, check the [Gamma Evaluation](/paco-cpu/docs/eval-gamma/) page.
