@@ -78,7 +78,7 @@ We were suspicious of the rise in mean relative error with image size, so we dec
 
 ### Implementation<a id="#eval_gauss_alu"></a>
 
-This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other than that, it corresponds to the [native implementation](#Approximate-Gaussian-Filter-Evaluation).**TODO:** Add anchor 
+This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other than that, it corresponds to the [native implementation](#approximate-gaussian-filter-evaluation).**TODO:** Add anchor 
 
 [Linked: The complete code including a Makefile](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/alu-gaussian-application). 
 
@@ -93,7 +93,7 @@ This script iterates over a [Lenna](https://en.wikipedia.org/wiki/Lenna) image i
 - add.approx with 4 bits neglected, mul.approx not used -> ADD62.png
 - add.approx with 7 bits neglected, mul.approx with 4 bits neglected -> ADD60MUL62.png
 
-**Note:** The values after MUL and ADD in the image name correspond to the decimal value of the binary neglect masks defined in the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=tab:alutable2)**TODO**: Add link to table in Design Document
+**Note:** The values after MUL and ADD in the image name correspond to the decimal value of the binary neglect masks defined in the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=tab:alutable2).
 
 ### Results
 
