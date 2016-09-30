@@ -2,6 +2,9 @@
 title: "Concepts"
 permalink: /docs/concepts/
 excerpt: "Description of the Idea/Concepts."
+modified: 2016-09-30T15:54:02-04:00
+redirect_from:
+  - /theme-setup/
 ---
 
 {% include base_path %}
