@@ -89,12 +89,8 @@ documentation:
         url: /docs/developer-guide/
       - title: "Design Document"
         url: /docs/design-document/
-      - title: "Glossary"
-        url: /docs/glossary/
       - title: "FAQ"
         url: /docs/faq/
-      - title: "Troubleshooting"
-        url: /docs/troubleshoot/
 
 evaluation:
    - title : Evaluation
