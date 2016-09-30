@@ -14,7 +14,7 @@ Our most important decision was the selection of the CPU that we wanted to modif
 * an active community developing it
 * a novel, promising and (apparently!) working language for hardware definition: [Chisel](https://chisel.eecs.berkeley.edu/)
 
-## On the technology used in PACO
+## On the Technology used in PACO
 
 We tried to avoid reinventing the wheel but wanted to build on open-source projects that are state of the art without adding unnecessary complexity.
 
