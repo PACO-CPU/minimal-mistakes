@@ -14,3 +14,10 @@ To clone the entire project to your system:
 The `--recursive` flag saves you from cloning all subdirectories of the project manually. This, instead, downloads the entire content to your main directory.
 
 Or download the project from [here](https://github.com/PACO-CPU/paco-env.git)
+
+## Ready to use images
+We prepared images you can download to quickly check out PACO.
+You can find the images for:
+
+- FPGA bitstream [here](https://github.com/PACO-CPU/paco-env/raw/master/ready-to-run-images/fpga-bitstream/paco_core.bit)
+- Program binaries [here](https://github.com/PACO-CPU/paco-env/tree/master/ready-to-run-images/precompiles-programs)
