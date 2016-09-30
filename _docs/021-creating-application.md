@@ -126,7 +126,7 @@ Now you should have a binary ready to be run on an FPGA.
 ### 2.4 Run your program on the FPGA 
 For instructions on how you can run your program on the FPGA please take a look [here](/paco-cpu/docs/use-fpga/). 
 
-## 3. Approximate ALU Guide <a id="#3-approximate-alu-guide"></a>
+## 3. Approximate ALU Guide
 The PACO Approximate ALU approximates by neglecting some of the least significant bits of an operation such as add, sub, or mul. This effect can be accomplished only in certain applications. Since its not possible to automatically discern the variables that supports the approximation operation, you, as the programmer, need to annotate the variables as approximate. The next section will show you how to do just that.
 
 For this example we will use a  [Gaussian blur](https://en.wikipedia.org/wiki/Gaussian_blur) image filter with the following kernel matrix:
