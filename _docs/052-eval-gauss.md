@@ -14,10 +14,10 @@ Precise implementations of the Gaussian blur algorithms calculate this by moving
 
 We compare a precise implementation of the Gaussian blur algorithm with a 3x3 window (greyscale) to implementations using
 
-* the [approximate ALU](#eval_gauss_alu) **insert correct address**
-* the [Lookup Table](#approximate-alu-guide) **insert address**
+* the [approximate ALU](#evaluation-approximate-alu) **insert correct address**
+* the [Lookup Table](#evaluation-lookup-table) **insert address**
 
-## Evaluation: Lookup Table<a id="#eval_gauss_lookup"></a>
+## Evaluation: Lookup Table
 
 The Gaussian LUT implementation passes over the image twice: once with a 3x1 window in the horizonal direction to generate an intermediate image, then with a 1x3 window in the vertical to generate the final pixel value. The lookup table is fed with the 3 most significant bits from each pixel value in the window.
 
