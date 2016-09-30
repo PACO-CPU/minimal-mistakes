@@ -36,7 +36,7 @@ The application was run on a [ml605 FPGA](https://www.xilinx.com/products/boards
 The resulting approximate images were compared pixel by pixel to the output of the precise Gaussian filter implementation. Mean absolute and relative deviation were calculated from the differences and distributions of the absolute deviations were compiled for each image size.
 
 ### Results
-For a 256 by 256 pixel image the original:
+For a 256 by 256 pixel image, the original:
 
 <img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256.png" alt="Lenna original" width="512">
 
@@ -54,11 +54,24 @@ The Gaussian LUT speedup compared to the precise version was approximately 3, wi
 
 | Image size | LUT Speedup |
 |:-------:|:----------------:|
-| 64x64   | 2.9343642421        |
-| 128x128 | 3.0031788517        |
-| 192x192 | 3.0323924042        |
-| 256x256	| 3.0443438853        |
+| 64x64   | 2.934        |
+| 128x128 | 3.003        |
+| 192x192 | 3.032        |
+| 256x256	| 3.044        |
 
+In comparison of the resulting images we found the following mean absolute and relative errors of grey values (0-255):
+| Image size | Mean absolute error | Mean relative error |
+|:-------:|:----------------:|:----------------:|
+| 64x64\* |  n/a             |  0.04074    |
+| 128x128 |  6.427           |  0.06617    |
+| 192x192 |  6.587           |  0.06992    |
+| 256x256 |  6.537           |  0.07129    |
+
+\* Star image, so not comparable with Lenna images.
+
+We were suspicious of the rise in mean relative error with image size, so we decided to draw a histogram of error magnitudes:
+
+<img src="/paco-cpu/images/gauss_lut_distribution_abs_deviation.png" alt="Histogram error magnitude" width="550">
 
 ## Evaluation: Approximate ALU
 
