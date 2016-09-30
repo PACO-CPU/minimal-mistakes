@@ -2,9 +2,6 @@
 title: "Concepts"
 permalink: /docs/concepts/
 excerpt: "Description of the Idea/Concepts."
-modified: 2016-09-30T15:54:02-04:00
-redirect_from:
-  - /theme-setup/
 ---
 
 {% include base_path %}
@@ -39,7 +36,7 @@ These functional units
 * behave deterministically i.e, given the same inputs they always compute the same results 
 * addressed using special approximate instructions.
 
-<img src="/paco-cpu/images/PACO_core.png" alt="PACO core" width="400">
+<img src="/paco-cpu/images/PACO_core.png" alt="PACO core" width="400" style = "margin:30px">
 
 To prove that it is possible to integrate different approximate functional units in the PACO core, we have implemented:
 
