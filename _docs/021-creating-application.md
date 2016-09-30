@@ -111,8 +111,8 @@ For more information on other possible key/values please read [Annotate Code](/p
 ### 2.3 Compile your program 
 The basic steps to compile you program are (for more details, refer to [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs)):
 
-1. Compile you program using Clang. This will yield an llvm-ir file of your code and an input file to the lut-compiler.
-2. Use llc to convert the llvm-ir file into an assembly file. 
+1. Compile you program using Clang. This will yield an llvm-ir file of your code and an input file to the LUT-compiler.
+2. Use llc to convert the LLVM-IR file into an assembly file. 
 3. Invoke the lut-compiler on the input file to generate a configuration for the LUT.
 4. Use the lut-startup script with the configuration to create a startup code that loads the configuration.
 5. Link everything together into a binary.
