@@ -39,7 +39,7 @@ For both and libuuid lua you can use the newest version. If problems occur, use 
 $ python --version
 ```  
 
-#### Assumed you use a new installation of Ubuntu 16.04 LTS the following command will install the missing libaries for PACO:
+#### Assumed you use a new installation of Ubuntu 16.04 LTS the following command will install the missing liberaries for PACO:
 
 ```bash
 $ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev \
