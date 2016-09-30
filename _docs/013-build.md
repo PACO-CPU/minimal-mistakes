@@ -7,7 +7,7 @@ sidebar:
 ---
 
 {% include base_path %}
-Now that you have the [prerequisites]() installed and the project [downloaded](), let's build the toolchain so that
+Now that you have the prerequisites mentioned in [getting -started](https://paco-cpu.github.io/paco-cpu/docs/getting-started/) installed and the project [downloaded](https://paco-cpu.github.io/paco-cpu/docs/download/), let's build the toolchain so that
 you can use it.
 
 #### Quick Build
@@ -21,8 +21,7 @@ $ ./install.sh
 
 #### Building the Toolchain Step-by-Step
 
-If you have already built the entire project, you can go ahead and [run]() the project. Unless of course if you 
-want to learn about the parts of the toolchain that you just built, you can stick around. 
+If you have already built the entire project, you can go ahead and [run](https://paco-cpu.github.io/paco-cpu/docs/run/) the project. Unless of course if you want to learn about the parts of the toolchain that you just built, you can stick around. 
 
 These are the parts of the toolchain that needs to be build if you consider to do it manually:
 
@@ -37,12 +36,12 @@ These are the parts of the toolchain that needs to be build if you consider to d
 The RISCV-Toolchain consists of the gcc compiler, binutils and the riscv-tests and these
 need to be installed into the `paco-env/riscv-tools` tools directory.
 
-To do so, go to the `riscv-tools-src` directory and run the build script. 
+To do so, go to the `riscv-tools-src` directory and run the build script.  
 
 ```bash
 $ cd paco-env/riscv-tools-src
 $ ./build.sh
-```
+```  
 
 The gcc compiler is needed to . Binutils consists of an assembler and a linker. The assembler converts assembly language to machine or object code. The linker  Riscv-test ..
 
@@ -50,29 +49,27 @@ The gcc compiler is needed to . Binutils consists of an assembler and a linker. 
 
 Clang is . LLVM is a .
 
-In order to set them up, run the following code. 
+In order to set them up, run the following code.   
 
 ```bash
 $ cd paco-env/riscv-tools-src/riscv-llvm
 $ CC=gcc CXX=g++ ../configure --enable-targets=riscv --prefix=$RISCV
 $ make -jN && make install
-```
-#### Remember to replace N with the number of threads you wish to spawn.
+```  
+Attention: remember to replace N with the number of threads you want to spawn.
 
 This will install the clang compiler and the llvm tools into the `riscv-tools` directory.
-The flags --ebalbe-targets=riscv and --prefix=$RISCV configures the build so that the compiler is only build for the target RISCV, because other targets are not needed. This is to speed up the building process by skipping the not needed target builds.
+
+#### explain what the second and the third command does. for example the flag --enable-targets does something ...
 
 #### 3 LUT Compiler
-
-The following code installs the LUT compiler into the `riscv-tools` directory:
+If you decide to use our PACO's LUT to approximate functions, you will need our LUT compiler. The following code gets it installed into the `riscv-tools` directory:  
 
 ```bash
 $ cd paco-env/riscv-tools-src/riscv-lut-compiler
 $ make -jN && make install
-```
-#### Again remember to replace N with the number of threads you wish to spawn.
-
-The LUT compiler is needed to emit binary code to control the LUT hardware. This is not done by Clang/LLVM because of complex mathematical optimizations which were easier to implement without all checks and translations implemented in the normal compiler toolchain. 
+```  
+Attention: remember to replace N with the number of threads you want to spawn.
 
 #### 4 Python Libaries
 
@@ -92,9 +89,8 @@ This will install the RocketLib into the directory riscv-tools when you run it:
 ```bash
 $ cd paco-env/rocket-soc/rocket_soc/lib
 $ make -jN && make install
-```
-#### Again remember to replace N with the number of threads you wish to spawn.
-
+```  
+Attention: remember to replace N with the number of threads you want to spawn.  
 
 Congrats. From this point onwards your system should be prepared to run all the software tools of this
 environment. Hopefully you didn't even break a sweat!
