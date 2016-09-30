@@ -6,39 +6,32 @@ excerpt: "The results obtained in PACO with LUT and Approx ALU"
 
 {% include base_path %}
 
-### Measuring Improvement
-The stock Rocket core is compared to the approximate PACO core. The PACO core was not modified apart from integration of the approximate functional units and necessary changes to the decoder.
+### Measuring Improvements
+Improvements on the execution are measured by comparing the native Rocket core to the approximate PACO core. Modifications to the Rocket core was limited to the integration of the approximate functional units and its necessary changes to the decoder.
  
-We chose two different image processing tasks as benchmarks, [Gaussian blur](https://en.wikipedia.org/wiki/Gaussian_blur), which is a neighbourhood operation (with several parameters), and [Gamma correction](https://en.wikipedia.org/wiki/Gamma_correction), which is a point operation (with one). Primary advantage of using image processing benchmarks is the possibility of visual appraisal of result quality by humans. (In precise benchmarks, exact conformance of results is expected, here other result quality metrics are needed. Since many use cases for approximate computing results expect human consumption, visual appraisal seems fitting.)
+We chose two different image processing tasks as benchmarks: [Gaussian Blur](https://en.wikipedia.org/wiki/Gaussian_blur), a neighbourhood operation with several parameters, and [Gamma Correction](https://en.wikipedia.org/wiki/Gamma_correction), a point operation with a single parameter. The primary advantage of using image processing benchmarks is the possibility of visual appraisal of the quality of results by humans. (In precise benchmarks, exact conformance of results is expected whereas here, other quality metrics are required. Since the results of many approximate computing use cases expect human consumption, visual appraisal seems apt.)
 
-Both were used as test applications for both our approximate ALU and the Lookup Table, verifying their results stay within predicted error bounds and giving an impression of the effects of approximation for the human eye.
+Gaussian Blur and Gamma Correction were both used as test applications for the Approximate ALU and the Lookup Table. Let's look at some of the results obtained:
 
-### Example: Accelerate Gaussian Blur with Lookup Table
+### Accelerating Gaussian Blur with the Lookup Table
 
-An approximate implementation of the Gaussian algorithm is roughly 3 times as fast as a precise implementation. For more details, check the [Gaussian evaluation](/paco-cpu/docs/eval-gauss/) section.
+An approximate implementation of the Gaussian algorithm is roughly **3 times** faster than the precise implementation. The graph of the performance can be seen below,
 
  <img src="/paco-cpu/images/results/lut/gaussian_lut_speedup.png" alt="LUT speedup" width="500" height= "300" style = "margin:30px">
 
-The approximate result image is noticeably different from the precise version, but noise would certainly be filtered out.
-
-The following images from left to right: original image, image from the precise version and the image approximated. 
+Let's take a look at one of the example images evaluated.
 
 <div style = "display:flex; flex-direction:row; justify-content: space-around;" >
  <img src="/paco-cpu/images/results/lut/star/star_64x64.png" alt="LUT example" style = "margin:30px">
  <img src="/paco-cpu/images/results/lut/star/star_64x64_native.png" alt="LUT example native" style = "margin:30px">
  <img src="/paco-cpu/images/results/lut/star/star_64x64_lut.png" alt="LUT example lut" style = "margin:30px">
 </div>
-<img src="/paco-cpu/images/results/lut/LUT-design.png" alt="LUT core" width="700" style = "margin:30px">
 
-Since the number of possible input combinations is 2^(3\*3)=512 and the hardware Lookup Table has less entries, entries that contain the same output results must be combined. The LUT compiler does this for arithmetical functions with one parameter, in this case it was done manually. The AND-plane can now recognize input patterns and the OR-plane generates addresses for the memory containing the results.
+The leftmost image is the original image, the middle one is executely precisely and the rightmost, approximately. The resulting approximate image is quite noticeably different from the precise version however, it can be quite clearly perceived by the human eye without suffering from substantial quality loss, considering the speedup obtained. 
 
-In effect, instead of
+For more details, check the [Gaussian evaluation](/paco-cpu/docs/eval-gauss/) section.
 
-* a multiplication and an addition for each pixel in the Gauss filter neighborhood,
-* and a division at the end,
+### Accelerating Gamma Correction with the Lookup Table
 
-for each pixel two lookup instructions are executed. A lookup instruction takes only one cycle in the execution stage of the pipeline.
+The Gamma correction application was accelerated by a modest 38%. For more details of this, check the [Gamma Evaluation](/paco-cpu/docs/eval-gamma/) page.
 
-### Example: Accelerate Gamma Correction with Lookup Table
-
-Our other example application, Gamma correction, was accelerated by a more modest 38%. For more details, check the [Gamma Evaluation](/paco-cpu/docs/eval-gamma/) page.
