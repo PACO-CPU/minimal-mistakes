@@ -8,12 +8,13 @@ sidebar:
 
 {% include base_path %}
 
-Welcome to our Getting-started page where you can find the prerequists to use PACO and how to download, build and use the core and toolchain. Now lets make sure you have all the required prerequisites.
+The Getting Started pages are meant to help the user quickly setup the environment in order to use PACO. This page deals with the prerequisites required to setup, the subsequent pages dealing with how to download, build and use the core and the toolchain.
+
 
 ## Prerequisites
 PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your machine, please install them.  
 
-Assuming you use a freshly installed Ubuntu, the following command will install the missing liberaries for PACO:
+Assuming you use a freshly installed Debian-based Linux Operating System, the following command will install the missing libraries for PACO:
 
 ```bash
 $ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev \
@@ -34,11 +35,9 @@ $ sudo apt-get install uuid-dev
 $ lua -v
 ```  
   
-If you don't have it already you can download it from [here](https://www.lua.org/download.html).  
+If you don't have it already you can download it from [here](https://www.lua.org/download.html). If problems occur, use the tested versions for libuuid (2.20.1-5.lubuntu20.7) and lua (5.2.3-1).
 
-For both and libuuid lua you can use the newest version. If problems occur, use the tested versions for libuuid(2.20.1-5.lubuntu20.7) and lua(5.2.3-1).
-
-- Python is used to communicate with the core via the UART interface. Version 2.7.6 is known to work with our environment. You can check your version by using the command:
+- Python is used to communicate with the core via the UART interface. Version 3.X is known to work with our environment. You can check your version by using the command:
 
 ```bash
 $ python --version
@@ -46,8 +45,8 @@ $ python --version
 
 ### Installation on other systems
 
-while developing PACO, Ubuntu 16.04 LTS was used. All components are known to run on this distribution successfully. We suppose, but not guarantee, that other linux distributions might work as well.
+while developing PACO, Ubuntu 16.04 LTS was used. All components are known to run on this distribution successfully. We suppose, but not guarantee, that other linux distributions would work as well.
 
 ## Next step
 
-Now that you have all the prerequisites setup precisely [:wink], lets move on to [downloading](https://paco-cpu.github.io/paco-cpu/docs/download/) PACO on your machine.
+Now that you have all the prerequisites setup precisely, lets move on to [downloading](https://paco-cpu.github.io/paco-cpu/docs/download/) PACO on your machine.
