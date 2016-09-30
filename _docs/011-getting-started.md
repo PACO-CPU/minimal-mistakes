@@ -15,7 +15,9 @@ Welcome to our Getting-started page where you can find the prerequists to use PA
 ## Prerequisite
 PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your maschine, please install them.  
 
-- libuuid is a The libuuid library is used to generate unique identifiers. It is needed so that Clang and LLVM would work properly. *which version is needed?*. If you do not have it already, You can install it using:  
+#### If you already worked with the rocket core, you just have to check the following packages:
+
+- libuuid is a The libuuid library is used to generate unique identifiers. It is needed so that Clang and LLVM would work properly. You can use the newest version, if problems occurs, use the tested versions for libuuid(2.20.1-5.lubuntu20.7) and lua(5.2.3-1). If you do not have it already, You can install it using:  
 
 ```bash
 $ sudo apt-get install uuid-dev
@@ -29,11 +31,18 @@ $ lua -v
   
 If you don't have it already you can download it from [here](https://www.lua.org/download.html).
 
-- python is ... `python --version` checks the version running 
+- Python is used in the core implementation. Version 2.7.6 is tested wo work. You can check your version by using the command:
 
-### explain what the prerequisites are, how to check if they are already installed 
-### I think there are more prerequisites like Python and which version. please ask others
+```bash
+$ python --version
+```  
 
-You also need some disc space free on your machine. ### Give a quantity or leave this sentence out
+#### Assumed you use a new installation of Ubuntu 16.04 LTS the following command will install the missing libaries for PACO:
+
+```bash
+$ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev \
+libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf \
+libtool patchutils bc uuid-dev liblua5.2-dev
+``` 
 
 Now that you have all the prerequisites setup precisely [:wink], lets move on to [downloading](https://paco-cpu.github.io/paco-cpu/docs/download/) PACO on your machine.
