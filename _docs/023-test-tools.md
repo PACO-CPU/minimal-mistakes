@@ -80,5 +80,3 @@ $ /root/test-program
 ```sh
 $ /root/alu_verify.elf
 ```
-
-** Conclude **
