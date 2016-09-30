@@ -78,7 +78,7 @@ We were suspicious of the rise in mean relative error with image size, so we dec
 
 ### Implementation<a id="#eval_gauss_alu"></a>
 
-This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other than that, it corresponds to the [native implementation](#approximate-gaussian-filter-evaluation).**TODO:** Add anchor 
+This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other than that, it corresponds to the [native implementation](#approximate-gaussian-filter-evaluation). 
 
 [Linked: The complete code including a Makefile](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/alu-gaussian-application). 
 
