@@ -27,7 +27,7 @@ $  make CONFIG=PACOConfigCPP -jN
 $ make CONFIG=PACOCOnfigCPP -jN run-asm-tests
 ```
 
-To write your own test to the testsuite, look into the [riscv-tests](https://github.com/PACO-CPU/riscv-tests). A good example to start with is [add_approx.S](https://github.com/PACO-CPU/riscv-tests/blob/master/isa/rv64ui/add_approx.S). Once you added your own file, you need to rebuild the tests and add them to the [Makefrag](https://github.com/PACO-CPU/riscv-tests/blob/4019a9c000d7471cc5dca149fed206aae88fe35f/isa/rv64ui/Makefrag) of the same folder.
+To write your own test to the testsuite, look into the [riscv-tests](https://github.com/PACO-CPU/riscv-tests). A good example to start with is [add_approx.S](https://github.com/PACO-CPU/riscv-tests/blob/master/isa/rv64ui/add_approx.S). Once you added your own file, you need to rebuild the tests and add your addition to the [Makefrag](https://github.com/PACO-CPU/riscv-tests/blob/4019a9c000d7471cc5dca149fed206aae88fe35f/isa/rv64ui/Makefrag) of the same folder.
 
 **Note:** The C Emulator should only be used for the approximate ALU.
 
