@@ -39,7 +39,7 @@ and an approximated Gaussian blur version, created with a Lookup Table with 9 in
 
 <img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256_lut.png" alt="Lenna lut" width="508">
 
-[64x64](/paco-cpu/docs/results-064/), 128x128, 192x192 and 256x256 images were processed in the same way, each 20 times, and speedup was measured:
+[64x64](/paco-cpu/docs/results-064/), [128x128](/paco-cpu/docs/results-128/), [192x192](/paco-cpu/docs/results-192/) and 256x256 (above) images were processed in the same way, each 20 times, and speedup was measured:
 
 <img src="/paco-cpu/images/gaussian_lut_speedup.png" alt="Gaussian LUT Speedup graph" width="550">
 
