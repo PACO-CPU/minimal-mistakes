@@ -46,7 +46,7 @@ An extension to C/C++ languages has also been created that allows both expected 
  
  <img src="/paco-cpu/images/results/alu/approx-alu-pipeline.svg" alt="Approx ALU" width="500" height= "300" style = "margin:30px">
  
-The [design document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:alu) elaborates on the concept behind approximation using the ALU in detail.
+The [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:alu) elaborates on the concept behind approximation using the ALU in detail.
  
 ### A Lookup Table (LUT) 
 The Lookup Table unit allows an application to replace complex arithmetical functions with a segment-wise linear approximation of it (see Fig.2). It is created within the CPU pipeline and takes **only one cycle** in the execution stage of the CPU. 
@@ -61,7 +61,7 @@ Fig.2: The Lookup Table unit approximates arithmetic functions within segments. 
 
 Fig.3. Design of LUT as a part of the pipeline.
 
-To understand how LUT performs its magic refer to the [design document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut).
+To understand how LUT performs its magic refer to the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut).
 
 ## Extensions to the Compiler
 
@@ -81,7 +81,7 @@ In these parts the following is implemented:
 * compute the approximation level for the approximated ALU
 * depending of an annotation write into the binary either a new instruction or using an old one
 
-The concepts how to compute the approximation level for the approximate ALU is described in detail in the [design document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lang-instruction-approx).
+The concepts how to compute the approximation level for the approximate ALU is described in detail in the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lang-instruction-approx).
 
 ### LUT Compiler
 
