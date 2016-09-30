@@ -7,18 +7,18 @@ sidebar:
 ---
 {% include base_path %}
 
-### Approximate Gaussian Filter Evaluation
+### 1 Approximate Gaussian Filter Evaluation
 The Gaussian blur filter algorithm is used in image processing to smooth over noisy images. They generally generate a new color value for each pixel by incorporating the color values of neighboring pixels, weighted depending on the distance between pixel and neighbor.
 
 Precise implementations of the Gaussian blur algorithms calculate this by moving a sliding window over the image, adding up neighboring pixels (multiplied by weights).
 
 We compare a precise implementation of the Gaussian blur algorithm with a 3x3 window (greyscale) to implementations using
 
-* the [approximate ALU]() **insert address**
-* the [Lookup Table]() **insert address**
+* the [approximate ALU](#eval_gauss_alu) **insert correct address**
+* the [Lookup Table](#eval_gauss_lookup) **insert address**
 
-### Evaluation: Lookup Table
-**insert anchor**
+### 2 Evaluation: Lookup Table<a id="#eval_gauss_lookup"></a>
+
 The Gaussian LUT implementation passes over the image twice: once with a 3x1 window in the horizonal direction to generate an intermediate image, then with a 1x3 window in the vertical to generate the final pixel value. The lookup table is fed with the 3 most significant bits from each pixel value in the window.
 
 <img src="/paco-cpu/images/gauss_filter_grid.png" alt="Gaussian window" width="500">
@@ -43,9 +43,11 @@ and an approximated Gaussian blur version, created with a Lookup Table with 9 in
 
 <img src="/paco-cpu/images/gaussian_lut_speedup.png" alt="Gaussian LUT Speedup graph" width="550">
 
-### 3.1 Implementation
+## 3 Evaluation: Approximate ALU
 
-This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other then that, it corresponds to the [native implementation](anchor).**TODO:** Add anchor 
+### 3.1 Implementation<a id="#eval_gauss_alu"></a>
+
+This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other then that, it corresponds to the [native implementation](_top).**TODO:** Add anchor 
 
 The complete code including a makefile can be found [here](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/alu-gaussian-application). 
 
