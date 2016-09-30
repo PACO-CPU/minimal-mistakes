@@ -6,7 +6,7 @@ excerpt: "Description of the Idea/Concepts."
 
 {% include base_path %}
 
-## The PACO idea
+## The PACO Idea
 [Approximate computing](https://en.wikipedia.org/wiki/Approximate_computing) is a [steadily growing research topic](/paco-cpu/images/year_on_year_growth_approx.png) because other performance gains become [harder to reach](https://en.wikipedia.org/wiki/Dennard_scaling#Breakdown_of_Dennard_scaling_around_2006) while [applications](https://en.wikipedia.org/wiki/Computer_vision) [requiring](https://en.wikipedia.org/wiki/Image_processing) [less](https://en.wikipedia.org/wiki/Big_data) [than](https://en.wikipedia.org/wiki/Speech_recognition) [absolute](https://en.wikipedia.org/wiki/Machine_learning) [precision](https://en.wikipedia.org/wiki/Data_compression#Video) proliferate. The common goal is trading off accuracy or reliability for energy-savings, speed-up or computational latency reduction.
 
 Approximate computing concepts range from 
@@ -58,6 +58,3 @@ Fig.2: The Lookup Table unit approximates arithmetic functions within segments. 
 <img src="/paco-cpu/images/results/lut/LUT-design.png" alt="LUT core" width="700" style = "margin:30px">
 
 Fig.3. Design of LUT as a part of the pipeline.
- 
-
- 
