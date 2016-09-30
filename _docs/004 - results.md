@@ -18,7 +18,7 @@ Both were used as test applications for both our approximate ALU and the Lookup 
 
 ### Example: Accelerate Gaussian Blur with Lookup Table
 
-An approximate implementation of the Gaussian algorithm is roughly 3 times as fast as a precise implementation.
+An approximate implementation of the Gaussian algorithm is roughly 3 times as fast as a precise implementation. (Details) **TODO insert link to Gauss eval**
 
 (insert graph)
 
