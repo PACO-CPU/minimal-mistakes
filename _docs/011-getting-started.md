@@ -10,17 +10,19 @@ sidebar:
 
 # Getting started with PACO
 
-~~Welcome on the webpage of the project PACO. PACO is an implementation of a CPU core which contains approximate computing units. In the current state, it consits two approximation units. The first is an approximate ALU which can add, substract and multiply approximately, the second one is lookup table, which selects a precomputed output for a specific function. 
-The approximate ALU can be used to analyse approximation, the LUT also saves computation time up to be 3 times faster than a normal CPU would compute results. ~~
-
-### introduction to the getting started section not of PACO.
-The Getting Started guide helps you blah blah..
-Now lets make sure you have all the required prerequisites.
+Welcome to our Getting-started page where you can find the prerequists to use PACO and how to download, build and use the core and toolchain. Now lets make sure you have all the required prerequisites.
 
 ## Prerequisite
-PACO relies on [libuuid]() and [lua](), if they aren't already on your maschine, please install them. 
-- libuuid is a *blah blah (oneline)* It is needed for Clang and LLVM. *which version is needed?*
-- lua for the LUT Compiler....
+PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your maschine, please install them. 
+- libuuid is a The libuuid library is used to generate unique identifiers. It is needed so that Clang and LLVM would work properly. *which version is needed?*. If you do not have it already, You can install it using:
+```bash
+$ # sudo apt-get install uuid-dev
+```
+- Lua is a powerful, efficient, lightweight, embeddable scripting language. It is needed to compile your code to run on PACO's approximate LUT. You can check if lua is already installed on your machine using:
+```bash
+$ # lua -v
+```
+If you don't have it already you can download it from [here](https://www.lua.org/download.html).
 - python is ... `python --version` checks the version running 
 
 ### explain what the prerequisites are, how to check if they are already installed 
@@ -28,6 +30,4 @@ PACO relies on [libuuid]() and [lua](), if they aren't already on your maschine,
 
 You also need some disc space free on your machine. ### Give a quantity or leave this sentence out
 
-Now that you have all the prerequisites setup precisely [:wink], lets move on to [downloading]() PACO on your machine.
-
-### Provide links wherever required
+Now that you have all the prerequisites setup precisely [:wink], lets move on to [downloading](https://paco-cpu.github.io/paco-cpu/docs/download/) PACO on your machine.
