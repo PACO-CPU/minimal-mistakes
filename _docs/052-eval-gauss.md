@@ -33,7 +33,7 @@ The application was run on a [ml605 FPGA](https://www.xilinx.com/products/boards
 
 [64x64](/paco-cpu/docs/results-064/), [128x128](/paco-cpu/docs/results-128/), [192x192](/paco-cpu/docs/results-192/) and 256x256 (below) images were processed with the LUT Gaussian application, each 20 times. The speedup was measured by cycle-counting in comparison to the precise Gaussian filter implementation. Standard deviation of the runtime was calculated.
 
-The resulting approximate images were compared pixel by pixel to the output of the precise Gaussian filter implementation. Mean absolute and relative deviation was calculated from the differences and distributions of the deviations were compiled for each image size.
+The resulting approximate images were compared pixel by pixel to the output of the precise Gaussian filter implementation. Mean absolute and relative deviation were calculated from the differences and distributions of the absolute deviations were compiled for each image size.
 
 ### Results
 For a 256 by 256 pixel image the original:
@@ -49,6 +49,16 @@ and an approximated Gaussian blur version, created with a Lookup Table with 9 in
 <img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256_lut.png" alt="Lenna lut" width="508">
 
 <img src="/paco-cpu/images/results/lut/gaussian_lut_speedup.png" alt="Gaussian LUT Speedup graph" width="550">
+
+The Gaussian LUT speedup compared to the precise version was approximately 3, with slight improvements as image size rose. One standard deviation is marked in the graph but barely discernible.
+
+| Image size | LUT Speedup |
+|:-------:|:----------------:|
+| 64x64   | 2.9343642421        |
+| 128x128 | 3.0031788517        |
+| 192x192 | 3.0323924042        |
+| 256x256	| 3.0443438853        |
+
 
 ## Evaluation: Approximate ALU
 
