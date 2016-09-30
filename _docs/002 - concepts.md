@@ -62,3 +62,42 @@ Fig.2: The Lookup Table unit approximates arithmetic functions within segments. 
 Fig.3. Design of LUT as a part of the pipeline.
 
 To understand how LUT performs its magic refer to the [design document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut).
+
+## Extensions to the Compiler
+
+Since the additional hardware will be controlled by using annotations in C/C++ files, the compiler needs to be extended. 
+
+### Compiler Concept
+
+The compiler allows to implement new instructions and to add extensions for using annotations. Since the implementation of the compiler is quite complex and hard to extend without creating crashes by some side effects, the most complex part of our additions to the compiler have been outsourced to a new program, the LUT Compiler. The LUT compiler is used for compile the functions which will be approximated by using the LUT hardware. All other extensions are done in Clang, LLVM and GNU-Binutils. 
+
+### Extensions implemented in Clang, LLVM and GNU-Binutils
+
+In these parts the following is implemented:
+
+* parsing of the annotations
+* interfacing with the LUT compiler via writing an input file for the LUT Compiler
+* processing semantic checs of the annotations
+* compute the approximation level for the approximated ALU
+* depending of an annotation write into the binary either a new instruction or using an old one
+
+The concepts how to compute the approximation level for the approximate ALU is described in detail in the [design document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lang-instruction-approx).
+
+### LUT Compiler
+
+The LUT Compiler is used to write the LUT configuration used for the approximated functions. This contains serveral mathematical methods to implement different approximation techniques. These techniques include configuring the LUT hardware that way that it fits to the concepts the programmer annoted in the code. The selections the programmer can set are:
+
+* selecting the bounds where the function is needed to be approximated (values below the lower bound will have the value of the lowest bound, equivalent to values higher than the upper bound)
+* selecting the number of segments (higher numbers are more precise)
+* selecting the segmentation strategy (see Fig.4), functions are more precise in regions where more segments are
+* selecting the approximation strategy(see Fig.5)
+
+The output of the LUT Compiler will be produced by putting it into a format, Clang/LLVM can deal with. The output then is a binary file which will set the LUT hardware configuration by using the startup script written for the rocket core. 
+
+<img src="/paco-cpu/images/ltc-segmentation-examples.svg" alt="ltc-segmentation-examples" width="400" style = "margin:30px">
+
+Fig.4. Examples of segmentation strategies.
+
+<img src="/paco-cpu/images/ltc-approximation-examples.svg" alt="ltc-approximation-examples" width="400" style = "margin:30px">
+
+Fig.5. Examples of approximation strategies.
