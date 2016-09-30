@@ -14,7 +14,7 @@ In order to load and run your applications on an FPGA, a flashing tool named as 
 
 ** introduce the process of synthesis using Xilinx ISE also in a line, the way flashing tool was introduced before**
 
-- If you are using the FPGA for the very first time, start from [here](#Installing Xilinx and starting ISE)
+- If you are using the FPGA for the very first time, start from [here](#Installing-Xilinx-and-starting-ISE)
 - If you already have Xilinx tools, start from [here](#Prerequisites)
 
 
