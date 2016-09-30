@@ -93,7 +93,7 @@ This script iterates over a [Lenna](https://en.wikipedia.org/wiki/Lenna) image i
 - add.approx with 4 bits neglected, mul.approx not used -> ADD62.png
 - add.approx with 7 bits neglected, mul.approx with 4 bits neglected -> ADD60MUL62.png
 
-**Note:** The values after MUL and ADD in the image name correspond to the decimal value of the binary neglect masks defined in the [Design Document]()**TODO**: Add link to table in Design Document
+**Note:** The values after MUL and ADD in the image name correspond to the decimal value of the binary neglect masks defined in the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=tab:alutable2)**TODO**: Add link to table in Design Document
 
 ### Results
 
