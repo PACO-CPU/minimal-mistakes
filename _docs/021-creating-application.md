@@ -1,6 +1,6 @@
 ---
 title: "Creating your Application"
-permalink: /docs/create-application
+permalink: /docs/create-application/
 excerpt: "Creating your Application."
 sidebar:
   nav: "tutorial"
