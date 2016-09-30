@@ -10,9 +10,7 @@ sidebar:
 
 This guide gives you step by step instructions on how to run your application on an FPGA. 
 
-In order to load and run your applications on an FPGA, a flashing tool named as **riscv-uart-flash** is written in **where can I find it?**. This tool communicates with the FPGA via an UART port, loads the binary and obtains the result back from the FPGA. 
-
-** introduce the process of synthesis using Xilinx ISE also in a line, the way flashing tool was introduced before**
+In order to load and run your applications on an FPGA, a flashing tool named as **riscv-uart-flash** is written. This tool communicates with the FPGA via an UART port, loads the binary and obtains the result back from the FPGA. 
 
 - If you are using the FPGA for the very first time, start from [here](#Installing-Xilinx-and-starting-ISE)
 - If you already have Xilinx tools, start from [here](#Prerequisites)
@@ -53,4 +51,4 @@ $ riscv-uart-flash -i prog.elf -w
 
 wherein **riscv-uart-flash** is the flashing tool obtained from the PACO environment, **prog.elf** is your program and the argument **-w** asks the flashing tool to continue executing until it receives a terminating signal from the program running on the FPGA.
 
-In order to obtain the data back from the FPGA and writing data into FPGA, your application should use appropriate functions **name the functions atleast **. For a detailed description follow the [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:communicate-with-prog).
+In order to obtain the data back from the FPGA and writing data into FPGA, your application should use appropriate functions. For a detailed description follow the [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:communicate-with-prog).
