@@ -10,7 +10,7 @@ sidebar:
 Now that you have the prerequisites mentioned in [getting -started](https://paco-cpu.github.io/paco-cpu/docs/getting-started/) installed and the project [downloaded](https://paco-cpu.github.io/paco-cpu/docs/download/), let's build the toolchain so that
 you can use it.
 
-#### Quick Build
+### Quick Build
 
 You can build the entire project by using the install script.
 
@@ -19,7 +19,7 @@ $ cd paco-env
 $ ./install.sh
 ```
 
-#### Building the Toolchain Step-by-Step
+### Building the Toolchain Step-by-Step
 
 If you have already built the entire project, you can go ahead and [run](https://paco-cpu.github.io/paco-cpu/docs/run/) the project. Unless of course if you want to learn about the parts of the toolchain that you just built, you can stick around. 
 
@@ -31,7 +31,7 @@ These are the parts of the toolchain that needs to be build if you consider to d
 4. Python Libaries
 5. Rocket Libaries
 
-#### 1 RISCV-Toolchain
+### 1 RISCV-Toolchain
 
 The RISCV-Toolchain consists of the gcc compiler, binutils and the riscv-tests and these
 need to be installed into the `paco-env/riscv-tools` tools directory.
@@ -45,7 +45,7 @@ $ ./build.sh
 
 The GCC compiler can be used to compile non approximate code. Some GCC libaries are needed as well to run GNU-Binutils. Binutils consists of an assembler and a linker. The assembler converts assembly language to machine or object code. The linker finally links the binary output files to generate a single executable. Riscv-test contains test programs to make sure the rocket core has been implemented correctly. 
 
-#### 2 Clang and LLVM
+### 2 Clang and LLVM
 
 Clang is a compiler front end for the programming languages C, C++ and many others. LLVM is a collection of modular and reusable compiler and toolchain technologies used to develop compiler front ends and back ends. 
 
@@ -61,7 +61,7 @@ Attention: remember to replace N with the number of threads you want to spawn.
 This will install the clang compiler and the llvm tools into the `riscv-tools` directory.
 The flags of the `configure` command sets the make configuration, so that the code is only built for target RISCV. This prevents building for other targets that are not needed, and hence saves disk space and speeds up the building process a bit.
 
-#### 3 LUT Compiler
+### 3 LUT Compiler
 If you decide to use our PACO's LUT to approximate functions, you will need our LUT compiler. The following code gets it installed into the `riscv-tools` directory:  
 
 ```bash
@@ -70,7 +70,7 @@ $ make -jN && make install
 ```  
 Attention: remember to replace N with the number of threads you want to spawn.
 
-#### 4 Python Libaries
+### 4 Python Libaries
 
 Python liberaries are needed for our software tool that downloads code to the FPGA and communicates with it via UART. To install the python libaries use the following command:
 
@@ -80,9 +80,7 @@ $ make install
 ```
 This installs the python libraries into the `riscv-tools` directory.
 
-#### 5 Rocket Libaries
-
-#### Again what are the rocket libraries? Why do we need them?
+### 5 Rocket Libaries
 
 RocketLib contains liberaries essential for the communication between programs running on the FPGA and the machine attached. This will install the RocketLib into the directory riscv-tools:
 
