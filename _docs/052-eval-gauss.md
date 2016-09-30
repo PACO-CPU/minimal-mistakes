@@ -8,7 +8,7 @@ sidebar:
 {% include base_path %}
 
 ## Approximate Gaussian Filter Evaluation
-The Gaussian blur filter algorithm is used in image processing to smooth over noisy images. They generally generate a new color value for each pixel by incorporating the color values of neighboring pixels, weighted depending on the distance between pixel and neighbor.
+The [Gaussian Blur](https://en.wikipedia.org/wiki/Gaussian_blur) filter algorithm is used in image processing to smooth over noisy images. They generally generate a new color value for each pixel by incorporating the color values of neighboring pixels, weighted depending on the distance between pixel and neighbor.
 
 Precise implementations of the Gaussian blur algorithms calculate this by moving a sliding window over the image, adding up neighboring pixels (multiplied by weights).
 
@@ -78,7 +78,7 @@ We were suspicious of the rise in mean relative error with image size, so we dec
 
 ### Implementation<a id="#eval_gauss_alu"></a>
 
-This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other then that, it corresponds to the [native implementation](_top).**TODO:** Add anchor 
+This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other than that, it corresponds to the [native implementation](#Approximate-Gaussian-Filter-Evaluation).**TODO:** Add anchor 
 
 [Linked: The complete code including a Makefile](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/alu-gaussian-application). 
 
