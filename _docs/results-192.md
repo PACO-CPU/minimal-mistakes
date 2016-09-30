@@ -4,7 +4,7 @@ permalink: /docs/results-192/
 excerpt: "Visual comparison of 192x192 images."
 ---
 
-For a 128 by 128 pixel image the original:
+For a 192 by 192 pixel image the original:
 
 <img src="/paco-cpu/images/results/lut/lenna_192/lenna_192x192.png" alt="Lenna original" width="256">
 
