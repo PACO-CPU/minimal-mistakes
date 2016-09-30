@@ -1,3 +1,9 @@
+---
+title: "Star image comparison"
+permalink: /docs/results-064/
+excerpt: "Visual comparison of 64x64 images."
+---
+
 For a 64 by 64 pixel image the original:
 
 <img src="/paco-cpu/images/results/lut/star/star_64x64.png" alt="Star original" width="128">
