@@ -15,13 +15,17 @@ Welcome to our Getting-started page where you can find the prerequists to use PA
 ## Prerequisite
 PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your maschine, please install them. 
 - libuuid is a The libuuid library is used to generate unique identifiers. It is needed so that Clang and LLVM would work properly. *which version is needed?*. If you do not have it already, You can install it using:  
+
 ```bash
-$ # sudo apt-get install uuid-dev
+$ sudo apt-get install uuid-dev
 ```  
-- Lua is a powerful, efficient, lightweight, embeddable scripting language. It is needed to compile your code to run on PACO's approximate LUT. You can check if lua is already installed on your machine using:  
+    
+- Lua is a powerful, efficient, lightweight, embeddable scripting language. It is needed to compile your code to run on PACO's approximate LUT. You can check if lua is already installed on your machine using: 
+
 ```bash
-$ # lua -v
+$ lua -v
 ```  
+  
 If you don't have it already you can download it from [here](https://www.lua.org/download.html).
 - python is ... `python --version` checks the version running 
 
