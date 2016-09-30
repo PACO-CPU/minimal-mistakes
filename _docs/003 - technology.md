@@ -7,12 +7,12 @@ excerpt: "Description regarding the technology used in PACO"
 {% include base_path %}
 
 ## The CPU of Choice
-Our most important decision was the selection of the CPU that we wanted to modify for the PACO core. The PACO group surveyed several available CPU specifications and chose a [RISC V](https://riscv.org/) implementation - the [Rocket CPU](https://github.com/ucb-bar/rocket). The reason for the Rocket is because it offered
+Our most important decision was the selection of the CPU that we wanted to modify for the PACO core. The PACO group surveyed several available CPU specifications and chose a [RISC V](https://riscv.org/) implementation - the [Rocket CPU](https://github.com/ucb-bar/rocket). We decided to use the Rocket is because it offered
 
 * a current open source CPU design
 * a diverse and powerful set of open source tools (including Spike, gdb, LLVM, binutils) 
 * an active community developing it
-* a novel, promising and (apparently!) working language for hardware definition: [Chisel](https://chisel.eecs.berkeley.edu/)
+* a novel, promising and apparently working(!) language for hardware definition: [Chisel](https://chisel.eecs.berkeley.edu/)
 
 ## On the Technology used in PACO
 
