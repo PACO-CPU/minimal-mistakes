@@ -14,4 +14,4 @@ The Paderborn CPU Core for Approximate Computing (PACO) is a CPU that can comput
 * [How much speedup can I achieve? (Results)](/paco-cpu/docs/results/)
 
 ### Origin
-PACO has been created at the University of Paderborn by a group of Master's students supervised by Prof. Christian Plessl and Dr. Paul Kaufmann. The code base is open source and builds on [other open source projects](/paco-cpu/docs/technology#opensourceprojects).
+PACO has been created at the University of Paderborn by a group of Master's students supervised by Prof. Christian Plessl and Dr. Paul Kaufmann. The code base is open source and builds on [other open source projects](/paco-cpu/docs/technology/#on-the-technology-used-in-paco).
