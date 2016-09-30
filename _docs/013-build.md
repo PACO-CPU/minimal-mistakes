@@ -7,7 +7,7 @@ sidebar:
 ---
 
 {% include base_path %}
-Now that you have the prerequisites mentioned in [getting -started](https://paco-cpu.github.io/paco-cpu/docs/getting-started/) installed and the project [downloaded](https://paco-cpu.github.io/paco-cpu/docs/download/), let's build the toolchain so that
+Now that you have the prerequisites mentioned in [getting-started](https://paco-cpu.github.io/paco-cpu/docs/getting-started/) installed and the project [downloaded](https://paco-cpu.github.io/paco-cpu/docs/download/), let's build the toolchain so that
 you can use it.
 
 ## Quick Build
@@ -59,7 +59,7 @@ $ make -jN && make install
 Attention: remember to replace N with the number of threads you want to spawn.
 
 This will install the clang compiler and the llvm tools into the `riscv-tools` directory.
-The flags of the `configure` command sets the make configuration, so that the code is only built for target RISCV. This prevents building for other targets that are not needed, and hence saves disk space and speeds up the building process a bit.
+The flags of the `configure` command set the make configuration, so that the code is only built for target RISCV. This prevents building for other targets that are not needed, and hence saves disk space and speeds up the building process a bit.
 
 ### 3 LUT Compiler
 If you decide to use our PACO's LUT to approximate functions, you will need our LUT compiler. The following code gets it installed into the `riscv-tools` directory:  
@@ -70,9 +70,9 @@ $ make -jN && make install
 ```  
 Attention: remember to replace N with the number of threads you want to spawn.
 
-### 4 Python Libaries
+### 4 Python Liberaries
 
-Python liberaries are needed for our software tool that downloads code to the FPGA and communicates with it via UART. To install the python libaries use the following command:
+Python liberaries are needed for our software tool that downloads code to the FPGA and communicates with it via UART. To install the python liberaries use the following command:
 
 ```bash
 $ cd paco-env/riscv-tools-src/py
