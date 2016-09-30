@@ -13,11 +13,11 @@ sidebar:
 Welcome to our Getting-started page where you can find the prerequists to use PACO and how to download, build and use the core and toolchain. Now lets make sure you have all the required prerequisites.
 
 ## Prerequisite
-PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your maschine, please install them.  
+PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your machine, please install them.  
 
 #### If you already worked with the rocket core, you just have to check the following packages:
 
-- libuuid is a The libuuid library is used to generate unique identifiers. It is needed so that Clang and LLVM would work properly. You can use the newest version, if problems occurs, use the tested versions for libuuid(2.20.1-5.lubuntu20.7) and lua(5.2.3-1). If you do not have it already, You can install it using:  
+- libuuid is used to generate unique identifiers. It is needed so that Clang and LLVM would work properly. If you do not have it already, You can install it using:  
 
 ```bash
 $ sudo apt-get install uuid-dev
@@ -29,9 +29,11 @@ $ sudo apt-get install uuid-dev
 $ lua -v
 ```  
   
-If you don't have it already you can download it from [here](https://www.lua.org/download.html).
+If you don't have it already you can download it from [here](https://www.lua.org/download.html).  
 
-- Python is used in the core implementation. Version 2.7.6 is tested wo work. You can check your version by using the command:
+For both and libuuid lua you can use the newest version. If problems occur, use the tested versions for libuuid(2.20.1-5.lubuntu20.7) and lua(5.2.3-1).
+
+- Python is used in the core implementation. Version 2.7.6 is known to work with our environment. You can check your version by using the command:
 
 ```bash
 $ python --version
@@ -47,7 +49,7 @@ libtool patchutils bc uuid-dev liblua5.2-dev
 
 #### Installation on other systems
 
-We suppose to use Ubuntu 16.04 LTS where all components are checked to run successful. You are free to use other linux distributions as well. For example parts of PACO has been tested to run successful on Arch Linux. 
+We suppose you use Ubuntu 16.04 LTS where all components are checked to run successfully. You are free to use other linux distributions as well. For example parts of PACO has been tested to run successful on Arch Linux. 
 
 #### Next step
 
