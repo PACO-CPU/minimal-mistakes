@@ -16,7 +16,7 @@ Alright! Let's get started!
 
 ## 1. Decide on the Approximate Component to Use
 - Lookup Table (LUT) [start](#2-lut-guide)
-- Approximate ALU [start](/paco-cpu/docs/create-application#3-approximate-alu-guide)
+- Approximate ALU [start](#approximate-alu-guide)
 
 ## 2. LUT Guide
 The Lookup Table (LUT) is a functional unit residing in the CPU pipeline and can be imagined as a software lookup table on crack. It's main purpose is to approximate any derivable function. To visualize it, let's take a look at the graph of a function:
