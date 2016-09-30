@@ -7,13 +7,13 @@ sidebar:
 ---
 {% include base_path %}
 
-## Evaluation
+Choosing suitable benchmarks to test the toolchain and the PACO core relied on several factors. 
 
-Many common benchmarks expect more than the very limited amount of RAM available on our synthesis of the Rocket SoC for the [ml605 FPGA](https://www.xilinx.com/products/boards-and-kits/ek-v6-ml605-g.html). We deliberated about choice of existing benchmarks or writing our own, and convinced ourselves that a priority for approximate computing benchmarks should be human assessibility: Many use cases of approximate computing have in common that imprecision is tolerable because humans will not notice differences.
+- Several common benchmarks expect more RAM than the limited amount available on our synthesis of the Rocket SoC for the [ml605 FPGA](https://www.xilinx.com/products/boards-and-kits/ek-v6-ml605-g.html).
+- The use cases of approximate computing require tolerance towards imprecision since humans will not be able to notice differences i.e, human assessibility.
 
-Governed by these two guidelines, we decided to write our own (small) image processing benchmarks:
+Governed by these two guidelines, we decided to write our own image processing benchmarks:
 
-* a [Gaussian blur image filter application](/paco-cpu/docs/eval-gauss/) and
-* a [Gamma correction image filter application](/paco-cpu/docs/eval-gamma/).
+* A [Gaussian blur image filter application](/paco-cpu/docs/eval-gauss/) 
+* A [Gamma correction image filter application](/paco-cpu/docs/eval-gamma/).
 
-They have different demands on a CPU: One needs only one input per calculation, the other needs several (neighborhood operation). One only needs basic ALU functions, the other is arithmetically more complex. 
