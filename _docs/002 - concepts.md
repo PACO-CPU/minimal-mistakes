@@ -41,7 +41,7 @@ These functional units
 To prove that it is possible to integrate different approximate functional units in the PACO core, we have implemented:
 
 ### An Approximate ALU  
-The PACO Approximate ALU allows one to experiment with different degrees of approximation for approximate applications rather than providing energy savings or speedup as compared to the standard ALU. The ALU ignores a certain number of least significant bits of its inputs depending on the degree of approximation specified in the instruction.
+The PACO Approximate ALU allows one to experiment with different degrees of approximation for approximate applications, rather than providing energy savings or speedup compared to the standard ALU. The ALU ignores a certain number of least significant bits of its inputs depending on the degree of approximation specified in the instruction.
 An extension to C/C++ languages has also been created that allows both expected precision of inputs and minimum precision boundaries of outputs to be specified. The PACO compiler determines the most approximation possible without violating the output precision boundaries.
  
  <img src="/paco-cpu/images/results/alu/approx-alu-pipeline.svg" alt="Approx ALU" width="500" height= "300" style = "margin:30px">
@@ -49,9 +49,9 @@ An extension to C/C++ languages has also been created that allows both expected 
 The [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:alu) elaborates on the concept behind approximation using the ALU in detail.
  
 ### A Lookup Table (LUT) 
-The Lookup Table unit allows an application to replace complex arithmetical functions with a segment-wise linear approximation of it (see Fig.2). It is created within the CPU pipeline and takes **only one cycle** in the execution stage of the CPU. 
+The Lookup Table unit allows an application to replace complex arithmetical functions with a segment-wise linear approximations of them (see Fig.2). It is integrated in the CPU pipeline and takes **only one cycle** in the execution stage of the CPU. 
 
-The LUT accepts inputs from upto three registers. It can be configured at runtime to evaluate upto 9 bits from these registers to determine the segment that has be interpolated. Then, some input bits can be multiplied with the segment's slope and finally an offset is added to calculate the result of the lookup instruction. The design of the Lookup Table is shown in Fig.3.
+The LUT accepts inputs from up to three registers. It can be configured at runtime to evaluate up to 9 bits from these registers to determine the segment that has be interpolated. Also, some input bits can be multiplied with the segment's slope and finally an offset is added to calculate the result of the lookup instruction. The design of the Lookup Table is shown in Fig.3.
  
 <img src="/paco-cpu/images/lut-function-linear.png" alt="lut-function" width="400" style = "margin:30px">
 
@@ -61,13 +61,13 @@ Fig.2: The Lookup Table unit approximates arithmetic functions within segments. 
 
 Fig.3. Design of LUT as a part of the pipeline.
 
-To understand how LUT performs its magic refer to the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut).
+More detail can be found in the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut).
 
 ## PACO Compiler Extensions
 
 In order to create approximate applications, programmers must be able to control the level of approximation in their applications. The compiler must then be capable of translating this code to instructions that controls the approximate functional units. This not only requires special annotations but also new instructions.  
 
-The PACO Toolchain consists of CLANG capable of handling special annotations, translating this C code into an Intermediate Representation(IR). This IR is consumed by LLVM to create assembly code. Binutils then converts assembly to maschine level representation that can be loaded and run on the FPGA or an emulator. Besides this, the special annotations are used to create a configuration for the LUT Core by the **LUT Compiler**. 
+The PACO Toolchain consists of CLANG capable of handling special annotations, translating this C code into an Intermediate Representation(IR). This IR is consumed by LLVM to create assembly code. Binutils then converts assembly to machine level representation that can be loaded and run on the FPGA or an emulator. Besides this, the special annotations are used to create a configuration for the LUT Core by the **LUT Compiler**. 
 
 It is useful if the compiler can at least try to predict consequences of previous arithmetical operations on later ones. This prediction is of course limited because [small changes can have hard-to-predict effects in some functions](https://en.wikipedia.org/wiki/Numerical_stability).
 
