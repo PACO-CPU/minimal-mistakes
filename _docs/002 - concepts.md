@@ -94,10 +94,10 @@ The LUT Compiler is used to write the LUT configuration used for the approximate
 
 The output of the LUT Compiler will be produced by putting it into a format, Clang/LLVM can deal with. The output then is a binary file which will set the LUT hardware configuration by using the startup script written for the rocket core. 
 
-<img src="/paco-cpu/images/ltc-segmentation-examples.svg" alt="ltc-segmentation-examples" width="400" style = "margin:30px">
+<img src="/paco-cpu/images/ltc-segmentation-examples.png" alt="ltc-segmentation-examples" width="400" style = "margin:30px">
 
 Fig.4. Examples of segmentation strategies.
 
-<img src="/paco-cpu/images/ltc-approximation-examples.svg" alt="ltc-approximation-examples" width="400" style = "margin:30px">
+<img src="/paco-cpu/images/ltc-approximation-examples.png" alt="ltc-approximation-examples" width="400" style = "margin:30px">
 
 Fig.5. Examples of approximation strategies.
