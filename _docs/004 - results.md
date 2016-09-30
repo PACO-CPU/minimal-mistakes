@@ -18,26 +18,10 @@ Both were used as test applications for both our approximate ALU and the Lookup 
 
 ### Example: Accelerate Gaussian Blur with Lookup Table
 
-(insert images: traveling windows for standard gaussian, LUT gaussian)
+An approximate implementation of the Gaussian algorithm is roughly 3 times as fast as a precise implementation.
 
-Only the 3 most significant bits of each pixel in the window are fed into the lookup table to first look-up an intermediate result for the horizontal traveling window. Another lookup from the intermediate image returns the final value of each pixel.
+(insert graph)
 
-(insert figure: LUT HW schematic)
+The approximate result image is noticeably different from the precise version, but noise would certainly be filtered out.
 
-Since the number of possible input combinations is 2^(3\*3)=512 and the hardware Lookup Table has less entries, entries that contain the same output results must be combined. The LUT compiler does this for arithmetical functions with one parameter, in this case it was done manually. The AND-plane can now recognize input patterns and the OR-plane generates addresses for the memory containing the results.
-
-Original image:
-
-(insert Lenna images)
-
-This is the output of a precise Gaussian blur algorithm:
-
-This is the output of an approximate Gaussian blur algorithm using the lookup table:
-
-The performance gains:
-(insert speedup graph for Gaussian LUT)
-
-
-ALU?
-
-(insert a checkerboard image with different parameters for Gaussian ALU, maybe small with a link to the full image)
+(insert original image, precise image, approximate image)
