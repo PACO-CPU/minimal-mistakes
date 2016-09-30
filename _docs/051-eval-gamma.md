@@ -12,8 +12,6 @@ It takes each pixel of an image and exponentiates it with a constant - the Gamma
 the result of which is multiplied with a normalization factor to yield the
 output pixel value.
 
-** state the results first to inspire the readers to carry on **
-
 ## Implementation
 Gamma correction can be implemented in a number of ways. For demonstrating and
 evaluating the PACO LUT core, three implementations were used in comparison.
@@ -22,7 +20,6 @@ in total.
 The implementation itself uses a gamma exponent of 1.99 and a normalization
 factor of 1.   
 
-** write the formula substituted with the values **
 
 ### PACO LUT implementation
 The PACO LUT implementation uses a lookup-table of 128 values and perfoms
