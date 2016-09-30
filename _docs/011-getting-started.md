@@ -13,7 +13,14 @@ Welcome to our Getting-started page where you can find the prerequists to use PA
 ## Prerequisites
 PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your machine, please install them.  
 
-#### If you already worked with the rocket core, you just have to check the following packages:
+Assuming you use a freshly installed Ubuntu, the following command will install the missing liberaries for PACO:
+
+```bash
+$ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev \
+libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf \
+libtool patchutils bc uuid-dev liblua5.2-dev
+``` 
+In addition, you will need the following tools:
 
 - libuuid is used to generate unique identifiers. It is needed so that Clang and LLVM would work properly. If you do not have it already, You can install it using:  
 
@@ -37,15 +44,7 @@ For both and libuuid lua you can use the newest version. If problems occur, use 
 $ python --version
 ```  
 
-Assumed you use a new installation of Ubuntu the following command will install the missing liberaries for PACO:
-
-```bash
-$ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev \
-libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf \
-libtool patchutils bc uuid-dev liblua5.2-dev
-``` 
-
-## Installation on other systems
+### Installation on other systems
 
 while developing PACO, Ubuntu 16.04 LTS was used. All components are known to run on this distribution successfully. We suppose, but not guarantee, that other linux distributions might work as well.
 
