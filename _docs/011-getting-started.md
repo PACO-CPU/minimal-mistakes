@@ -49,7 +49,7 @@ libtool patchutils bc uuid-dev liblua5.2-dev
 
 #### Installation on other systems
 
-We suppose you use Ubuntu 16.04 LTS where all components are checked to run successfully. You are free to use other linux distributions as well. For example parts of PACO has been tested to run successful on Arch Linux. 
+We suppose you use Ubuntu 16.04 LTS where all components are known to run successfully. You are free to use other linux distributions as well. For example parts of PACO has been tested to run successful on Arch Linux. 
 
 #### Next step
 
