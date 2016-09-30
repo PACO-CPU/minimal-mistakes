@@ -49,7 +49,7 @@ An extension to C/C++ languages has also been created that allows both expected 
 ## A Lookup Table (LUT) 
 The Lookup Table unit allows an application to replace complex arithmetical functions with a segment-wise linear approximation of it (see Fig.2). It is created within the CPU pipeline and takes **only one cycle** in the execution stage of the CPU. 
 
-The LUT accepts inputs from upto three registers. It can be configured at runtime to evaluate upto 9 bits from these registers to determine the segment that has be interpolated. Then, some input bits can be multiplied with the segment's slope and finally an offset is added to calculate the result of the lookup instruction. The design of the Lookup Table is shown in the figure 3.
+The LUT accepts inputs from upto three registers. It can be configured at runtime to evaluate upto 9 bits from these registers to determine the segment that has be interpolated. Then, some input bits can be multiplied with the segment's slope and finally an offset is added to calculate the result of the lookup instruction. The design of the Lookup Table is shown in Fig.3.
  
 <img src="/paco-cpu/images/lut-function-linear.png" alt="lut-function" width="400" style = "margin:30px">
 
