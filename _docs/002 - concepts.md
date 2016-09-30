@@ -10,15 +10,16 @@ redirect_from:
 {% include base_path %}
 
 ### The PACO idea
-[Approximate computing](https://en.wikipedia.org/wiki/Approximate_computing) is a [steadily growing research topic](/paco-cpu/images/year_on_year_growth_approx.png) because other performance gains become [harder to reach](https://en.wikipedia.org/wiki/Dennard_scaling#Breakdown_of_Dennard_scaling_around_2006) while [applications](https://en.wikipedia.org/wiki/Computer_vision) [requiring](https://en.wikipedia.org/wiki/Image_processing) [less](https://en.wikipedia.org/wiki/Big_data) [than](https://en.wikipedia.org/wiki/Speech_recognition) [absolute](https://en.wikipedia.org/wiki/Machine_learning) [precision](https://en.wikipedia.org/wiki/Data_compression#Video) proliferate. Common goal is trading off accuracy or reliability for energy-savings, speed-up or computation latency reduction.
+[Approximate computing](https://en.wikipedia.org/wiki/Approximate_computing) is a [steadily growing research topic](/paco-cpu/images/year_on_year_growth_approx.png) because other performance gains become [harder to reach](https://en.wikipedia.org/wiki/Dennard_scaling#Breakdown_of_Dennard_scaling_around_2006) while [applications](https://en.wikipedia.org/wiki/Computer_vision) [requiring](https://en.wikipedia.org/wiki/Image_processing) [less](https://en.wikipedia.org/wiki/Big_data) [than](https://en.wikipedia.org/wiki/Speech_recognition) [absolute](https://en.wikipedia.org/wiki/Machine_learning) [precision](https://en.wikipedia.org/wiki/Data_compression#Video) proliferate. The common goal is trading off accuracy or reliability for energy-savings, speed-up or computational latency reduction.
 
 Approximate computing concepts range from 
 
-* completely custom CPU core fabrics with error rate self-monitoring over
+* completely custom CPU core fabrics with error rate self-monitoring <small>over</small>
 * under-volting or overclocking of circuits to 
 * selectively ignoring cache coherency requirements.
 
-A large majority of these approaches live an isolated existence, because they target a very specific trade-off effect and are not based on a current general purpose CPU design. This isolated existence translates to often outdated and limited toolsets around the approximate computing platform.  
+A large majority of these approaches live an isolated existence because they target a very specific trade-off effect and are not based on a current general purpose CPU design. This isolated existence translates to often outdated and limited toolsets around the approximate computing platform.  
+
 In contrast, the PACO group decided to **extend** a current **open general purpose CPU/ISA** by some promising **approximate functional units**.
 
 ### PACO Goal
