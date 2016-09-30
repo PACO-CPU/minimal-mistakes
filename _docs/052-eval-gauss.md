@@ -62,7 +62,7 @@ The Gaussian LUT speedup compared to the precise version was approximately 3, wi
 In comparison of the resulting images we found the following mean absolute and relative errors of grey values (0-255):
 | Image size | Mean absolute error | Mean relative error |
 |:-------:|:----------------:|:----------------:|
-| 64x64\* |  n/a             |  0.04074    |
+| 64x64\* |  -             |  0.04074    |
 | 128x128 |  6.427           |  0.06617    |
 | 192x192 |  6.587           |  0.06992    |
 | 256x256 |  6.537           |  0.07129    |
