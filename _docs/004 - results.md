@@ -25,3 +25,18 @@ An approximate implementation of the Gaussian algorithm is roughly 3 times as fa
 The approximate result image is noticeably different from the precise version, but noise would certainly be filtered out.
 
 (insert original image, precise image, approximate image)
+
+(insert figure: LUT HW schematic)
+
+Since the number of possible input combinations is 2^(3\*3)=512 and the hardware Lookup Table has less entries, entries that contain the same output results must be combined. The LUT compiler does this for arithmetical functions with one parameter, in this case it was done manually. The AND-plane can now recognize input patterns and the OR-plane generates addresses for the memory containing the results.
+
+In effect, instead of
+
+* a multiplication and an addition for each pixel in the Gauss filter neighborhood,
+* and a division at the end,
+
+for each pixel two lookup instructions are executed. A lookup instruction takes only one cycle in the execution stage of the pipeline.
+
+### Example: Accelerate Gamma Correction with Lookup Table
+
+Our other example application, Gamma correction, was accelerated by a more modest 38%. (Details) **TODO insert link to Gamma eval**
