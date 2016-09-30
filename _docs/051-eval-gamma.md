@@ -22,7 +22,7 @@ factor of 1.
 
 
 ### PACO LUT implementation
-The PACO LUT implementation uses a lookup-table of 128 values and perfoms
+The PACO LUT implementation uses a lookup-table of 128 values and performs
 linear interpolation with an additional 12 bits of the input flowing into 
 interpolation. 
 
