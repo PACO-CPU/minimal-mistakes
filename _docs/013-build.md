@@ -7,8 +7,7 @@ sidebar:
 ---
 
 {% include base_path %}
-Now that you have the prerequisites mentioned in [getting-started](https://paco-cpu.github.io/paco-cpu/docs/getting-started/) installed and the project [downloaded](https://paco-cpu.github.io/paco-cpu/docs/download/), let's build the toolchain so that
-you can use it.
+Now that you have the prerequisites mentioned in the [getting-started](https://paco-cpu.github.io/paco-cpu/docs/getting-started/) guide installed and the project [downloaded](https://paco-cpu.github.io/paco-cpu/docs/download/), let's build the toolchain so that you can use it.
 
 ## Quick Build
 
@@ -21,7 +20,7 @@ $ ./install.sh
 
 ## Building the Toolchain Step-by-Step
 
-If you have already built the entire project, you can go ahead and [run](https://paco-cpu.github.io/paco-cpu/docs/run/) the project. Unless of course if you want to learn about the parts of the toolchain that you just built, you can stick around. 
+Now go ahead and [run](https://paco-cpu.github.io/paco-cpu/docs/run/) the project. Unless of course if you wish to learn about the parts of the toolchain that you just built, you can stick around. 
 
 These are the parts of the toolchain that needs to be build if you consider to do it manually:
 
@@ -43,7 +42,7 @@ $ cd paco-env/riscv-tools-src
 $ ./build.sh
 ```  
 
-The GCC compiler can be used to compile non approximate code. Some GCC libaries are needed as well to run GNU-Binutils. Binutils consists of an assembler and a linker. The assembler converts assembly language to machine or object code. The linker finally links the binary output files to generate a single executable. Riscv-test contains test programs to make sure the rocket core has been implemented correctly. 
+The GCC compiler can be used to compile non approximate code as well to run GNU-Binutils. Binutils consists of an assembler and a linker. The assembler converts assembly language to machine or object code. The linker finally links the binary output files to generate a single executable. Riscv-test contains test programs to make sure the rocket core has been implemented correctly. 
 
 ### 2 Clang and LLVM
 
@@ -59,10 +58,10 @@ $ make -jN && make install
 Attention: remember to replace N with the number of threads you want to spawn.
 
 This will install the clang compiler and the llvm tools into the `riscv-tools` directory.
-The flags of the `configure` command set the make configuration, so that the code is only built for target RISCV. This prevents building for other targets that are not needed, and hence saves disk space and speeds up the building process a bit.
+The flags of the `configure` command makes sure that the code is only built for target RISCV. This prevents building for other targets that are not needed, hence saves disk space and speeds up the building process.
 
 ### 3 LUT Compiler
-If you decide to use our PACO's LUT to approximate functions, you will need our LUT compiler. The following code gets it installed into the `riscv-tools` directory:  
+If you decide to use our PACO's LUT to approximate functions, you will need our LUT compiler. The following code installs it into the `riscv-tools` directory:  
 
 ```bash
 $ cd paco-env/riscv-tools-src/riscv-lut-compiler
@@ -70,9 +69,9 @@ $ make -jN && make install
 ```  
 Attention: remember to replace N with the number of threads you want to spawn.
 
-### 4 Python Liberaries
+### 4 Python Libraries
 
-Python liberaries are needed for our software tool that downloads code to the FPGA and communicates with it via UART. To install the python liberaries use the following command:
+Python libraries are needed for our software tool that interacts with the FPGA via the UART. To install the python libraries use the following command:
 
 ```bash
 $ cd paco-env/riscv-tools-src/py
@@ -82,7 +81,7 @@ This installs the python libraries into the `riscv-tools` directory.
 
 ### 5 Rocket Libaries
 
-RocketLib contains liberaries essential for the communication between programs running on the FPGA and the machine attached. This will install the RocketLib into the directory riscv-tools:
+RocketLib contains libraries essential for the communication between programs running on the FPGA and the machine attached. This will install the RocketLib into the directory riscv-tools:
 
 ```bash
 $ cd paco-env/rocket-soc/rocket_soc/lib
