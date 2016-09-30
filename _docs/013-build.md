@@ -47,7 +47,7 @@ The gcc compiler is needed to . Binutils consists of an assembler and a linker. 
 
 #### 2 Clang and LLVM
 
-Clang is . LLVM is a .
+Clang is is a compiler front end for the programming languages C, C++ and many others. LLVM is a collection of modular and reusable compiler and toolchain technologies used to develop compiler front ends and back ends. 
 
 In order to set them up, run the following code.   
 
@@ -86,6 +86,7 @@ This installs the python libraries into the `riscv-tools` directory.
 #### Again what are the rocket libraries? Why do we need them?
 
 This will install the RocketLib into the directory riscv-tools when you run it:
+
 ```bash
 $ cd paco-env/rocket-soc/rocket_soc/lib
 $ make -jN && make install
@@ -97,27 +98,38 @@ environment. Hopefully you didn't even break a sweat!
 
 ### Hardware setup
 
-In case you possess an FPGA, the following setup would allow you to test the PACO Core on the device.
-#### Should there be a particular series of FPGA, should the FPGA be plugged in
-#### introduce what this process does?
-
-#### Generating the CPU core
-
 #### please dont use words without giving an introduction. 
-#### What is the rocket-chip directory?
-#### why should I generate the CPU? Im using the LUT :P
-#### what is fsim?
+#### please introduce? why should I synthesize.. what is the use of it? 
 
-To translate the Rocket-Chip, written in Chisel HDL, to a verilog description, run:
+If you are interested in running code on either the approximate ALU or the approximate LUT, you will need to download the PACO core to an FPGA. The following setup would allow you to synthesize and download the PACO Core on a Xilinx Virtex-6 board. You need to have Xilinx ISE 14.7 installed on your system as well as the Xilinx cable driver. A guide on installing both of them can be found [here](http://www.george-smart.co.uk/wiki/Xilinx_JTAG_Linux). You start ISE by first sourcing the file settings64.sh and invoking:
+
 ```bash
-$ cd paco-env/rocket-chip/fsim
-$ make -jN && make install
+$ source /opt/Xilinx/14.7/ISE_DS/settings64.sh
+$ ise&
+```  
+
+Attention: The previous step assumes that ISE is installed in the path /opt/Xilinx/14.7/ISE DS, If not please change the path in the first command.
+
+This will start ISE in a GUI window. From here you have to select ”File - Open
+Project” and open the Rocket-SoC project file called rocket soc.xise. If you finished the previous steps successfully, you should find the file under `paco-env/rocket-soc/rocket_soc/prj/ml605`. If a window pops
+up stating the file ”Memo.vhd” cannot be found, you can click the checkbox ”Remove
+unspecified files from project” and proceed. Once you open the project click generate
+programming file, which starts the synthesis process. Once the process is finished, a
+bitstream file is created called rocket soc.bit.
+To flash this bitstream onto you FPGA you have to start impact by either clicking on
+”Configure Target Device” in ISE or run:
+
+```bash
+$ source /opt/Xilinx/14.7/ISE_DS/settings64.sh
+$ impact&
 ```
 
-#### Synthesizing the system for FPGA installation
-#### please introduce? why should I synthesize.. what is the use of it? 
-#### You can't directly ask for the user to check the guide. Please go through the guide for a detailed description of something.
+In impact first click on ”No” or ”Cancel” on every popup window. Make sure your FPGA board is plugged in, then doubleclick on
+”Boundary Scan”, press ”Ctrl-I” to initalize your cable to the FPGA and click ”No” and
+”Cancel” on the two popups. Rightclick on the chip symbol labeled ”xc6vlx240t”, select
+”Assign new configuration File...”, and select the file rocket soc.bit. Finally rightclick
+the chip symbol again and select ”Program”, then ”Ok” and after a loading bar a blue
+box should appear saying ”Program succeeded”.
 
-Please look into the User guide for more information. 
+If you have reached so far, then you have everything ready to use our PACO core. Proceed to the next page to know how to [run](https://paco-cpu.github.io/paco-cpu/docs/run/) code on it.
 
-#### WHere is the conclusion of this page? and the link to the next page?
