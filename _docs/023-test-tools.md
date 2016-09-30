@@ -65,16 +65,14 @@ $ umount rootfs
  
 - After adding your program in the initrd, it can be tested through the virtual machine. To execute it, run the following:
  
-```
+```sh
  $ qemu-system-riscv -kernel bbl -append vmlinux -drive file=rootfs.ext2, format=raw -nographic
-   
 ```
  
 - Now this will boot the virtual machine. Eventually a user name is requested to be logged in. The test program can then be run by:
  
-```
+```sh
 $ /root/test-program
- 
 ```
 
 **Note:** The prebuilt images for QEMU contain a systemtest for the approximate ALU. You can start it by running
