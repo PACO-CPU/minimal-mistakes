@@ -1,7 +1,7 @@
 ---
-title: "Gauss Filter"
+title: "Gaussian Blur Evaluation"
 permalink: /docs/eval-gauss/
-excerpt: "Gauss Filter"
+excerpt: "Evaluation of PACO with Gaussian blur benchmark."
 sidebar:
    nav: "evaluation"
 ---
