@@ -15,7 +15,7 @@ Both were used as test applications for both our approximate ALU and the Lookup 
 
 ### Example: Accelerate Gaussian Blur with Lookup Table
 
-An approximate implementation of the Gaussian algorithm is roughly 3 times as fast as a precise implementation. (Details) **TODO insert link to Gauss eval**
+An approximate implementation of the Gaussian algorithm is roughly 3 times as fast as a precise implementation. For more details, check the [Gaussian evaluation](/paco-cpu/docs/eval-gauss/) section.
 
  <img src="/paco-cpu/images/results/lut/gaussian_lut_speedup.png" alt="LUT speedup" width="500" height= "300" style = "margin:30px">
 
@@ -23,7 +23,12 @@ The approximate result image is noticeably different from the precise version, b
 
 (insert original image, precise image, approximate image)
 
-(insert figure: LUT HW schematic)
+<div style = "display:flex; flex-direction:row" >
+ <img src="/paco-cpu/images/results/lut/star/star_64x64.png" alt="LUT example" style = "margin:30px">
+ <img src="/paco-cpu/images/results/lut/star/star_64x64_native.png" alt="LUT example native" style = "margin:30px">
+ <img src="/paco-cpu/images/results/lut/star/star_64x64_lut.png" alt="LUT example lut" style = "margin:30px">
+</div>
+<img src="/paco-cpu/images/results/lut/LUT-design.png" alt="LUT core" width="700" style = "margin:30px">
 
 Since the number of possible input combinations is 2^(3\*3)=512 and the hardware Lookup Table has less entries, entries that contain the same output results must be combined. The LUT compiler does this for arithmetical functions with one parameter, in this case it was done manually. The AND-plane can now recognize input patterns and the OR-plane generates addresses for the memory containing the results.
 
