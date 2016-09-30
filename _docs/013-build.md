@@ -10,7 +10,7 @@ sidebar:
 Now that you have the prerequisites mentioned in [getting -started](https://paco-cpu.github.io/paco-cpu/docs/getting-started/) installed and the project [downloaded](https://paco-cpu.github.io/paco-cpu/docs/download/), let's build the toolchain so that
 you can use it.
 
-### Quick Build
+## Quick Build
 
 You can build the entire project by using the install script.
 
@@ -19,7 +19,7 @@ $ cd paco-env
 $ ./install.sh
 ```
 
-### Building the Toolchain Step-by-Step
+## Building the Toolchain Step-by-Step
 
 If you have already built the entire project, you can go ahead and [run](https://paco-cpu.github.io/paco-cpu/docs/run/) the project. Unless of course if you want to learn about the parts of the toolchain that you just built, you can stick around. 
 
@@ -93,7 +93,7 @@ Attention: remember to replace N with the number of threads you want to spawn.
 Congrats. From this point onwards your system should be prepared to run all the software tools of this
 environment. Hopefully you didn't even break a sweat!
 
-### Hardware setup
+## Hardware setup
 
 If you are interested in running code on either the approximate ALU or the approximate LUT, you will need to download the PACO core to an FPGA. The following setup would allow you to synthesize and download the PACO Core on a Xilinx Virtex-6 board. You need to have Xilinx ISE 14.7 installed on your system as well as the Xilinx cable driver. A guide on installing both of them can be found [here](http://www.george-smart.co.uk/wiki/Xilinx_JTAG_Linux). You start ISE by first sourcing the file settings64.sh and invoking:
 
