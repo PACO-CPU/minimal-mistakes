@@ -35,8 +35,9 @@ y = m * x + b we can describe the line again.
  <img src="/paco-cpu/images/lut-function-linear.png" alt="lut-function" width="300">
 
 For more information on the LUT please read the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut)
-** Create a transition between what is described above and the Gamma correction **
-For this example we will use a [Gamma correction](https://en.wikipedia.org/wiki/Gamma_correction) image filter. 
+
+A suitable application for the LUT is the [Gamma correction](https://en.wikipedia.org/wiki/Gamma_correction) image filter
+since it uses an expensive exponentiation which can be approximated. Thus we use it as an example for this tutorial.
 
 The complete code for this example, including a Makefile can be found [here](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/lut-gaussian-application) 
 
