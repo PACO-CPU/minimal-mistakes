@@ -15,8 +15,8 @@ can also be combined to create a binary in which you could use both of them.
 Alright! Let's get started!
 
 ## 1. Decide on the Approximate Component to Use
-- Lookup Table (LUT) start [here](#2-lut-guide)
-- Approximate ALU start [here](#3-approximate-alu-guide)
+- Lookup Table (LUT) [start](#2-lut-guide)
+- Approximate ALU [start](#3-approximate-alu-guide)
 
 ## 2. Lut Guide <a id="#2-lut-guide"></a>
 The Lookup Table (LUT) is a functional unit residing in the CPU pipeline and can be imagined as a software lookup table on crack. It's main purpose is to approximate any derivable function. To visualize it, let's take a look at the graph of a function:
