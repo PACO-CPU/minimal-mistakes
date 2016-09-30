@@ -60,8 +60,7 @@ $ make -jN && make install
 #### Remember to replace N with the number of threads you wish to spawn.
 
 This will install the clang compiler and the llvm tools into the `riscv-tools` directory.
-
-#### explain what the second and the third command does. for example the flag --enable-targets does something ...
+The flags --ebalbe-targets=riscv and --prefix=$RISCV configures the build so that the compiler is only build for the target RISCV, because other targets are not needed. This is to speed up the building process by skipping the not needed target builds.
 
 #### 3 LUT Compiler
 
@@ -71,9 +70,9 @@ The following code installs the LUT compiler into the `riscv-tools` directory:
 $ cd paco-env/riscv-tools-src/riscv-lut-compiler
 $ make -jN && make install
 ```
-Attention: remember to replace N with the number of threads you want to spawn.
+#### Again remember to replace N with the number of threads you wish to spawn.
 
-#### explain why the LUT compiler is part of the toolchain and what it is does. just one sentence
+The LUT compiler is needed to emit binary code to control the LUT hardware. This is not done by Clang/LLVM because of complex mathematical optimizations which were easier to implement without all checks and translations implemented in the normal compiler toolchain. 
 
 #### 4 Python Libaries
 
