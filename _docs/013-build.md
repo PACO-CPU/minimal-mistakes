@@ -7,7 +7,7 @@ sidebar:
 ---
 
 {% include base_path %}
-Now that you have the prerequisites mentioned in the [getting-started](https://paco-cpu.github.io/paco-cpu/docs/getting-started/) guide installed and the project [downloaded](https://paco-cpu.github.io/paco-cpu/docs/download/), let's build the toolchain so that you can use it.
+Now that you have the prerequisites mentioned in the [getting-started](https://paco-cpu.github.io/paco-cpu/docs/getting-started/) guide installed and [downloaded](https://paco-cpu.github.io/paco-cpu/docs/download/) the project, you need to build the toolchain so that you can use it.
 
 ## Quick Build
 
@@ -20,9 +20,9 @@ $ ./install.sh
 
 ## Building the Toolchain Step-by-Step
 
-Now go ahead and [run](https://paco-cpu.github.io/paco-cpu/docs/run/) the project. Unless of course if you wish to learn about the parts of the toolchain that you just built, you can stick around. 
+Now go ahead and [run](https://paco-cpu.github.io/paco-cpu/docs/run/) the project. Unless of course if you wish to learn about the parts of the toolchain that you just built, then stick around. 
 
-These are the parts of the toolchain that needs to be build if you consider to do it manually:
+These are the parts of the toolchain that need to be build if you consider to do it manually:
 
 1. RISCV-Toolchain
 2. Clang and LLVM
@@ -32,7 +32,7 @@ These are the parts of the toolchain that needs to be build if you consider to d
 
 ### 1 RISCV-Toolchain
 
-The RISCV-Toolchain consists of the gcc compiler, binutils and the riscv-tests and these
+The RISCV-Toolchain consists of the GCC compiler, binutils and the riscv-tests and these
 need to be installed into the `paco-env/riscv-tools` tools directory.
 
 To do so, go to the `riscv-tools-src` directory and run the build script.  
@@ -42,7 +42,7 @@ $ cd paco-env/riscv-tools-src
 $ ./build.sh
 ```  
 
-The GCC compiler can be used to compile non approximate code as well to run GNU-Binutils. Binutils consists of an assembler and a linker. The assembler converts assembly language to machine or object code. The linker finally links the binary output files to generate a single executable. Riscv-test contains test programs to make sure the rocket core has been implemented correctly. 
+The GCC compiler can be used to compile non-approximate code as well as to run GNU-Binutils. Binutils consists of an assembler and a linker. The assembler converts assembly language to machine or object code. The linker finally links the binary output files to generate a single executable. The riscv-test directory contains test programs to make sure the rocket core has been implemented correctly. 
 
 ### 2 Clang and LLVM
 
@@ -79,33 +79,32 @@ $ make install
 ```
 This installs the python libraries into the `riscv-tools` directory.
 
-### 5 Rocket Libaries
+### 5 Rocket Libraries
 
 RocketLib contains libraries essential for the communication between programs running on the FPGA and the machine attached. This will install the RocketLib into the directory riscv-tools:
 
 ```bash
 $ cd paco-env/rocket-soc/rocket_soc/lib
 $ make -jN && make install
-```  
-Attention: remember to replace N with the number of threads you want to spawn.  
+```   
 
 Congrats. From this point onwards your system should be prepared to run all the software tools of this
 environment. Hopefully you didn't even break a sweat!
 
 ## Hardware setup
 
-If you are interested in running code on either the approximate ALU or the approximate LUT, you will need to download the PACO core to an FPGA. The following setup would allow you to synthesize and download the PACO Core on a Xilinx Virtex-6 board. You need to have Xilinx ISE 14.7 installed on your system as well as the Xilinx cable driver. A guide on installing both of them can be found [here](http://www.george-smart.co.uk/wiki/Xilinx_JTAG_Linux). You start ISE by first sourcing the file settings64.sh and invoking:
+If you are interested in running code on either the approximate ALU or the approximate LUT, you will need to download the PACO core to an FPGA. The following setup allows you to synthesize and download the PACO Core on a Xilinx Virtex-6 board. You need to have Xilinx ISE 14.7 installed on your system as well as the Xilinx cable driver. A guide on installing both of them can be found [here](http://www.george-smart.co.uk/wiki/Xilinx_JTAG_Linux). You start ISE by first sourcing the file settings64.sh and invoking:
 
 ```bash
 $ source /opt/Xilinx/14.7/ISE_DS/settings64.sh
 $ ise&
 ```  
 
-Attention: The previous step assumes that ISE is installed in the path /opt/Xilinx/14.7/ISE DS, If not please change the path in the first command.
+Attention: The previous step assumes that ISE is installed in the path /opt/Xilinx/14.7/ISE DS, if not please change the path in the first command.
 
 This will start ISE in a GUI window. From here you have to select ”File - Open
 Project” and open the Rocket-SoC project file called rocket soc.xise. If you finished the previous steps successfully, you should find the file under `paco-env/rocket-soc/rocket_soc/prj/ml605`. If a window pops
-up stating the file ”Memo.vhd” cannot be found, you can click the checkbox ”Remove
+up, complaining the file ”Memo.vhd” cannot be found, you can click the checkbox ”Remove
 unspecified files from project” and proceed. Once you open the project click generate
 programming file, which starts the synthesis process. Once the process is finished, a
 bitstream file is created called rocket soc.bit.
