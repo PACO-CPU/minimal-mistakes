@@ -21,9 +21,9 @@ An approximate implementation of the Gaussian algorithm is roughly 3 times as fa
 
 The approximate result image is noticeably different from the precise version, but noise would certainly be filtered out.
 
-(insert original image, precise image, approximate image)
+The following images from left to right: original image, image from the precise version and the image approximated. 
 
-<div style = "display:flex; flex-direction:row" >
+<div style = "display:flex; flex-direction:row; justify-content: space-around;" >
  <img src="/paco-cpu/images/results/lut/star/star_64x64.png" alt="LUT example" style = "margin:30px">
  <img src="/paco-cpu/images/results/lut/star/star_64x64_native.png" alt="LUT example native" style = "margin:30px">
  <img src="/paco-cpu/images/results/lut/star/star_64x64_lut.png" alt="LUT example lut" style = "margin:30px">
@@ -41,4 +41,4 @@ for each pixel two lookup instructions are executed. A lookup instruction takes 
 
 ### Example: Accelerate Gamma Correction with Lookup Table
 
-Our other example application, Gamma correction, was accelerated by a more modest 38%. (Details) **TODO insert link to Gamma eval**
+Our other example application, Gamma correction, was accelerated by a more modest 38%. For more details, check the [Gamma Evaluation](/paco-cpu/docs/eval-gamma/) page.*
