@@ -52,8 +52,8 @@ To provide proof that it possible to integrate very different approximate functi
  
  Fig.2: The Lookup Table unit approximates arithmetic functions within segments. In this case values within the segment are linearly interpolated.
 
-[Approximate ALU Hardware](/paco-cpu/images/results/alu/approx-alu-pipeline.svg)
+![Approximate ALU Hardware](/paco-cpu/images/results/alu/approx-alu-pipeline.svg)
 
-[LUT Hardware](/paco-cpu/images/results/gamma/LUT-design.png)
+![LUT Hardware](/paco-cpu/images/results/gamma/LUT-design.png)
 
 **TODO** Add links to good HW descriptions w/ figures of the LUT and ALU
