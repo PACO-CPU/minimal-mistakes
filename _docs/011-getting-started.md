@@ -45,4 +45,10 @@ libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf \
 libtool patchutils bc uuid-dev liblua5.2-dev
 ``` 
 
+#### Installation on other systems
+
+We suppose to use Ubuntu 16.04 LTS where all components are checked to run successful. You are free to use other linux distributions as well. For example parts of PACO has been tested to run successful on Arch Linux. 
+
+#### Next step
+
 Now that you have all the prerequisites setup precisely [:wink], lets move on to [downloading](https://paco-cpu.github.io/paco-cpu/docs/download/) PACO on your machine.
