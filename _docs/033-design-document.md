@@ -19,7 +19,7 @@ The contents of the document are as follows:
 - Approximation Techniques
   - The Approximate ALU unit as a swag modification of the already implemented precise ALU in the Rocket Chip (an implementation of the RISCV processor architecture). We make use of bypass registers to omit changes in the least
 significant bits of the ALU inputs, thereby reducing dynamic power consumption at the cost of accuracy.
-  - The Lookup-table unit as a *realization* of a configurable piece-wise affine linear function computed within the processor pipeline. This core implements functional approximation of a high-level function in one or more inputs and
+  - The Lookup-Table unit as a *realization* of a configurable piece-wise affine linear function computed within the processor pipeline. This core implements functional approximation of a high-level function in one or more inputs and
 a single output.
 - Compiler/Language Modifications - the application programmer's interface to our approximation units. 
   - An approximate decorator following the syntax of a parameterized C/C++ preprocessor macro. It can annotate C declarations with an arbitrary set of key-values that are understood by the compiler and 
