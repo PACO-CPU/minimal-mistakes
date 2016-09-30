@@ -2,9 +2,6 @@
 title: "Results"
 permalink: /docs/results/
 excerpt: "The results obtained in PACO with LUT and Approx ALU"
-modified: 2016-09-30T15:54:02-04:00
-redirect_from:
-  - /theme-setup/
 ---
 
 {% include base_path %}
@@ -20,7 +17,7 @@ Both were used as test applications for both our approximate ALU and the Lookup 
 
 An approximate implementation of the Gaussian algorithm is roughly 3 times as fast as a precise implementation. (Details) **TODO insert link to Gauss eval**
 
-(insert graph)
+ <img src="/paco-cpu/images/results/lut/gaussian_lut_speedup.png" alt="LUT speedup" width="500" height= "300" style = "margin:30px">
 
 The approximate result image is noticeably different from the precise version, but noise would certainly be filtered out.
 
