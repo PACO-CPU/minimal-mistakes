@@ -1,6 +1,6 @@
 ---
 title: "Gauss Filter"
-permalink: /docs/eval-gauss
+permalink: /docs/eval-gauss/
 excerpt: "Gauss Filter"
 sidebar:
    nav: "evaluation"
