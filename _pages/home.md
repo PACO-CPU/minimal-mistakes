@@ -11,7 +11,7 @@ excerpt: 'The Worlds First Approximate Computing General Purpose CPU <br /> <br 
 feature_row:
   - image_path: speed_grey.png
     alt: "speedup"
-    title: "Upto 3x Speedup"
+    title: "Up to 3x Speedup"
     excerpt: ""
     url: "/docs/results/"
     btn_label: "Speedup"
