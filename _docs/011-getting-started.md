@@ -13,7 +13,8 @@ sidebar:
 Welcome to our Getting-started page where you can find the prerequists to use PACO and how to download, build and use the core and toolchain. Now lets make sure you have all the required prerequisites.
 
 ## Prerequisite
-PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your maschine, please install them. 
+PACO relies on [libuuid](https://sourceforge.net/projects/libuuid/) and [lua](https://www.lua.org/), if they aren't already on your maschine, please install them.  
+
 - libuuid is a The libuuid library is used to generate unique identifiers. It is needed so that Clang and LLVM would work properly. *which version is needed?*. If you do not have it already, You can install it using:  
 
 ```bash
@@ -27,6 +28,7 @@ $ lua -v
 ```  
   
 If you don't have it already you can download it from [here](https://www.lua.org/download.html).
+
 - python is ... `python --version` checks the version running 
 
 ### explain what the prerequisites are, how to check if they are already installed 
