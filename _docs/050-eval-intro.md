@@ -14,6 +14,6 @@ Choosing suitable benchmarks to test the toolchain and the PACO core relied on s
 
 Governed by these two guidelines, we decided to write our own image processing benchmarks:
 
-* A [Gaussian blur image filter application](/paco-cpu/docs/eval-gauss/) 
-* A [Gamma correction image filter application](/paco-cpu/docs/eval-gamma/).
+* [Gaussian blur image filter application](/paco-cpu/docs/eval-gauss/) 
+* [Gamma correction image filter application](/paco-cpu/docs/eval-gamma/).
 
