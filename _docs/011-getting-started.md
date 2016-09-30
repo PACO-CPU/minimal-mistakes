@@ -33,7 +33,7 @@ If you don't have it already you can download it from [here](https://www.lua.org
 
 For both and libuuid lua you can use the newest version. If problems occur, use the tested versions for libuuid(2.20.1-5.lubuntu20.7) and lua(5.2.3-1).
 
-- Python is used in the core implementation. Version 2.7.6 is known to work with our environment. You can check your version by using the command:
+- Python is used to communicate with the core via the UART interface. Version 2.7.6 is known to work with our environment. You can check your version by using the command:
 
 ```bash
 $ python --version
