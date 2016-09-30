@@ -7,19 +7,46 @@ sidebar:
 ---
 {% include base_path %}
 
-# 1 Gaussian Filter
+### Approximate Gaussian Filter Evaluation
+The Gaussian blur filter algorithm is used in image processing to smooth over noisy images. They generally generate a new color value for each pixel by incorporating the color values of neighboring pixels, weighted depending on the distance between pixel and neighbor.
 
-# 2 LUT
+Precise implementations of the Gaussian blur algorithms calculate this by moving a sliding window over the image, adding up neighboring pixels (multiplied by weights).
 
-# 3 Approximate ALU
+We compare a precise implementation of the Gaussian blur algorithm with a 3x3 window (greyscale) to implementations using
 
-## 3.1 Implementation
+* the [approximate ALU]() **insert address**
+* the [Lookup Table]() **insert address**
+
+### Evaluation: Lookup Table
+**insert anchor**
+The Gaussian LUT implementation passes over the image twice: once with a 3x1 window in the horizonal direction to generate an intermediate image, then with a 1x3 window in the vertical to generate the final pixel value. The lookup table is fed with the 3 most significant bits from each pixel value in the window.
+
+<img src="/paco-cpu/images/gauss_filter_grid.png" alt="Gaussian window" width="500">
+
+Only the 3 most significant bits of each pixel in the window are fed into the lookup table to first look-up an intermediate result for the horizontal traveling window. Another lookup from the intermediate image returns the final value of each pixel.
+
+For a 256 by 256 pixel image the original:
+
+<img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256.png" alt="Lenna original" width="512">
+
+a precisely Gaussian-blurred version:
+
+<img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256_native.png" alt="Lenna native" width="508">
+
+and an an approximated Gaussian blur version, created with a Lookup Table with 9 inputs and 128 possible entries:
+
+<img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256_lut.png" alt="Lenna lut" width="508">
+
+The performance gains:
+(insert speedup graph for Gaussian LUT)
+
+### 3.1 Implementation
 
 This implementation approximates the multiplication of one pixel with the filter kernel using **mul.approx** and the additions of the resulting values from each multiplication using **add.approx**. Other then that, it corresponds to the [native implementation](anchor).**TODO:** Add anchor 
 
 The complete code including a makefile can be found [here](https://github.com/PACO-CPU/rocket-soc/tree/master/rocket_soc/lib/templates/alu-gaussian-application). 
 
-## 3.2 Approach
+### 3.2 Approach
 
 The application was run on a [ml605 FPGA](https://www.xilinx.com/products/boards-and-kits/ek-v6-ml605-g.html) using the script
 [run_eval.py](https://github.com/PACO-CPU/rocket-soc/blob/master/rocket_soc/lib/templates/alu-gaussian-application/run_eval.py).
@@ -32,7 +59,7 @@ This script iterates over a [Lenna](https://en.wikipedia.org/wiki/Lenna) image i
 
 **Note:** The values after MUL and ADD in the image name correspond to the decimal value of the binary neglect masks defined in the [Design Document]()**TODO**: Add link to table in Design Document
 
-## 3.3 Results
+### 3.3 Results
 
 The Table below shows the results for an image of the size 256x256 pixel. The first column of the table describes how many bits were neglected on a **mul.approx** instruction, the second column is likewise for **add.approx** instructions. A " - " means that a precise instruction was used. The third column is 
 a calculation of the [approximation error](https://en.wikipedia.org/wiki/Approximation_error) between the natively calculated image and the respective approximately computed image. The last column show the resulting image of the approximate calculation.
