@@ -25,6 +25,8 @@ The Gaussian LUT implementation passes over the image twice: once with a 3x1 win
 
 Only the 3 most significant bits of each pixel in the window are fed into the lookup table to first look-up an intermediate result for the horizontal traveling window. Another lookup from the intermediate image returns the final value of each pixel.
 
+**insert link to implementation**
+
 For a 256 by 256 pixel image the original:
 
 <img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256.png" alt="Lenna original" width="512">
@@ -33,12 +35,13 @@ a precisely Gaussian-blurred version:
 
 <img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256_native.png" alt="Lenna native" width="508">
 
-and an an approximated Gaussian blur version, created with a Lookup Table with 9 inputs and 128 possible entries:
+and an approximated Gaussian blur version, created with a Lookup Table with 9 inputs and 128 possible entries:
 
 <img src="/paco-cpu/images/results/lut/lenna_256/lenna_256x256_lut.png" alt="Lenna lut" width="508">
 
-The performance gains:
-(insert speedup graph for Gaussian LUT)
+[64x64](/paco-cpu/docs/concepts/results-064), 128x128, 192x192 and 256x256 images were processed in the same way, each 20 times, and speedup was measured:
+
+<img src="/paco-cpu/images/gaussian_lut_speedup.png" alt="Gaussian LUT Speedup graph" width="550">
 
 ### 3.1 Implementation
 
