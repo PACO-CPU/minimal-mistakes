@@ -30,8 +30,6 @@ For each segment we can now interpolate the function. The picture below shows a 
 segment. The interpolated line of each segment can then be stored as integer values m, b in our LUT. With the formula
 y = m * x + b we can describe the line again.
 
-** Rephrase the previous two lines. Maybe add a link to LUT in the idea page **
-
  <img src="/paco-cpu/images/lut-function-linear.png" alt="lut-function" width="300">
 
 For more information on the LUT please read the [Design Document](/paco-cpu/docs/design-doc.pdf#nameddest=sec:lut)
@@ -114,12 +112,10 @@ For more information on other possible key/values please read [Annotate Code](/p
 The basic steps to compile you program are (for more details, refer to [User Guide](/paco-cpu/docs/impl-doc.pdf#nameddest=sec:compiling-programs)):
 
 1. Compile you program using Clang. This will yield an llvm-ir file of your code and an input file to the lut-compiler.
-2. Use llc to convert the llvm-ir file into an assembly file. **what is llc? **
+2. Use llc to convert the llvm-ir file into an assembly file. 
 3. Invoke the lut-compiler on the input file to generate a configuration for the LUT.
-4. Use the lut-startup script with the configuration to create a startup code that loads the configuration **where?**.
+4. Use the lut-startup script with the configuration to create a startup code that loads the configuration.
 5. Link everything together into a binary.
-
-** Isn't it possible to add the commands here as well? Because the user has to have the complete program running without referring to other documents by the end of this section rite?  This comment applies to running the program on the FPGA section as well **
 
 Now you should have a binary ready to be run on an FPGA.
     
@@ -241,5 +237,3 @@ Our approximated program with a neglect_amount of 4, on applying the gaussian fi
 Let's compare it against our program that applies the gaussian filter without any approximate decorators: 
 
 ![native](/paco-cpu/images/results/alu/lenna-256x256-native.png) 
-
-** conclude this section **
