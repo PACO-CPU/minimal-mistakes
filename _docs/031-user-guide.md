@@ -10,7 +10,7 @@ sidebar:
 The User Guide is the first part of the implementation document which serves
 as a starting point for new users to understand the working environment of PACO.
 
-### Click [here](/paco-cpu/docs/impl-doc.pdf) to download the Implementation Document!
+### [Download the Implementation Document](/paco-cpu/docs/impl-doc.pdf)
 
 
 Before any work can be done with the PACO system, the environment must be set
