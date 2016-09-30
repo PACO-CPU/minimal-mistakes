@@ -43,7 +43,7 @@ $ cd paco-env/riscv-tools-src
 $ ./build.sh
 ```  
 
-The gcc compiler is needed to . Binutils consists of an assembler and a linker. The assembler converts assembly language to machine or object code. The linker  Riscv-test ..
+The gcc compiler can be used to compile non approximate code. As well some libaries of it are needed to run GNU-Binutils. Binutils consists of an assembler and a linker. The assembler converts assembly language to machine or object code. The linker finally links the binary output. Riscv-test consists test programs to make sure the rocket core has been implemented correct. 
 
 #### 2 Clang and LLVM
 
@@ -59,8 +59,7 @@ $ make -jN && make install
 Attention: remember to replace N with the number of threads you want to spawn.
 
 This will install the clang compiler and the llvm tools into the `riscv-tools` directory.
-
-#### explain what the second and the third command does. for example the flag --enable-targets does something ...
+The flags of the configure command sets the make configuration that the code is only build for target RISCV. This prevents building for other targets which are not needed and results in taking less disk space and speeding up the building process a bit.
 
 #### 3 LUT Compiler
 If you decide to use our PACO's LUT to approximate functions, you will need our LUT compiler. The following code gets it installed into the `riscv-tools` directory:  
@@ -73,7 +72,7 @@ Attention: remember to replace N with the number of threads you want to spawn.
 
 #### 4 Python Libaries
 
-#### What python libraries? Why do we need the python libraries?
+Python is used to communicate with the core via the UART interface for flashing and runtime diagnose of results. To install the python libaries use the following command:
 
 ```bash
 $ cd paco-env/riscv-tools-src/py
@@ -85,7 +84,7 @@ This installs the python libraries into the `riscv-tools` directory.
 
 #### Again what are the rocket libraries? Why do we need them?
 
-This will install the RocketLib into the directory riscv-tools when you run it:
+The RocketLib is used to communicate from your program running on the FPGA to the machine attached. This will install the RocketLib into the directory riscv-tools when you run it:
 
 ```bash
 $ cd paco-env/rocket-soc/rocket_soc/lib
@@ -97,9 +96,6 @@ Congrats. From this point onwards your system should be prepared to run all the 
 environment. Hopefully you didn't even break a sweat!
 
 ### Hardware setup
-
-#### please dont use words without giving an introduction. 
-#### please introduce? why should I synthesize.. what is the use of it? 
 
 If you are interested in running code on either the approximate ALU or the approximate LUT, you will need to download the PACO core to an FPGA. The following setup would allow you to synthesize and download the PACO Core on a Xilinx Virtex-6 board. You need to have Xilinx ISE 14.7 installed on your system as well as the Xilinx cable driver. A guide on installing both of them can be found [here](http://www.george-smart.co.uk/wiki/Xilinx_JTAG_Linux). You start ISE by first sourcing the file settings64.sh and invoking:
 
