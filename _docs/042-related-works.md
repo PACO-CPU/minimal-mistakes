@@ -29,4 +29,3 @@ Several efforts have been put into designing programming languages and coding st
 
 In  PACO we have not used any of the formerly discussed concepts rather added our own extensions to CLANG and LLVM. Check our [developer guide](https://paco-cpu.github.io/paco-cpu/docs/developer-guide/) for more details. 
 
-** Add modifications discussed on Slack
