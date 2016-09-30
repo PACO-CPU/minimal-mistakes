@@ -21,7 +21,7 @@ This guide however does not provide all the details regarding annotations, for w
 |:--------:|:-----------:|:-----------------:|:---:|
 |**name** | Any string | this uniquely identifies this function | Will be set by clang, should not be set manually|
 |**numSegments** | 0 to 2^segmentsBits-1 |This defines the maximum number of segments (primary + secondary) in which the function ought to be divided | - |
-|**numPrimarySegments** | (0 to 2^segmentsBits-1) | This defines the maximun number of primary segments in which the function ought to be divided  | - |
+|**numPrimarySegments** | (0 to 2^segmentsBits-1) | This defines the maximum number of primary segments in which the function ought to be divided  | - |
 |**segments** | "uniform", "log-left", "log-right", or "min-error" | This defines how the segments should be distributed in the function to be approximated | See table below for an overview over the segmentation strategies. |
 |segments2 | "uniform", "log-left", "log-right", or "min-error" | This defines how the subsegments (secondary segments) should be distributed in the function to be approximated  | Experimental |
 |**explicitSegments** | [min,max],(min,max),... | If the programmer knows the segments beforehand, he can explicitly state them as comma seperated value ranges | - |
@@ -35,7 +35,7 @@ value | short description | notes
 **uniform** | all segments are uniformly distributed | -
 **log-left** | the size of segments increases by the power of 2 starting from the right | -
 **log-right** | the size of segments increases by the power of 2 starting from the left | -
-**min-error** | the segments are chosen by the minizing the approximation error depending on the approximation strategy | You need to supply the key/value pair **approximation**
+**min-error** | the segments are chosen by the minimizing the approximation error depending on the approximation strategy | You need to supply the key/value pair **approximation**
 
 ### Example Functions
 
